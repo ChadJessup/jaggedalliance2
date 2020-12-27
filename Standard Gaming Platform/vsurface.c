@@ -899,9 +899,9 @@ HVSURFACE CreateVideoSurface( VSURFACE_DESC *VSurfaceDesc )
 			PixelFormat.dwGBitMask = uiGBitMask;
 			PixelFormat.dwBBitMask = uiBBitMask;
 //#else
-//			PixelFormat.dwRBitMask = 0xf800;
-//			PixelFormat.dwGBitMask = 0x7e0;
-//			PixelFormat.dwBBitMask = 0x1f;
+			PixelFormat.dwRBitMask = 0xf800;
+			PixelFormat.dwGBitMask = 0x7e0;
+			PixelFormat.dwBBitMask = 0x1f;
 //#endif
 			break;
 

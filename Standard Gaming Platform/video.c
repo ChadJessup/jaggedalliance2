@@ -2621,7 +2621,8 @@ HRESULT       ReturnCode;
 
   usBit = 0x8000;
   gusRedShift = 8;
-	while(!(gusRedMask & usBit))
+
+	while(usBit != 0 && !(gusRedMask & usBit))
 	{
 		usBit >>= 1;
 		gusRedShift--;
@@ -2629,7 +2630,7 @@ HRESULT       ReturnCode;
 
   usBit = 0x8000;
   gusGreenShift = 8;
-	while(!(gusGreenMask & usBit))
+	while(usBit != 0 && !(gusGreenMask & usBit))
 	{
 		usBit >>= 1;
 		gusGreenShift--;
@@ -2637,7 +2638,7 @@ HRESULT       ReturnCode;
 
   usBit = 0x8000;
   gusBlueShift = 8;
-	while(!(gusBlueMask & usBit))
+	while(usBit != 0 && !(gusBlueMask & usBit))
 	{
 		usBit >>= 1;
 		gusBlueShift--;

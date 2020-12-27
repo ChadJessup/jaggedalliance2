@@ -11,3 +11,9 @@ UpgradeLog.htm
 Debug Demo/
 *.log
 *.tlog
+Data/
+*.ilk
+ja2/debug.txt
+ja2/ja2.exe
+ja2/Ja2.set
+
