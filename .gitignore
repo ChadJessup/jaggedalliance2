@@ -8,3 +8,6 @@
 .vs/
 Debug/
 UpgradeLog.htm
+Debug Demo/
+*.log
+*.tlog

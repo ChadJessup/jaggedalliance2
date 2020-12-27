@@ -467,7 +467,7 @@ UINT32 uiChannel, uiSoundID;
 			uiSoundID=SoundStartStream(pFilename, uiChannel, pParms);
 			if(uiSoundID!=SOUND_ERROR)
 			{
-				AIL_auto_service_stream(pSoundList[uiChannel].hMSSStream, FALSE);
+				//AIL_auto_service_stream(pSoundList[uiChannel].hMSSStream, FALSE);
 				pSoundList[uiChannel].pCallback=pCallback;
 				pSoundList[uiChannel].pData=pData;
 				pSoundList[uiChannel].uiFlags|=SOUND_CALLBACK;
@@ -517,16 +517,16 @@ INT32 iStatus=SMP_DONE;
 
 	if(fSoundSystemInit)
 	{
-		if(pSoundList[uiSound].hMSS!=NULL)
-			iStatus = AIL_sample_status(pSoundList[uiSound].hMSS);
-		
-		if(pSoundList[uiSound].hMSSStream!=NULL)
-			iStatus = AIL_stream_status(pSoundList[uiSound].hMSSStream);
-
-		if(pSoundList[uiSound].hM3D!=NULL)
-			iStatus = AIL_3D_sample_status(pSoundList[uiSound].hM3D);
-
-		return((iStatus!=SMP_DONE) && (iStatus!=SMP_STOPPED));
+		//if(pSoundList[uiSound].hMSS!=NULL)
+		//	iStatus = AIL_sample_status(pSoundList[uiSound].hMSS);
+		//
+		//if(pSoundList[uiSound].hMSSStream!=NULL)
+		//	iStatus = AIL_stream_status(pSoundList[uiSound].hMSSStream);
+		//
+		//if(pSoundList[uiSound].hM3D!=NULL)
+		//	iStatus = AIL_3D_sample_status(pSoundList[uiSound].hM3D);
+		//
+		//return((iStatus!=SMP_DONE) && (iStatus!=SMP_STOPPED));
 	}
 
 	return(FALSE);
@@ -643,7 +643,7 @@ UINT32 uiVolClip;
 	if(fSoundSystemInit)
 	{
 		uiVolClip=__min(uiVolume, 127);
-		AIL_set_digital_master_volume(hSoundDriver, uiVolClip);
+		//AIL_set_digital_master_volume(hSoundDriver, uiVolClip);
 	}
 	return(TRUE);
 }
@@ -658,9 +658,9 @@ UINT32 uiVolClip;
 //*******************************************************************************
 UINT32 SoundGetDigitalVolume(UINT32 uiVolume)
 {
-	if(fSoundSystemInit)
-		return((UINT32)AIL_digital_master_volume(hSoundDriver));
-	else
+	//if(fSoundSystemInit)
+	//	return((UINT32)AIL_digital_master_volume(hSoundDriver));
+	//else
 		return(0);
 }
 
@@ -813,14 +813,14 @@ UINT32 uiVolCap;
 	{
 		uiVolCap=__min(uiVolume, 127);			
 		
-		if(pSoundList[uiChannel].hMSS!=NULL)
-			AIL_set_sample_volume(pSoundList[uiChannel].hMSS, uiVolCap);
+		//if(pSoundList[uiChannel].hMSS!=NULL)
+		//	AIL_set_sample_volume(pSoundList[uiChannel].hMSS, uiVolCap);
 
-		if(pSoundList[uiChannel].hMSSStream!=NULL)
-			AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, uiVolCap);
+		//if(pSoundList[uiChannel].hMSSStream!=NULL)
+		//	AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, uiVolCap);
 
-		if(pSoundList[uiChannel].hM3D!=NULL)
-			AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, uiVolCap);
+		//if(pSoundList[uiChannel].hM3D!=NULL)
+		//	AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, uiVolCap);
 
 		return(TRUE);
 	}
@@ -848,10 +848,10 @@ UINT32 uiSound, uiPanCap;
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
 			if(pSoundList[uiSound].hMSS!=NULL)
-				AIL_set_sample_pan(pSoundList[uiSound].hMSS, uiPanCap);
+			//	AIL_set_sample_pan(pSoundList[uiSound].hMSS, uiPanCap);
 
 			if(pSoundList[uiSound].hMSSStream!=NULL)
-				AIL_set_stream_pan(pSoundList[uiSound].hMSSStream, uiPanCap);
+			//	AIL_set_stream_pan(pSoundList[uiSound].hMSSStream, uiPanCap);
 
 			return(TRUE);
 		}
@@ -880,13 +880,13 @@ UINT32 uiSound, uiFreqCap;
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
 			if(pSoundList[uiSound].hMSS!=NULL)
-				AIL_set_sample_playback_rate(pSoundList[uiSound].hMSS, uiFreqCap);
+			//	AIL_set_sample_playback_rate(pSoundList[uiSound].hMSS, uiFreqCap);
 
 			if(pSoundList[uiSound].hMSSStream!=NULL)
-				AIL_set_stream_playback_rate(pSoundList[uiSound].hMSSStream, uiFreqCap);
+			//	AIL_set_stream_playback_rate(pSoundList[uiSound].hMSSStream, uiFreqCap);
 
 			if(pSoundList[uiSound].hM3D!=NULL)
-				AIL_set_3D_sample_playback_rate(pSoundList[uiSound].hM3D, uiFreqCap);
+			//	AIL_set_3D_sample_playback_rate(pSoundList[uiSound].hM3D, uiFreqCap);
 
 			return(TRUE);
 		}
@@ -915,13 +915,13 @@ UINT32 uiSound, uiLoopCap;
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
 			if(pSoundList[uiSound].hMSS!=NULL)
-				AIL_set_sample_loop_count(pSoundList[uiSound].hMSS, uiLoopCap);
+			//	AIL_set_sample_loop_count(pSoundList[uiSound].hMSS, uiLoopCap);
 
 			if(pSoundList[uiSound].hMSSStream!=NULL)
-				AIL_set_stream_loop_count(pSoundList[uiSound].hMSSStream, uiLoopCap);
+			//	AIL_set_stream_loop_count(pSoundList[uiSound].hMSSStream, uiLoopCap);
 
 			if(pSoundList[uiSound].hM3D!=NULL)
-				AIL_set_3D_sample_loop_count(pSoundList[uiSound].hM3D, uiLoopCap);
+			//	AIL_set_3D_sample_loop_count(pSoundList[uiSound].hM3D, uiLoopCap);
 
 			return(TRUE);
 		}
@@ -966,14 +966,14 @@ UINT32 SoundGetVolumeIndex(UINT32 uiChannel)
 {
 	if(fSoundSystemInit)
 	{
-		if(pSoundList[uiChannel].hMSS!=NULL)
-			return((UINT32)AIL_sample_volume(pSoundList[uiChannel].hMSS));
+		//if(pSoundList[uiChannel].hMSS!=NULL)
+		//	return((UINT32)AIL_sample_volume(pSoundList[uiChannel].hMSS));
 
-		if(pSoundList[uiChannel].hMSSStream!=NULL)
-			return((UINT32)AIL_stream_volume(pSoundList[uiChannel].hMSSStream));
+		//if(pSoundList[uiChannel].hMSSStream!=NULL)
+		//	return((UINT32)AIL_stream_volume(pSoundList[uiChannel].hMSSStream));
 
-		if(pSoundList[uiChannel].hM3D!=NULL)
-			return((UINT32)AIL_3D_sample_volume(pSoundList[uiChannel].hM3D));
+		//if(pSoundList[uiChannel].hM3D!=NULL)
+		//	return((UINT32)AIL_3D_sample_volume(pSoundList[uiChannel].hM3D));
 	}
 
 	return(SOUND_ERROR);
@@ -994,11 +994,11 @@ UINT32 uiSound;
 	{
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
-			if(pSoundList[uiSound].hMSS!=NULL)
-				return((UINT32)AIL_sample_pan(pSoundList[uiSound].hMSS));
+			//if(pSoundList[uiSound].hMSS!=NULL)
+			//	return((UINT32)AIL_sample_pan(pSoundList[uiSound].hMSS));
 
-			if(pSoundList[uiSound].hMSSStream!=NULL)
-				return((UINT32)AIL_stream_pan(pSoundList[uiSound].hMSSStream));
+			//if(pSoundList[uiSound].hMSSStream!=NULL)
+			//	return((UINT32)AIL_stream_pan(pSoundList[uiSound].hMSSStream));
 		}
 	}
 
@@ -1020,14 +1020,14 @@ UINT32 uiSound;
 	{
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
-			if(pSoundList[uiSound].hMSS!=NULL)
-				return((UINT32)AIL_sample_playback_rate(pSoundList[uiSound].hMSS));
-
-			if(pSoundList[uiSound].hMSSStream!=NULL)
-				return((UINT32)AIL_stream_playback_rate(pSoundList[uiSound].hMSSStream));
-
-			if(pSoundList[uiSound].hM3D!=NULL)
-				return((UINT32)AIL_3D_sample_playback_rate(pSoundList[uiSound].hM3D));
+			//if(pSoundList[uiSound].hMSS!=NULL)
+			//	return((UINT32)AIL_sample_playback_rate(pSoundList[uiSound].hMSS));
+			//
+			//if(pSoundList[uiSound].hMSSStream!=NULL)
+			//	return((UINT32)AIL_stream_playback_rate(pSoundList[uiSound].hMSSStream));
+			//
+			//if(pSoundList[uiSound].hM3D!=NULL)
+			//	return((UINT32)AIL_3D_sample_playback_rate(pSoundList[uiSound].hM3D));
 		}
 	}
 
@@ -1049,14 +1049,14 @@ UINT32 uiSound;
 	{
 		if((uiSound=SoundGetIndexByID(uiSoundID))!=NO_SAMPLE)
 		{
-			if(pSoundList[uiSound].hMSS!=NULL)
-				return((UINT32)AIL_sample_loop_count(pSoundList[uiSound].hMSS));
-
-			if(pSoundList[uiSound].hMSSStream!=NULL)
-				return((UINT32)AIL_stream_loop_count(pSoundList[uiSound].hMSSStream));
-
-			if(pSoundList[uiSound].hM3D!=NULL)
-				return((UINT32)AIL_3D_sample_loop_count(pSoundList[uiSound].hM3D));
+			//if(pSoundList[uiSound].hMSS!=NULL)
+			//	return((UINT32)AIL_sample_loop_count(pSoundList[uiSound].hMSS));
+			//
+			//if(pSoundList[uiSound].hMSSStream!=NULL)
+			//	return((UINT32)AIL_stream_loop_count(pSoundList[uiSound].hMSSStream));
+			//
+			//if(pSoundList[uiSound].hM3D!=NULL)
+			//	return((UINT32)AIL_3D_sample_loop_count(pSoundList[uiSound].hM3D));
 		}
 	}
 
@@ -1210,7 +1210,7 @@ void		*pData;
 		{
 			if(pSoundList[uiCount].hMSSStream!=NULL)
 			{
-				if(AIL_service_stream(pSoundList[uiCount].hMSSStream, 0))
+				//if(AIL_service_stream(pSoundList[uiCount].hMSSStream, 0))
 				{
 					if(pSoundList[uiCount].uiFlags&SOUND_CALLBACK)
 					{
@@ -1350,13 +1350,13 @@ UINT32 uiSound;
 		{
 			if(pSoundList[uiSound].hMSS!=NULL)
 			{
-				AIL_sample_ms_position(pSoundList[uiSound].hMSS, puiTotalMilliseconds, puiCurrentMilliseconds);
+				//AIL_sample_ms_position(pSoundList[uiSound].hMSS, puiTotalMilliseconds, puiCurrentMilliseconds);
 				return TRUE;
 			}
 			
 			if(pSoundList[uiSound].hMSSStream!=NULL)
 			{
-				AIL_stream_ms_position(pSoundList[uiSound].hMSSStream, puiTotalMilliseconds, puiCurrentMilliseconds);
+				//AIL_stream_ms_position(pSoundList[uiSound].hMSSStream, puiTotalMilliseconds, puiCurrentMilliseconds);
 				return TRUE;
 			}
 		}
@@ -1627,7 +1627,7 @@ BOOLEAN fRemoved=TRUE;
 
 		memset(&pSampleList[uiSample], 0, sizeof(SAMPLETAG));
 
-		if((pSampleList[uiSample].pData=AIL_mem_alloc_lock(uiSize))==NULL)
+		//if((pSampleList[uiSample].pData=AIL_mem_alloc_lock(uiSize))==NULL)
 		{
 			FastDebugMsg(String("SoundLoadDisk:  ERROR: Trying to play %s, AIL channels are full\n", pFilename ) );
 			FileClose(hFile);
@@ -1750,7 +1750,7 @@ CHAR8 *pChunk;
 AILSOUNDINFO ailInfo;
 
 	pChunk=(CHAR8 *)pSampleList[uiSample].pData;
-	if(!AIL_WAV_info((void *)pChunk, &ailInfo))
+	//if(!AIL_WAV_info((void *)pChunk, &ailInfo))
 		return(FALSE);
 
 	pSampleList[uiSample].uiSpeed=ailInfo.rate;
@@ -1781,7 +1781,7 @@ UINT32 SoundFreeSampleIndex(UINT32 uiSample)
 		if(pSampleList[uiSample].pData!=NULL)
 		{
 			guiSoundMemoryUsed-=pSampleList[uiSample].uiSize;
-			AIL_mem_free_lock(pSampleList[uiSample].pData);
+		//	AIL_mem_free_lock(pSampleList[uiSample].pData);
 		}
 
 		memset(&pSampleList[uiSample], 0, sizeof(SAMPLETAG));
@@ -1827,7 +1827,7 @@ UINT32 uiCount;
 CHAR8	cDriverName[128];
 
 	// Try to start up the Miles Sound System
-	if(!AIL_startup()) 
+	//if(!AIL_startup()) 
 		return(FALSE);
 
 	// Initialize the driver handle
@@ -1837,12 +1837,12 @@ CHAR8	cDriverName[128];
 	// maximum number of handles that we are allowed to allocate. Note
 	// that this is not the number we may have playing at one time--
 	// that number is set by SOUND_MAX_CHANNELS
-	AIL_set_preference(DIG_MIXER_CHANNELS, SOUND_MAX_CHANNELS);
+	//AIL_set_preference(DIG_MIXER_CHANNELS, SOUND_MAX_CHANNELS);
 
 
 	fDirectSound=TRUE;
 
-	AIL_set_preference(DIG_USE_WAVEOUT,NO);
+	//AIL_set_preference(DIG_USE_WAVEOUT,NO);
 	// startup with DirectSound
 	if (hSoundDriver == NULL) 
 		hSoundDriver = SoundInitDriver(44100, 16, 2);
@@ -1863,7 +1863,7 @@ CHAR8	cDriverName[128];
 		// code layer can slow us down by up to 40% under NT
 		if(strstr(cDriverName, "emulated"))
 		{
-			AIL_waveOutClose(hSoundDriver);
+			//AIL_waveOutClose(hSoundDriver);
 			hSoundDriver=NULL;
 		}
 	}
@@ -1872,7 +1872,7 @@ CHAR8	cDriverName[128];
 	if (hSoundDriver == NULL)
 	{
 		fDirectSound=FALSE;
-		AIL_set_preference(DIG_USE_WAVEOUT,YES); 
+		//AIL_set_preference(DIG_USE_WAVEOUT,YES); 
 	}
 	
 	if (hSoundDriver == NULL) 
@@ -1924,7 +1924,7 @@ CHAR8	cDriverName[128];
 BOOLEAN SoundShutdownHardware(void)
 {
 	if(fSoundSystemInit)
-		AIL_shutdown();
+		//AIL_shutdown();
 
 	return(TRUE);
 }
@@ -1951,11 +1951,11 @@ CHAR8									cBuf[128];
   sPCMWF.wf.nBlockAlign     =        (uiBits / 8) * uiChans;
   sPCMWF.wBitsPerSample     = uiBits;
 
-  if(AIL_waveOutOpen(&DIG, NULL, 0, (LPWAVEFORMAT) &sPCMWF))
+  //if(AIL_waveOutOpen(&DIG, NULL, 0, (LPWAVEFORMAT) &sPCMWF))
 		return(NULL);
 
   memset(cBuf, 0, 128);
-  AIL_digital_configuration(DIG,0,0,cBuf);
+ // AIL_digital_configuration(DIG,0,0,cBuf);
 	FastDebugMsg(String("Sound Init: %dKHz, %d uiBits, %s %s\n", uiRate, uiBits, (uiChans==1)? "Mono": "Stereo", cBuf));
 
 	return(DIG);
@@ -1974,7 +1974,7 @@ BOOLEAN SoundGetDriverName(HDIGDRIVER DIG, CHAR8 *cBuf)
 	if(DIG)
 	{
 		cBuf[0]='\0';
-		AIL_digital_configuration(DIG, NULL, NULL, cBuf);
+		//AIL_digital_configuration(DIG, NULL, NULL, cBuf);
 		return(TRUE);
 	}
 	else
@@ -2025,99 +2025,99 @@ CHAR8 AILString[200];
 	if(!fSoundSystemInit)
 		return(SOUND_ERROR);
 
-	if((pSoundList[uiChannel].hMSS = AIL_allocate_sample_handle(hSoundDriver))==NULL)
-	{
-		sprintf(AILString, "Sample Error: %s", AIL_last_error());
-		FastDebugMsg(AILString);
-		return(SOUND_ERROR);
-	}
-
-	AIL_init_sample(pSoundList[uiChannel].hMSS);
-
-	if(!AIL_set_named_sample_file(pSoundList[uiChannel].hMSS, pSampleList[uiSample].pName, pSampleList[uiSample].pData, pSampleList[uiSample].uiSize, 0))
-	{
-		AIL_release_sample_handle(pSoundList[uiChannel].hMSS);
-		pSoundList[uiChannel].hMSS=NULL;
-
-		sprintf(AILString, "AIL Set Sample Error: %s", AIL_last_error());
-		DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
-		return(SOUND_ERROR);
-	}
-
-	// Store the natural playback rate before we modify it below
-	pSampleList[uiSample].uiSpeed=AIL_sample_playback_rate(pSoundList[uiChannel].hMSS);
-
-	if(pSampleList[uiSample].uiFlags & SAMPLE_RANDOM)
-	{
-		if((pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT) && (pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT))
-		{
-			UINT32 uiSpeed = pSampleList[uiSample].uiSpeedMin+Random(pSampleList[uiSample].uiSpeedMax-pSampleList[uiSample].uiSpeedMin);
-
-			AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, uiSpeed);
-		}
-	}
-	else
-	{
-		if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
-		{
-			Assert((pParms->uiSpeed > 0) && (pParms->uiSpeed <= 60000));
-			AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, pParms->uiSpeed);
-		}
-	}
-
-	if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
-	{
-		UINT32 uiRate = AIL_sample_playback_rate(pSoundList[uiChannel].hMSS);
-		UINT32 uiBend = uiRate * pParms->uiPitchBend/100;
-		AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, uiRate + (Random(uiBend*2)-uiBend));
-	}
-
-	if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
-		AIL_set_sample_volume(pSoundList[uiChannel].hMSS, pParms->uiVolume);
-	else
-		AIL_set_sample_volume(pSoundList[uiChannel].hMSS, guiSoundDefaultVolume);
-
-	if((pParms!=NULL) && (pParms->uiLoop!=SOUND_PARMS_DEFAULT))
-	{
-		AIL_set_sample_loop_count(pSoundList[uiChannel].hMSS, pParms->uiLoop);
-
-		// If looping infinately, lock the sample so it can't be unloaded
-		// and mark it as a looping sound
-		if(pParms->uiLoop==0)
-		{
-			pSampleList[uiSample].uiFlags|=SAMPLE_LOCKED;
-			pSoundList[uiChannel].fLooping=TRUE;
-		}
-	}
-
-	if((pParms!=NULL) && (pParms->uiPan!=SOUND_PARMS_DEFAULT))
-		AIL_set_sample_pan(pSoundList[uiChannel].hMSS, pParms->uiPan);
-
-	if((pParms!=NULL) && (pParms->uiPriority!=SOUND_PARMS_DEFAULT))
-		pSoundList[uiChannel].uiPriority=pParms->uiPriority;
-	else
-		pSoundList[uiChannel].uiPriority=PRIORITY_MAX;
-
-	if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
-	{
-		pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
-		pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
-	}
-	else
-	{
-		pSoundList[uiChannel].EOSCallback=NULL;
-		pSoundList[uiChannel].pCallbackData=NULL;
-	}
-		
-	uiSoundID=SoundGetUniqueID();
-	pSoundList[uiChannel].uiSoundID=uiSoundID;
-	pSoundList[uiChannel].uiSample=uiSample;
-	pSoundList[uiChannel].uiTimeStamp=GetTickCount();
-	pSoundList[uiChannel].uiFadeVolume = SoundGetVolumeIndex(uiChannel);
-	
-	pSampleList[uiSample].uiCacheHits++;
-	
-	AIL_start_sample(pSoundList[uiChannel].hMSS);
+	//if((pSoundList[uiChannel].hMSS = AIL_allocate_sample_handle(hSoundDriver))==NULL)
+	//{
+	//	sprintf(AILString, "Sample Error: %s", AIL_last_error());
+	//	FastDebugMsg(AILString);
+	//	return(SOUND_ERROR);
+	//}
+	//
+	//AIL_init_sample(pSoundList[uiChannel].hMSS);
+	//
+	//if(!AIL_set_named_sample_file(pSoundList[uiChannel].hMSS, pSampleList[uiSample].pName, pSampleList[uiSample].pData, pSampleList[uiSample].uiSize, 0))
+	//{
+	//	AIL_release_sample_handle(pSoundList[uiChannel].hMSS);
+	//	pSoundList[uiChannel].hMSS=NULL;
+	//
+	//	sprintf(AILString, "AIL Set Sample Error: %s", AIL_last_error());
+	//	DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
+	//	return(SOUND_ERROR);
+	//}
+	//
+	//// Store the natural playback rate before we modify it below
+	//pSampleList[uiSample].uiSpeed=AIL_sample_playback_rate(pSoundList[uiChannel].hMSS);
+	//
+	//if(pSampleList[uiSample].uiFlags & SAMPLE_RANDOM)
+	//{
+	//	if((pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT) && (pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT))
+	//	{
+	//		UINT32 uiSpeed = pSampleList[uiSample].uiSpeedMin+Random(pSampleList[uiSample].uiSpeedMax-pSampleList[uiSample].uiSpeedMin);
+	//
+	//		AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, uiSpeed);
+	//	}
+	//}
+	//else
+	//{
+	//	if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
+	//	{
+	//		Assert((pParms->uiSpeed > 0) && (pParms->uiSpeed <= 60000));
+	//		AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, pParms->uiSpeed);
+	//	}
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
+	//{
+	//	UINT32 uiRate = AIL_sample_playback_rate(pSoundList[uiChannel].hMSS);
+	//	UINT32 uiBend = uiRate * pParms->uiPitchBend/100;
+	//	AIL_set_sample_playback_rate(pSoundList[uiChannel].hMSS, uiRate + (Random(uiBend*2)-uiBend));
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
+	//	AIL_set_sample_volume(pSoundList[uiChannel].hMSS, pParms->uiVolume);
+	//else
+	//	AIL_set_sample_volume(pSoundList[uiChannel].hMSS, guiSoundDefaultVolume);
+	//
+	//if((pParms!=NULL) && (pParms->uiLoop!=SOUND_PARMS_DEFAULT))
+	//{
+	//	AIL_set_sample_loop_count(pSoundList[uiChannel].hMSS, pParms->uiLoop);
+	//
+	//	// If looping infinately, lock the sample so it can't be unloaded
+	//	// and mark it as a looping sound
+	//	if(pParms->uiLoop==0)
+	//	{
+	//		pSampleList[uiSample].uiFlags|=SAMPLE_LOCKED;
+	//		pSoundList[uiChannel].fLooping=TRUE;
+	//	}
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiPan!=SOUND_PARMS_DEFAULT))
+	//	AIL_set_sample_pan(pSoundList[uiChannel].hMSS, pParms->uiPan);
+	//
+	//if((pParms!=NULL) && (pParms->uiPriority!=SOUND_PARMS_DEFAULT))
+	//	pSoundList[uiChannel].uiPriority=pParms->uiPriority;
+	//else
+	//	pSoundList[uiChannel].uiPriority=PRIORITY_MAX;
+	//
+	//if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
+	//{
+	//	pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
+	//	pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
+	//}
+	//else
+	//{
+	//	pSoundList[uiChannel].EOSCallback=NULL;
+	//	pSoundList[uiChannel].pCallbackData=NULL;
+	//}
+	//	
+	//uiSoundID=SoundGetUniqueID();
+	//pSoundList[uiChannel].uiSoundID=uiSoundID;
+	//pSoundList[uiChannel].uiSample=uiSample;
+	//pSoundList[uiChannel].uiTimeStamp=GetTickCount();
+	//pSoundList[uiChannel].uiFadeVolume = SoundGetVolumeIndex(uiChannel);
+	//
+	//pSampleList[uiSample].uiCacheHits++;
+	//
+	//AIL_start_sample(pSoundList[uiChannel].hMSS);
 
 	return(uiSoundID);
 }
@@ -2140,68 +2140,68 @@ CHAR8	AILString[200];
 	if(!fSoundSystemInit)
 		return(SOUND_ERROR);
 
-	if((pSoundList[uiChannel].hMSSStream=AIL_open_stream(hSoundDriver, pFilename, SOUND_DEFAULT_STREAM))==NULL)
-	{
-		SoundCleanCache();
-		pSoundList[uiChannel].hMSSStream=AIL_open_stream(hSoundDriver, pFilename, SOUND_DEFAULT_STREAM);
-	}
-
-	if(pSoundList[uiChannel].hMSSStream==NULL)
-	{
-		sprintf(AILString, "Stream Error: %s", AIL_last_error());
-		DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
-		return(SOUND_ERROR);
-	}
-	
-	if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
-		uiSpeed=pParms->uiSpeed;
-	else
-		uiSpeed=AIL_stream_playback_rate(pSoundList[uiChannel].hMSSStream);
-
-	if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
-	{
-		UINT32 uiBend = uiSpeed * pParms->uiPitchBend/100;
-		uiSpeed+=(Random(uiBend*2)-uiBend);
-	}
-
-	AIL_set_stream_playback_rate(pSoundList[uiChannel].hMSSStream, uiSpeed);
-
-	if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
-		AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, pParms->uiVolume);
-	else
-		AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, guiSoundDefaultVolume);
-
-	if( pParms!=NULL )
-	{
-		if (pParms->uiLoop!=SOUND_PARMS_DEFAULT )
-			AIL_set_stream_loop_count(pSoundList[uiChannel].hMSSStream, pParms->uiLoop);
-	}
-
-	if((pParms!=NULL) && (pParms->uiPan!=SOUND_PARMS_DEFAULT))
-		AIL_set_stream_pan(pSoundList[uiChannel].hMSSStream, pParms->uiPan);
-
-	AIL_start_stream(pSoundList[uiChannel].hMSSStream);
-
-	uiSoundID=SoundGetUniqueID();
-	pSoundList[uiChannel].uiSoundID=uiSoundID;
-	if(pParms)
-		pSoundList[uiChannel].uiPriority=pParms->uiPriority;
-	else
-		pSoundList[uiChannel].uiPriority=SOUND_PARMS_DEFAULT;
-
-	if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
-	{
-		pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
-		pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
-	}
-	else
-	{
-		pSoundList[uiChannel].EOSCallback=NULL;
-		pSoundList[uiChannel].pCallbackData=NULL;
-	}
-
-	pSoundList[uiChannel].uiTimeStamp=GetTickCount();
-	pSoundList[uiChannel].uiFadeVolume = SoundGetVolumeIndex(uiChannel);
+	//if((pSoundList[uiChannel].hMSSStream=AIL_open_stream(hSoundDriver, pFilename, SOUND_DEFAULT_STREAM))==NULL)
+	//{
+	//	SoundCleanCache();
+	//	pSoundList[uiChannel].hMSSStream=AIL_open_stream(hSoundDriver, pFilename, SOUND_DEFAULT_STREAM);
+	//}
+	//
+	//if(pSoundList[uiChannel].hMSSStream==NULL)
+	//{
+	//	sprintf(AILString, "Stream Error: %s", AIL_last_error());
+	//	DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
+	//	return(SOUND_ERROR);
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
+	//	uiSpeed=pParms->uiSpeed;
+	//else
+	//	uiSpeed=AIL_stream_playback_rate(pSoundList[uiChannel].hMSSStream);
+	//
+	//if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
+	//{
+	//	UINT32 uiBend = uiSpeed * pParms->uiPitchBend/100;
+	//	uiSpeed+=(Random(uiBend*2)-uiBend);
+	//}
+	//
+	//AIL_set_stream_playback_rate(pSoundList[uiChannel].hMSSStream, uiSpeed);
+	//
+	//if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
+	//	AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, pParms->uiVolume);
+	//else
+	//	AIL_set_stream_volume(pSoundList[uiChannel].hMSSStream, guiSoundDefaultVolume);
+	//
+	//if( pParms!=NULL )
+	//{
+	//	if (pParms->uiLoop!=SOUND_PARMS_DEFAULT )
+	//		AIL_set_stream_loop_count(pSoundList[uiChannel].hMSSStream, pParms->uiLoop);
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiPan!=SOUND_PARMS_DEFAULT))
+	//	AIL_set_stream_pan(pSoundList[uiChannel].hMSSStream, pParms->uiPan);
+	//
+	//AIL_start_stream(pSoundList[uiChannel].hMSSStream);
+	//
+	//uiSoundID=SoundGetUniqueID();
+	//pSoundList[uiChannel].uiSoundID=uiSoundID;
+	//if(pParms)
+	//	pSoundList[uiChannel].uiPriority=pParms->uiPriority;
+	//else
+	//	pSoundList[uiChannel].uiPriority=SOUND_PARMS_DEFAULT;
+	//
+	//if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
+	//{
+	//	pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
+	//	pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
+	//}
+	//else
+	//{
+	//	pSoundList[uiChannel].EOSCallback=NULL;
+	//	pSoundList[uiChannel].pCallbackData=NULL;
+	//}
+	//
+	//pSoundList[uiChannel].uiTimeStamp=GetTickCount();
+	//pSoundList[uiChannel].uiFadeVolume = SoundGetVolumeIndex(uiChannel);
 
 	return(uiSoundID);
 }
@@ -2269,8 +2269,8 @@ UINT32 uiSample;
 		{
 				if(pSoundList[uiChannel].hMSS!=NULL)
 				{
-					AIL_stop_sample(pSoundList[uiChannel].hMSS);
-					AIL_release_sample_handle(pSoundList[uiChannel].hMSS);
+					//AIL_stop_sample(pSoundList[uiChannel].hMSS);
+					//AIL_release_sample_handle(pSoundList[uiChannel].hMSS);
 					pSoundList[uiChannel].hMSS=NULL;
 					uiSample=pSoundList[uiChannel].uiSample;
 					
@@ -2289,7 +2289,7 @@ UINT32 uiSample;
 
 				if(pSoundList[uiChannel].hMSSStream!=NULL)
 				{
-					AIL_close_stream(pSoundList[uiChannel].hMSSStream);
+					//AIL_close_stream(pSoundList[uiChannel].hMSSStream);
 					pSoundList[uiChannel].hMSSStream=NULL;
 					if(pSoundList[uiChannel].EOSCallback!=NULL)
 						pSoundList[uiChannel].EOSCallback(pSoundList[uiChannel].pCallbackData);
@@ -2299,8 +2299,8 @@ UINT32 uiSample;
 
 				if(pSoundList[uiChannel].hM3D!=NULL)
 				{
-					AIL_stop_3D_sample(pSoundList[uiChannel].hM3D);
-					AIL_release_3D_sample_handle(pSoundList[uiChannel].hM3D);
+					//AIL_stop_3D_sample(pSoundList[uiChannel].hM3D);
+					//AIL_release_3D_sample_handle(pSoundList[uiChannel].hM3D);
 					pSoundList[uiChannel].hM3D=NULL;
 					uiSample=pSoundList[uiChannel].uiSample;
 					
@@ -2577,27 +2577,27 @@ INT32 iResult;
 
 	while(!fDone)
 	{
-		if(!AIL_enumerate_3D_providers(&hEnum, &hProvider, &pName))
+		//if(!AIL_enumerate_3D_providers(&hEnum, &hProvider, &pName))
 			fDone=TRUE;
-		else if(hProvider)
+		//else if(hProvider)
 		{
 			if(strcmp(pProviderName, pName)==0)
 			{
 				fDone=TRUE;
-				if(AIL_open_3D_provider(hProvider)==M3D_NOERR)
+				//if(AIL_open_3D_provider(hProvider)==M3D_NOERR)
 				{
 					gh3DProvider = hProvider;
 
 					// Create a "listener" which represents our position in space
-					gh3DListener = AIL_open_3D_listener(gh3DProvider);
+					//gh3DListener = AIL_open_3D_listener(gh3DProvider);
 					if(!gh3DListener)
 					{
-						AIL_close_3D_provider(gh3DProvider);
+						//AIL_close_3D_provider(gh3DProvider);
 						return(FALSE);
 					}
 					Sound3DSetListener(0.0f, 0.0f, 0.0f);
 
-			    AIL_3D_provider_attribute(gh3DProvider, "EAX environment selection", &iResult);
+			   // AIL_3D_provider_attribute(gh3DProvider, "EAX environment selection", &iResult);
 					if(iResult!=(-1))
 						gfUsingEAX = TRUE;
 
@@ -2628,13 +2628,13 @@ void Sound3DShutdownProvider(void)
 
 	if(gh3DListener)
 	{
-		AIL_close_3D_listener(gh3DListener);
+		//AIL_close_3D_listener(gh3DListener);
 		gh3DListener=0;
 	}
 
 	if(gh3DProvider)
 	{
-		AIL_close_3D_provider(gh3DProvider);
+		//AIL_close_3D_provider(gh3DProvider);
 		gh3DProvider=0;
 	}
 }
@@ -2664,7 +2664,7 @@ UINT32 uiChannel;
 		{
 			if(pSoundList[uiChannel].hM3D!=NULL)
 			{
-				AIL_set_3D_position(pSoundList[uiChannel].hM3D, flX, flY, flZ);
+				//AIL_set_3D_position(pSoundList[uiChannel].hM3D, flX, flY, flZ);
 			}
 		}
 	}
@@ -2716,8 +2716,8 @@ UINT32 uiChannel;
 //*****************************************************************************************
 void Sound3DSetListener(FLOAT flX, FLOAT flY, FLOAT flZ)
 {
-	if(fSoundSystemInit && gh3DListener)
-		AIL_set_3D_position(gh3DListener, flX, flY, flZ);
+	//if(fSoundSystemInit && gh3DListener)
+		//AIL_set_3D_position(gh3DListener, flX, flY, flZ);
 }
 
 
@@ -2741,8 +2741,8 @@ void Sound3DSetListener(FLOAT flX, FLOAT flY, FLOAT flZ)
 //*****************************************************************************************
 void Sound3DSetFacing(FLOAT flXFace, FLOAT flYFace, FLOAT flZFace, FLOAT flXUp, FLOAT flYUp, FLOAT flZUp)
 {
-	if(fSoundSystemInit && gh3DListener)
-		AIL_set_3D_orientation(gh3DListener, flXFace, flYFace, flZFace, flXUp, flYUp, flZUp);
+	//if(fSoundSystemInit && gh3DListener)
+	//	AIL_set_3D_orientation(gh3DListener, flXFace, flYFace, flZFace, flXUp, flYUp, flZUp);
 }
 
 //*****************************************************************************************
@@ -2773,7 +2773,7 @@ UINT32 uiChannel;
 		{
 			if(pSoundList[uiChannel].hM3D!=NULL)
 			{
-				AIL_set_3D_orientation(pSoundList[uiChannel].hM3D, flXFace, flYFace, flZFace, flXUp, flYUp, flZUp);
+			//	AIL_set_3D_orientation(pSoundList[uiChannel].hM3D, flXFace, flYFace, flZFace, flXUp, flYUp, flZUp);
 			}
 		}
 	}
@@ -2807,7 +2807,7 @@ UINT32 uiChannel;
 		{
 			if(pSoundList[uiChannel].hM3D!=NULL)
 			{
-				AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, flMax, flMin);
+				//AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, flMax, flMin);
 			}
 		}
 	}
@@ -2825,7 +2825,8 @@ UINT32 uiChannel;
 //*****************************************************************************************
 INT32 Sound3DActiveSounds(void)
 {
-	return((INT32)AIL_active_3D_sample_count(gh3DProvider));
+	return 0;
+	//return((INT32)AIL_active_3D_sample_count(gh3DProvider));
 }
 
 
@@ -2898,6 +2899,8 @@ UINT32 Sound3DStartSample(UINT32 uiSample, UINT32 uiChannel, SOUND3DPARMS *pParm
 UINT32 uiSoundID;
 CHAR8 AILString[200];
 
+	return(SOUND_ERROR);
+
 	if(!fSoundSystemInit || !gh3DProvider)
 		return(SOUND_ERROR);
 
@@ -2905,97 +2908,97 @@ CHAR8 AILString[200];
 	if(pSampleList[uiSample].fStereo || strstr(pSampleList[uiSample].pName, ".MP3"))
 		return(SOUND_ERROR);
 		
-	if((pSoundList[uiChannel].hM3D = AIL_allocate_3D_sample_handle(gh3DProvider))==NULL)
-	{
-		sprintf(AILString, "AIL3D Error: %s", AIL_last_error());
-		DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
-		return(SOUND_ERROR);
-	}
-
-	if(!AIL_set_3D_sample_file(pSoundList[uiChannel].hM3D, pSampleList[uiSample].pData))
-	{
-		AIL_release_3D_sample_handle(pSoundList[uiChannel].hM3D);
-		pSoundList[uiChannel].hM3D=NULL;
-
-		sprintf(AILString, "AIL3D Set Sample Error: %s", AIL_last_error());
-		DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
-		return(SOUND_ERROR);
-	}
-
-	// Store the natural playback rate before we modify it below
-	pSampleList[uiSample].uiSpeed=AIL_3D_sample_playback_rate(pSoundList[uiChannel].hM3D);
-
-	if(pSampleList[uiSample].uiFlags & SAMPLE_RANDOM)
-	{
-		if((pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT) && (pSampleList[uiSample].uiSpeedMax != SOUND_PARMS_DEFAULT))
-		{
-			UINT32 uiSpeed = pSampleList[uiSample].uiSpeedMin+Random(pSampleList[uiSample].uiSpeedMax-pSampleList[uiSample].uiSpeedMin);
-
-			AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D, uiSpeed);
-		}
-	}
-	else
-	{
-		if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
-			AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D, pParms->uiSpeed);
-	}
-
-	if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
-	{
-		UINT32 uiRate = AIL_3D_sample_playback_rate(pSoundList[uiChannel].hM3D);
-		UINT32 uiBend = uiRate * pParms->uiPitchBend/100;
-		AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D,	uiRate + (Random(uiBend*2)-uiBend));
-	}
-
-	if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
-		AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, pParms->uiVolume);
-	else
-		AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, guiSoundDefaultVolume);
-
-	if((pParms!=NULL) && (pParms->uiLoop!=SOUND_PARMS_DEFAULT))
-	{
-		AIL_set_3D_sample_loop_count(pSoundList[uiChannel].hM3D, pParms->uiLoop);
-
-		// If looping infinately, lock the sample so it can't be unloaded
-		// and mark it as a looping sound
-		if(pParms->uiLoop==0)
-		{
-			pSampleList[uiSample].uiFlags|=SAMPLE_LOCKED;
-			pSoundList[uiChannel].fLooping=TRUE;
-		}
-	}
-
-	if((pParms!=NULL) && (pParms->uiPriority!=SOUND_PARMS_DEFAULT))
-		pSoundList[uiChannel].uiPriority=pParms->uiPriority;
-	else
-		pSoundList[uiChannel].uiPriority=PRIORITY_MAX;
-
-	if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
-	{
-		pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
-		pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
-	}
-	else
-	{
-		pSoundList[uiChannel].EOSCallback=NULL;
-		pSoundList[uiChannel].pCallbackData=NULL;
-	}
-		
-
-	AIL_set_3D_position(pSoundList[uiChannel].hM3D, pParms->Pos.flX, pParms->Pos.flY, pParms->Pos.flZ);
-	AIL_set_3D_velocity_vector(pSoundList[uiChannel].hM3D, pParms->Pos.flVelX, pParms->Pos.flVelY, pParms->Pos.flVelZ);
-	AIL_set_3D_orientation(pSoundList[uiChannel].hM3D, pParms->Pos.flFaceX, pParms->Pos.flFaceY, pParms->Pos.flFaceZ, pParms->Pos.flUpX, pParms->Pos.flUpY, pParms->Pos.flUpZ);
-//	AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, pParms->Pos.flFalloffMax, pParms->Pos.flFalloffMin);
-	AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, 99999999.9f, 99999999.9f);
-
-	uiSoundID=SoundGetUniqueID();
-	pSoundList[uiChannel].uiSoundID=uiSoundID;
-	pSoundList[uiChannel].uiSample=uiSample;
-	pSoundList[uiChannel].uiTimeStamp=GetTickCount();
-
-	pSampleList[uiSample].uiCacheHits++;
-	
-	AIL_start_3D_sample(pSoundList[uiChannel].hM3D);
+	//if((pSoundList[uiChannel].hM3D = AIL_allocate_3D_sample_handle(gh3DProvider))==NULL)
+	//{
+	//	sprintf(AILString, "AIL3D Error: %s", AIL_last_error());
+	//	DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
+	//	return(SOUND_ERROR);
+	//}
+	//
+	//if(!AIL_set_3D_sample_file(pSoundList[uiChannel].hM3D, pSampleList[uiSample].pData))
+	//{
+	//	AIL_release_3D_sample_handle(pSoundList[uiChannel].hM3D);
+	//	pSoundList[uiChannel].hM3D=NULL;
+	//
+	//	sprintf(AILString, "AIL3D Set Sample Error: %s", AIL_last_error());
+	//	DbgMessage(TOPIC_GAME, DBG_LEVEL_0, AILString);
+	//	return(SOUND_ERROR);
+	//}
+	//
+	//// Store the natural playback rate before we modify it below
+	//pSampleList[uiSample].uiSpeed=AIL_3D_sample_playback_rate(pSoundList[uiChannel].hM3D);
+	//
+	//if(pSampleList[uiSample].uiFlags & SAMPLE_RANDOM)
+	//{
+	//	if((pSampleList[uiSample].uiSpeedMin != SOUND_PARMS_DEFAULT) && (pSampleList[uiSample].uiSpeedMax != SOUND_PARMS_DEFAULT))
+	//	{
+	//		UINT32 uiSpeed = pSampleList[uiSample].uiSpeedMin+Random(pSampleList[uiSample].uiSpeedMax-pSampleList[uiSample].uiSpeedMin);
+	//
+	//		AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D, uiSpeed);
+	//	}
+	//}
+	//else
+	//{
+	//	if((pParms!=NULL) && (pParms->uiSpeed!=SOUND_PARMS_DEFAULT))
+	//		AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D, pParms->uiSpeed);
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiPitchBend!=SOUND_PARMS_DEFAULT))
+	//{
+	//	UINT32 uiRate = AIL_3D_sample_playback_rate(pSoundList[uiChannel].hM3D);
+	//	UINT32 uiBend = uiRate * pParms->uiPitchBend/100;
+	//	AIL_set_3D_sample_playback_rate(pSoundList[uiChannel].hM3D,	uiRate + (Random(uiBend*2)-uiBend));
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiVolume!=SOUND_PARMS_DEFAULT))
+	//	AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, pParms->uiVolume);
+	//else
+	//	AIL_set_3D_sample_volume(pSoundList[uiChannel].hM3D, guiSoundDefaultVolume);
+	//
+	//if((pParms!=NULL) && (pParms->uiLoop!=SOUND_PARMS_DEFAULT))
+	//{
+	//	AIL_set_3D_sample_loop_count(pSoundList[uiChannel].hM3D, pParms->uiLoop);
+	//
+	//	// If looping infinately, lock the sample so it can't be unloaded
+	//	// and mark it as a looping sound
+	//	if(pParms->uiLoop==0)
+	//	{
+	//		pSampleList[uiSample].uiFlags|=SAMPLE_LOCKED;
+	//		pSoundList[uiChannel].fLooping=TRUE;
+	//	}
+	//}
+	//
+	//if((pParms!=NULL) && (pParms->uiPriority!=SOUND_PARMS_DEFAULT))
+	//	pSoundList[uiChannel].uiPriority=pParms->uiPriority;
+	//else
+	//	pSoundList[uiChannel].uiPriority=PRIORITY_MAX;
+	//
+	//if((pParms!=NULL) && ((UINT32)pParms->EOSCallback!=SOUND_PARMS_DEFAULT))
+	//{
+	//	pSoundList[uiChannel].EOSCallback=pParms->EOSCallback;
+	//	pSoundList[uiChannel].pCallbackData=pParms->pCallbackData;
+	//}
+	//else
+	//{
+	//	pSoundList[uiChannel].EOSCallback=NULL;
+	//	pSoundList[uiChannel].pCallbackData=NULL;
+	//}
+	//	
+	//
+	//AIL_set_3D_position(pSoundList[uiChannel].hM3D, pParms->Pos.flX, pParms->Pos.flY, pParms->Pos.flZ);
+	//AIL_set_3D_velocity_vector(pSoundList[uiChannel].hM3D, pParms->Pos.flVelX, pParms->Pos.flVelY, pParms->Pos.flVelZ);
+	//AIL_set_3D_orientation(pSoundList[uiChannel].hM3D, pParms->Pos.flFaceX, pParms->Pos.flFaceY, pParms->Pos.flFaceZ, pParms->Pos.flUpX, pParms->Pos.flUpY, pParms->Pos.flUpZ);
+//	//AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, pParms->Pos.flFalloffMax, pParms->Pos.flFalloffMin);
+	//AIL_set_3D_sample_distances(pSoundList[uiChannel].hM3D, 99999999.9f, 99999999.9f);
+	//
+	//uiSoundID=SoundGetUniqueID();
+	//pSoundList[uiChannel].uiSoundID=uiSoundID;
+	//pSoundList[uiChannel].uiSample=uiSample;
+	//pSoundList[uiChannel].uiTimeStamp=GetTickCount();
+	//
+	//pSampleList[uiSample].uiCacheHits++;
+	//
+	//AIL_start_3D_sample(pSoundList[uiChannel].hM3D);
 
 	return(uiSoundID);
 }
@@ -3099,7 +3102,7 @@ void Sound3DSetRoomType(UINT32 uiRoomType)
 		
 		sprintf(cName, "EAX_ENVIRONMENT_%s", pEAXRoomTypes[uiRoomType]);
 
-		AIL_set_3D_provider_preference(gh3DProvider, cName, (void *)(&uiRoomType));
+		//AIL_set_3D_provider_preference(gh3DProvider, cName, (void *)(&uiRoomType));
 		guiRoomTypeIndex = uiRoomType;
 	}
 }
