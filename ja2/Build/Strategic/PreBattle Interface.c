@@ -214,7 +214,7 @@ void ValidateAndCorrectInBattleCounters( GROUP *pLocGroup )
 	if( ubInvalidGroups || pSector->ubAdminsInBattle || pSector->ubTroopsInBattle || pSector->ubElitesInBattle || pSector->ubCreaturesInBattle )
 	{
 		UINT16 str[ 512 ];
-		swprintf( str, L"Strategic info warning:  Sector 'in battle' counters are not clear when they should be.  "
+		wprintf( str, L"Strategic info warning:  Sector 'in battle' counters are not clear when they should be.  "
 									 L"If you can provide information on how a previous battle was resolved here or nearby patrol "
 									 L"(auto resolve, tactical battle, cheat keys, or retreat),"
 									 L"please forward that info (no data files necessary) as well as the following code (very important):  "
@@ -902,33 +902,33 @@ void RenderPBHeader( INT32 *piX, INT32 *piWidth)
 	SetFontShadow( FONT_NEARBLACK );
 	if( !gfPersistantPBI )
 	{
-		swprintf( str, gzNonPersistantPBIText[8] );
+		wprintf( str, gzNonPersistantPBIText[8] );
 	}
 	else switch( gubEnemyEncounterCode )
 	{
 		case ENEMY_INVASION_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_ENEMYINVASION_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENEMYINVASION_HEADER ] );
 			break;
 		case ENEMY_ENCOUNTER_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_ENEMYENCOUNTER_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENEMYENCOUNTER_HEADER ] );
 			break;
 		case ENEMY_AMBUSH_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_ENEMYAMBUSH_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENEMYAMBUSH_HEADER ] );
 			gfBlinkHeader = TRUE;
 			break;
 		case ENTERING_ENEMY_SECTOR_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_ENTERINGENEMYSECTOR_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENTERINGENEMYSECTOR_HEADER ] );
 			break;
 		case CREATURE_ATTACK_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_CREATUREATTACK_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_CREATUREATTACK_HEADER ] );
 			gfBlinkHeader = TRUE;
 			break;
 		case BLOODCAT_AMBUSH_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_BLOODCATAMBUSH_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_BLOODCATAMBUSH_HEADER ] );
 			gfBlinkHeader = TRUE;
 			break;
 		case ENTERING_BLOODCAT_LAIR_CODE:
-			swprintf( str, gpStrategicString[ STR_PB_ENTERINGBLOODCATLAIR_HEADER ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENTERINGBLOODCATLAIR_HEADER ] );
 			break;
 	}
 	width = StringPixLength( str, FONT10ARIALBOLD );
@@ -1009,7 +1009,7 @@ void RenderPreBattleInterface()
 
 		SetFont( BLOCKFONT );
 		SetFontForeground( FONT_BEIGE );
-		swprintf( str, gpStrategicString[ STR_PB_LOCATION ] );
+		wprintf( str, gpStrategicString[ STR_PB_LOCATION ] );
 		width = StringPixLength( str, BLOCKFONT );
 		if( width > 64 )
 		{
@@ -1021,15 +1021,15 @@ void RenderPreBattleInterface()
 		SetFont( BLOCKFONT );
 		if( gubEnemyEncounterCode != CREATURE_ATTACK_CODE )
 		{
-			swprintf( str, gpStrategicString[ STR_PB_ENEMIES ] );
+			wprintf( str, gpStrategicString[ STR_PB_ENEMIES ] );
 		}
 		else if( gubEnemyEncounterCode == BLOODCAT_AMBUSH_CODE || gubEnemyEncounterCode == ENTERING_BLOODCAT_LAIR_CODE )
 		{
-			swprintf( str, gpStrategicString[ STR_PB_BLOODCATS ] );
+			wprintf( str, gpStrategicString[ STR_PB_BLOODCATS ] );
 		}
 		else
 		{
-			swprintf( str, gpStrategicString[ STR_PB_CREATURES ] );
+			wprintf( str, gpStrategicString[ STR_PB_CREATURES ] );
 		}
 		width = StringPixLength( str, BLOCKFONT );
 		if( width > 52 )
@@ -1040,7 +1040,7 @@ void RenderPreBattleInterface()
 		mprintf( 54 - width , 38, str );
 		
 		SetFont( BLOCKFONT );
-		swprintf( str, gpStrategicString[ STR_PB_MERCS ] );
+		wprintf( str, gpStrategicString[ STR_PB_MERCS ] );
 		width = StringPixLength( str, BLOCKFONT );
 		if( width > 52 )
 		{
@@ -1050,7 +1050,7 @@ void RenderPreBattleInterface()
 		mprintf( 139 - width , 38, str );
 		
 		SetFont( BLOCKFONT );
-		swprintf( str, gpStrategicString[ STR_PB_MILITIA ] );
+		wprintf( str, gpStrategicString[ STR_PB_MILITIA ] );
 		width = StringPixLength( str, BLOCKFONT );
 		if( width > 52 )
 		{
@@ -1088,25 +1088,25 @@ void RenderPreBattleInterface()
 				WhatPlayerKnowsAboutEnemiesInSector( gubPBSectorX, gubPBSectorY ) != KNOWS_HOW_MANY )
 		{
 			// don't know how many
-			swprintf( str, L"?" );
+			wprintf( str, L"?" );
 			SectorInfo[ SECTOR( gubPBSectorX, gubPBSectorY ) ].bLastKnownEnemies = -2;
 		}
 		else
 		{
 			// know exactly how many
 			i = NumEnemiesInSector( gubPBSectorX, gubPBSectorY );
-			swprintf( str, L"%d", i );
+			wprintf( str, L"%d", i );
 			SectorInfo[ SECTOR( gubPBSectorX, gubPBSectorY ) ].bLastKnownEnemies = (INT8)i;
 		}
 		x = 57 + (27 - StringPixLength( str, FONT14ARIAL )) / 2;
 		y = 36;
 		mprintf( x, y, str );
 		//player
-		swprintf( str, L"%d", guiNumInvolved );
+		wprintf( str, L"%d", guiNumInvolved );
 		x = 142 + (27 - StringPixLength( str, FONT14ARIAL )) / 2;
 		mprintf( x, y, str );
 		//militia
-		swprintf( str, L"%d", CountAllMilitiaInSector( gubPBSectorX, gubPBSectorY ) );
+		wprintf( str, L"%d", CountAllMilitiaInSector( gubPBSectorX, gubPBSectorY ) );
 		x = 227 + (27 - StringPixLength( str, FONT14ARIAL )) / 2;
 		mprintf( x, y, str );
 		SetFontShadow( FONT_NEARBLACK );
@@ -1141,12 +1141,12 @@ void RenderPreBattleInterface()
 					x = 129 + (58-StringPixLength( str, BLOCKFONT2)) / 2;
 					mprintf( x, y, str );
 					//HP
-					swprintf( str, L"%d%%", ubHPPercent );
+					wprintf( str, L"%d%%", ubHPPercent );
 					x = 189 + (25-StringPixLength( str, BLOCKFONT2)) / 2;
 					wcscat( str, L"%" );
 					mprintf( x, y, str );
 					//BP
-					swprintf( str, L"%d%%", ubBPPercent );
+					wprintf( str, L"%d%%", ubBPPercent );
 					x = 217 + (25-StringPixLength( str, BLOCKFONT2)) / 2;
 					wcscat( str, L"%" );
 					mprintf( x, y, str );
@@ -1402,39 +1402,39 @@ void GetSoldierConditionInfo( SOLDIERTYPE *pSoldier, UINT16 *szCondition, UINT8 
 	//Go from the worst condition to the best.
 	if( !pSoldier->bLife )
 	{ //0 life
-		swprintf( szCondition, pConditionStrings[ COND_DEAD ] );
+		wprintf( szCondition, pConditionStrings[ COND_DEAD ] );
 	}
 	else if( pSoldier->bLife < OKLIFE && pSoldier->bBleeding )
 	{ //life less than OKLIFE and bleeding
-		swprintf( szCondition, pConditionStrings[ COND_DYING ] );
+		wprintf( szCondition, pConditionStrings[ COND_DYING ] );
 	}
 	else if( pSoldier->bBreath < OKBREATH && pSoldier->bCollapsed )
 	{ //breath less than OKBREATH
-		swprintf( szCondition, pConditionStrings[ COND_UNCONCIOUS ] );
+		wprintf( szCondition, pConditionStrings[ COND_UNCONCIOUS ] );
 	}
 	else if( pSoldier->bBleeding > MIN_BLEEDING_THRESHOLD)
 	{ //bleeding
-		swprintf( szCondition, pConditionStrings[ COND_BLEEDING ] );
+		wprintf( szCondition, pConditionStrings[ COND_BLEEDING ] );
 	}
 	else if( pSoldier->bLife*100 < pSoldier->bLifeMax*50 )
 	{ //less than 50% life
-		swprintf( szCondition, pConditionStrings[ COND_WOUNDED ] );
+		wprintf( szCondition, pConditionStrings[ COND_WOUNDED ] );
 	}
 	else if( pSoldier->bBreath < 50 )
 	{ //breath less than half
-		swprintf( szCondition, pConditionStrings[ COND_FATIGUED ] );
+		wprintf( szCondition, pConditionStrings[ COND_FATIGUED ] );
 	}
 	else if( pSoldier->bLife*100 < pSoldier->bLifeMax*67 )
 	{ //less than 67% life
-		swprintf( szCondition, pConditionStrings[ COND_FAIR ] );
+		wprintf( szCondition, pConditionStrings[ COND_FAIR ] );
 	}
 	else if( pSoldier->bLife*100 < pSoldier->bLifeMax*86 )
 	{ //less than 86% life
-		swprintf( szCondition, pConditionStrings[ COND_GOOD ] );
+		wprintf( szCondition, pConditionStrings[ COND_GOOD ] );
 	}
 	else
 	{ //86%+ life
-		swprintf( szCondition, pConditionStrings[ COND_EXCELLENT ] );
+		wprintf( szCondition, pConditionStrings[ COND_EXCELLENT ] );
 	}
 }
 

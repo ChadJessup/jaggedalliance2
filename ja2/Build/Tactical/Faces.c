@@ -1307,7 +1307,7 @@ void HandleRenderFaceAdjustments( FACETYPE *pFace, BOOLEAN fDisplayBuffer, BOOLE
 			{
 				SetFontDestBuffer( uiRenderBuffer, 0, 0, 640, 480, FALSE );
 
-				swprintf( sString, L"%d", pSoldier->bOppCnt );
+				wprintf( sString, L"%d", pSoldier->bOppCnt );
 
 				SetFont( TINYFONT1 );
 				SetFontForeground( FONT_DKRED );
@@ -1516,11 +1516,11 @@ void HandleRenderFaceAdjustments( FACETYPE *pFace, BOOLEAN fDisplayBuffer, BOOLE
 
 				if ( fShowMaximum )
 				{
-					swprintf( sString, L"%d/%d", sPtsAvailable, usMaximumPts );
+					wprintf( sString, L"%d/%d", sPtsAvailable, usMaximumPts );
 				}
 				else
 				{
-					swprintf( sString, L"%d", sPtsAvailable );
+					wprintf( sString, L"%d", sPtsAvailable );
 				}
 
 				usTextWidth = StringPixLength( sString, FONT10ARIAL );

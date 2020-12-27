@@ -1521,9 +1521,9 @@ void DisplayTextForSpeckVideoPopUp( STR16 pString )
 //	wcscpy(gsSpeckDialogueTextPopUp, pString);
 	//add the "" around the speech.
 #ifdef TAIWANESE
-	swprintf( gsSpeckDialogueTextPopUp, L"%s", pString );
+	wprintf( gsSpeckDialogueTextPopUp, L"%s", pString );
 #else
-	swprintf( gsSpeckDialogueTextPopUp, L"\"%s\"", pString );
+	wprintf( gsSpeckDialogueTextPopUp, L"\"%s\"", pString );
 #endif
 
 	gfDisplaySpeckTextBox = TRUE;

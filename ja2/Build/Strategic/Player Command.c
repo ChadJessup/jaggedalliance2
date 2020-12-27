@@ -29,7 +29,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	if( SectorInfo[ SECTOR( sMapX, sMapY ) ].uiFacilitiesFlags == 0 )
 	{
 		// none
-	  swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 0 ] );
+	  wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 0 ] );
 		return;
 	}
 
@@ -37,7 +37,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	// hospital
 	if( SectorInfo[ SECTOR( sMapX, sMapY ) ].uiFacilitiesFlags & SFCF_HOSPITAL )
 	{
-		swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 1 ] );
+		wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 1 ] );
 	}
 
 	// industry
@@ -45,7 +45,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	{
 		if( wcslen( sFacilitiesString ) == 0 )
 		{
-		  swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 2 ] );
+		  wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 2 ] );
 		}
 		else
 		{
@@ -59,7 +59,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	{
 		if( wcslen( sFacilitiesString ) == 0 )
 		{
-		  swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 3 ] );
+		  wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 3 ] );
 		}
 		else
 		{
@@ -73,7 +73,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	{
 		if( wcslen( sFacilitiesString ) == 0 )
 		{
-		  swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 5 ] );
+		  wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 5 ] );
 		}
 		else
 		{
@@ -87,7 +87,7 @@ void GetSectorFacilitiesFlags( INT16 sMapX, INT16 sMapY, STR16 sFacilitiesString
 	{
 		if( wcslen( sFacilitiesString ) == 0 )
 		{
-		  swprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 6 ] );
+		  wprintf( sFacilitiesString, L"%s", sFacilitiesStrings[ 6 ] );
 		}
 		else
 		{

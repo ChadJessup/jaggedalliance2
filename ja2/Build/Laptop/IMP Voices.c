@@ -384,7 +384,7 @@ UINT32 PlayVoice( void )
 		{
 		  case( 0 ):
 				//fVoiceAVisited = TRUE;
-				//swprintf( sString, L"Voice # %d is not done yet", iCurrentVoices + 1 );
+				//wprintf( sString, L"Voice # %d is not done yet", iCurrentVoices + 1 );
 				//DoLapTopSystemMessageBox( MSG_BOX_LAPTOP_DEFAULT, sString, LAPTOP_SCREEN, MSG_BOX_FLAG_OK, NULL );
 	     return( PlayJA2SampleFromFile( "Speech\\051_001.wav", RATE_11025, MIDVOLUME, 1 , MIDDLEPAN ) );	 
 		  break;
@@ -401,7 +401,7 @@ UINT32 PlayVoice( void )
     switch( iCurrentVoices )
 		{
 		  case( 0 ):
-				//	swprintf( sString, L"Voice # %d is not done yet", iCurrentVoices + 1 );
+				//	wprintf( sString, L"Voice # %d is not done yet", iCurrentVoices + 1 );
 				//DoLapTopSystemMessageBox( MSG_BOX_LAPTOP_DEFAULT, sString, LAPTOP_SCREEN, MSG_BOX_FLAG_OK, NULL );
 				return( PlayJA2SampleFromFile( "Speech\\054_001.wav", RATE_11025, MIDVOLUME, 1 , MIDDLEPAN ) );	 
 	 
@@ -468,7 +468,7 @@ void RenderVoiceIndex( void )
 	INT16 sX, sY;
 
 	// render the voice index value on the the blank portrait
-	swprintf( sString, L"%s %d", pIMPVoicesStrings[ 0 ], iCurrentVoices + 1 );
+	wprintf( sString, L"%s %d", pIMPVoicesStrings[ 0 ], iCurrentVoices + 1 );
 
 	FindFontCenterCoordinates( 290 + LAPTOP_UL_X, 0, 100, 0, sString, FONT12ARIAL, &sX, &sY );
 

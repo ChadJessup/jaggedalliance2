@@ -1071,7 +1071,7 @@ void SaveLoadGameNumber( INT8 bSaveGameID )
 		{
 			CHAR16	sText[512];
 
-			swprintf( sText, zSaveLoadText[SLG_CONFIRM_SAVE], bSaveGameID );
+			wprintf( sText, zSaveLoadText[SLG_CONFIRM_SAVE], bSaveGameID );
 
 			DoSaveLoadMessageBox( MSG_BOX_BASIC_STYLE, sText, SAVE_LOAD_SCREEN, MSG_BOX_FLAG_YESNO, ConfirmSavedGameMessageBoxCallBack );
 		}
@@ -1108,7 +1108,7 @@ void SaveLoadGameNumber( INT8 bSaveGameID )
 			IF YOU UNCOMMENT THIS -- LOCALIZE IT!!!
 			CHAR16	sText[512];
 
-			swprintf( sText, L"%s%d?", zSaveLoadText[SLG_CONFIRM_LOAD], bSaveGameID );
+			wprintf( sText, L"%s%d?", zSaveLoadText[SLG_CONFIRM_LOAD], bSaveGameID );
 
 			DoSaveLoadMessageBox( MSG_BOX_BASIC_STYLE, sText, SAVE_LOAD_SCREEN, MSG_BOX_FLAG_YESNO, ConfirmLoadSavedGameMessageBoxCallBack );
 */
@@ -1339,10 +1339,10 @@ BOOLEAN DisplaySaveGameEntry( INT8 bEntryID )//, UINT16 usPosY )
 			CHAR16		zDifString[256];
 			
 			//Create a string for difficulty level
-			swprintf( zDifString, L"%s %s", gzGIOScreenText[ GIO_EASY_TEXT + SaveGameHeader.sInitialGameOptions.ubDifficultyLevel - 1 ], zSaveLoadText[ SLG_DIFF ] );
+			wprintf( zDifString, L"%s %s", gzGIOScreenText[ GIO_EASY_TEXT + SaveGameHeader.sInitialGameOptions.ubDifficultyLevel - 1 ], zSaveLoadText[ SLG_DIFF ] );
 
 			//make a string containing the extended options
-			swprintf( zMouseHelpTextString, L"%20s     %22s     %22s     %22s", zDifString,
+			wprintf( zMouseHelpTextString, L"%20s     %22s     %22s     %22s", zDifString,
 						/*gzGIOScreenText[ GIO_TIMED_TURN_TITLE_TEXT + SaveGameHeader.sInitialGameOptions.fTurnTimeLimit + 1],*/
 
 						SaveGameHeader.sInitialGameOptions.fIronManMode ? gzGIOScreenText[ GIO_IRON_MAN_TEXT ] : gzGIOScreenText[ GIO_SAVE_ANYWHERE_TEXT ],
@@ -1358,15 +1358,15 @@ BOOLEAN DisplaySaveGameEntry( INT8 bEntryID )//, UINT16 usPosY )
 		else
 		{
 			//Create the string for the Data
-			swprintf( zDateString, L"%s %d, %02d:%02d", pMessageStrings[ MSG_DAY ], SaveGameHeader.uiDay, SaveGameHeader.ubHour, SaveGameHeader.ubMin );
+			wprintf( zDateString, L"%s %d, %02d:%02d", pMessageStrings[ MSG_DAY ], SaveGameHeader.uiDay, SaveGameHeader.ubHour, SaveGameHeader.ubMin );
 
 			//Create the string for the current location
 			if( SaveGameHeader.sSectorX == -1 && SaveGameHeader.sSectorY == -1 || SaveGameHeader.bSectorZ < 0 )
 			{
 				if( ( SaveGameHeader.uiDay * NUM_SEC_IN_DAY + SaveGameHeader.ubHour * NUM_SEC_IN_HOUR + SaveGameHeader.ubMin * NUM_SEC_IN_MIN ) <= STARTING_TIME )
-					swprintf( zLocationString, gpStrategicString[ STR_PB_NOTAPPLICABLE_ABBREVIATION ] );
+					wprintf( zLocationString, sizeof(zLocationString)/2, gpStrategicString[ STR_PB_NOTAPPLICABLE_ABBREVIATION ] );
 				else
-					swprintf( zLocationString, gzLateLocalizedString[14] );
+					wprintf( zLocationString, sizeof(zLocationString)/2, gzLateLocalizedString[14] );
 			}
 			else
 			{
@@ -1385,16 +1385,16 @@ BOOLEAN DisplaySaveGameEntry( INT8 bEntryID )//, UINT16 usPosY )
 			if( SaveGameHeader.ubNumOfMercsOnPlayersTeam == 1 )
 			{
 				//use "merc"
-				swprintf( zNumMercsString, L"%d %s", SaveGameHeader.ubNumOfMercsOnPlayersTeam, MercAccountText[ MERC_ACCOUNT_MERC ] );
+				wprintf( zNumMercsString, L"%d %s", SaveGameHeader.ubNumOfMercsOnPlayersTeam, MercAccountText[ MERC_ACCOUNT_MERC ] );
 			}
 			else
 			{
 				//use "mercs"
-				swprintf( zNumMercsString, L"%d %s", SaveGameHeader.ubNumOfMercsOnPlayersTeam, pMessageStrings[ MSG_MERCS ] );
+				wprintf( zNumMercsString, L"%d %s", SaveGameHeader.ubNumOfMercsOnPlayersTeam, pMessageStrings[ MSG_MERCS ] );
 			}
 
 			//Get the current balance
-			swprintf( zBalanceString, L"%d", SaveGameHeader.iCurrentBalance);
+			wprintf( zBalanceString, L"%d", SaveGameHeader.iCurrentBalance);
 			InsertCommasForDollarFigure( zBalanceString );
 			InsertDollarSignInToString( zBalanceString );
 
@@ -1947,7 +1947,7 @@ void SetSelection( UINT8 ubNewSelection )
 		}
 	}
 
-	swprintf( zMouseHelpTextString, L"%s: %s\n%s: %s\n%s: %s\n%s: %s", gzGIOScreenText[ GIO_DIF_LEVEL_TEXT ],
+	wprintf( zMouseHelpTextString, L"%s: %s\n%s: %s\n%s: %s\n%s: %s", gzGIOScreenText[ GIO_DIF_LEVEL_TEXT ],
 		gzGIOScreenText[ GIO_DIF_LEVEL_TEXT + SaveGameHeader.sInitialGameOptions.ubDifficultyLevel + 1 ],
 
 		gzGIOScreenText[ GIO_TIMED_TURN_TITLE_TEXT ],
@@ -2075,12 +2075,12 @@ void DisplayOnScreenNumber( BOOLEAN fErase )
 		if( bLoopNum != 10 )
 		{
 			bNum = bLoopNum;
-			swprintf( zTempString, L"%2d", bNum );
+			wprintf( zTempString, L"%2d", bNum );
 		}
 		else
 		{
 			bNum = 0;
-			swprintf( zTempString, L"%2d", bNum );
+			wprintf( zTempString, L"%2d", bNum );
 		}
 
 		if( !fErase )
@@ -2307,14 +2307,14 @@ BOOLEAN DoQuickSave()
 		UINT32	uiSpaceOnDrive;
 		CHAR16	zSizeNeeded[512];
 
-		swprintf( zSizeNeeded, L"%d", REQUIRED_FREE_SPACE / BYTESINMEGABYTE );
+		wprintf( zSizeNeeded, L"%d", REQUIRED_FREE_SPACE / BYTESINMEGABYTE );
 		InsertCommasForDollarFigure( zSizeNeeded );
 
 		uiSpaceOnDrive = GetFreeSpaceOnHardDriveWhereGameIsRunningFrom( );
 
-		swprintf( zSpaceOnDrive, L"%.2f", uiSpaceOnDrive / (FLOAT)BYTESINMEGABYTE );
+		wprintf( zSpaceOnDrive, L"%.2f", uiSpaceOnDrive / (FLOAT)BYTESINMEGABYTE );
 
-		swprintf( zText, pMessageStrings[ MSG_LOWDISKSPACE_WARNING ], zSpaceOnDrive, zSizeNeeded );
+		wprintf( zText, pMessageStrings[ MSG_LOWDISKSPACE_WARNING ], zSpaceOnDrive, zSizeNeeded );
 
 		if( guiPreviousOptionScreen == MAP_SCREEN )
 			DoMapMessageBox( MSG_BOX_BASIC_STYLE, zText, MAP_SCREEN, MSG_BOX_FLAG_OK, NotEnoughHardDriveSpaceForQuickSaveMessageBoxCallBack );
@@ -2523,14 +2523,14 @@ void SaveGameToSlotNum()
 		CHAR16	zSpaceOnDrive[512];
 		UINT32	uiSpaceOnDrive;
 
-		swprintf( zSizeNeeded, L"%d", REQUIRED_FREE_SPACE / BYTESINMEGABYTE );
+		wprintf( zSizeNeeded, L"%d", REQUIRED_FREE_SPACE / BYTESINMEGABYTE );
 		InsertCommasForDollarFigure( zSizeNeeded );
 
 		uiSpaceOnDrive = GetFreeSpaceOnHardDriveWhereGameIsRunningFrom( );
 
-		swprintf( zSpaceOnDrive, L"%.2f", uiSpaceOnDrive / (FLOAT)BYTESINMEGABYTE );
+		wprintf( zSpaceOnDrive, L"%.2f", uiSpaceOnDrive / (FLOAT)BYTESINMEGABYTE );
 
-		swprintf( zText, pMessageStrings[ MSG_LOWDISKSPACE_WARNING ], zSpaceOnDrive, zSizeNeeded );
+		wprintf( zText, pMessageStrings[ MSG_LOWDISKSPACE_WARNING ], zSpaceOnDrive, zSizeNeeded );
 
 		DoSaveLoadMessageBox( MSG_BOX_BASIC_STYLE, zText, SAVE_LOAD_SCREEN, MSG_BOX_FLAG_OK, NotEnoughHardDriveSpaceForNormalSaveMessageBoxCallBack );
 

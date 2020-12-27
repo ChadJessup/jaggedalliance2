@@ -436,7 +436,7 @@ void mprintfEditor(INT16 x, INT16 y, UINT16 *pFontString, ...)
 	Assert( pFontString != NULL );
 
 	va_start( argptr, pFontString );       	// Set up variable argument pointer
-	vswprintf( string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf( string, 256, pFontString, argptr);	// process gprintf string (get output str)
 	va_end( argptr );
 
 	uiStringLength = StringPixLength( string, FontDefault );
@@ -696,26 +696,26 @@ void BuildTriggerName( OBJECTTYPE *pItem, UINT16 *szItemName )
 	if( pItem->usItem == SWITCH )
 	{
 		if( pItem->bFrequency == PANIC_FREQUENCY )
-			swprintf( szItemName, L"Panic Trigger1" );
+			wprintf( szItemName, sizeof(szItemName)/2, L"Panic Trigger1" );
 		else if( pItem->bFrequency == PANIC_FREQUENCY_2 )
-			swprintf( szItemName, L"Panic Trigger2" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Panic Trigger2" );
 		else if( pItem->bFrequency == PANIC_FREQUENCY_3 )
-			swprintf( szItemName, L"Panic Trigger3" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Panic Trigger3" );
 		else
-			swprintf( szItemName, L"Trigger%d", pItem->bFrequency - 50 );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Trigger%d", pItem->bFrequency - 50 );
 	}
 	else
 	{ //action item
 		if( pItem->bDetonatorType == BOMB_PRESSURE )
-			swprintf( szItemName, L"Pressure Action" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Pressure Action" );
 		else if( pItem->bFrequency == PANIC_FREQUENCY )
-			swprintf( szItemName, L"Panic Action1" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Panic Action1" );
 		else if( pItem->bFrequency == PANIC_FREQUENCY_2 )
-			swprintf( szItemName, L"Panic Action2" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Panic Action2" );
 		else if( pItem->bFrequency == PANIC_FREQUENCY_3 )
-			swprintf( szItemName, L"Panic Action3" );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Panic Action3" );
 		else
-			swprintf( szItemName, L"Action%d", pItem->bFrequency - 50 );
+			wprintf( szItemName, sizeof(szItemName) / 2, L"Action%d", pItem->bFrequency - 50 );
 	}
 }
 
@@ -730,9 +730,9 @@ void RenderDoorLockInfo()
 		if( sScreenY > 390 )
 			continue;
 		if( DoorTable[ i ].ubLockID != 255 )
-			swprintf( str, L"%S", LockTable[ DoorTable[ i ].ubLockID ].ubEditorName );
+			wprintf( str, 25, L"%S", LockTable[ DoorTable[ i ].ubLockID ].ubEditorName );
 		else
-			swprintf( str, L"No Lock ID" );
+			wprintf( str, 25, L"No Lock ID" );
 		xp = sScreenX - 10;
 		yp = sScreenY - 40;
 		DisplayWrappedString( xp, yp, 60, 2, FONT10ARIAL, FONT_LTKHAKI, str, FONT_BLACK, TRUE, CENTER_JUSTIFIED );
@@ -744,26 +744,26 @@ void RenderDoorLockInfo()
 			switch( DoorTable[ i ].ubTrapID )
 			{
 				case EXPLOSION:
-					swprintf( str, L"Explosion Trap" );
+					wprintf( str, 25, L"Explosion Trap" );
 					break;
 				case ELECTRIC:
-					swprintf( str, L"Electric Trap" );
+					wprintf( str, 25, L"Electric Trap" );
 					break;
 				case SIREN:
-					swprintf( str, L"Siren Trap" );
+					wprintf( str, 25, L"Siren Trap" );
 					break;
 				case SILENT_ALARM:
-					swprintf( str, L"Silent Alarm" );
+					wprintf( str, 25, L"Silent Alarm" );
 					break;
 				case SUPER_ELECTRIC:
-					swprintf( str, L"Super Electric Trap" );
+					wprintf( str, 25, L"Super Electric Trap" );
 					break;
 
 			}
 			xp = sScreenX + 20 - StringPixLength( str, FONT10ARIAL ) / 2;
 			yp = sScreenY;
 			mprintf( xp, yp, str );
-			swprintf( str, L"Trap Level %d", DoorTable[ i ].ubTrapLevel );
+			wprintf( str, L"Trap Level %d", DoorTable[ i ].ubTrapLevel );
 			xp = sScreenX + 20 - StringPixLength( str, FONT10ARIAL ) / 2;
 			mprintf( xp, yp+10, str );
 		}
@@ -809,7 +809,7 @@ void RenderSelectedItemBlownUp()
 	}
 	else if( Item[ gpItem->usItem ].usItemClass == IC_KEY )
 	{
-		swprintf( szItemName, L"%S", LockTable[ gpItem->ubKeyID ].ubEditorName );
+		wprintf( szItemName, L"%S", LockTable[ gpItem->ubKeyID ].ubEditorName );
 	}
 	else
 	{
@@ -870,9 +870,9 @@ void RenderEditorInfo( )
 
 	//Display the mapindex position
 	if( GetMouseMapPos( &iMapIndex ) )
-		swprintf( FPSText, L"   (%d)   ", iMapIndex );
+		wprintf( FPSText, 25, L"   (%d)   ", iMapIndex );
 	else
-		swprintf( FPSText, L"          " );
+		wprintf( FPSText, 25, L"          " );
 	mprintfEditor( (UINT16)(50-StringPixLength( FPSText, FONT12POINT1 )/2), 463, FPSText );
 
 	switch( iCurrentTaskbar )
@@ -886,9 +886,9 @@ void RenderEditorInfo( )
 			break;
 		case TASK_TERRAIN:
 			if( gusSelectionType == LINESELECTION )
-				swprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
+				wprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
 			DrawEditorInfoBox( wszSelType[gusSelectionType], FONT12POINT1, 220, 430, 60, 30 );
-			swprintf( FPSText, L"%d%%", gusSelectionDensity );
+			wprintf( FPSText, L"%d%%", gusSelectionDensity );
 			DrawEditorInfoBox( FPSText, FONT12POINT1, 310, 430, 40, 30 );
 			break;
 		case TASK_ITEMS:
@@ -898,7 +898,7 @@ void RenderEditorInfo( )
 		case TASK_BUILDINGS:
 			UpdateBuildingsInfo();
 			if( gusSelectionType == LINESELECTION )
-				swprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
+				wprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
 			DrawEditorInfoBox( wszSelType[gusSelectionType], FONT12POINT1, 530, 430, 60, 30 );
 			break;
 		case TASK_MERCS:
@@ -907,7 +907,7 @@ void RenderEditorInfo( )
 		case TASK_MAPINFO:
 			UpdateMapInfo();
 			if( gusSelectionType == LINESELECTION )
-				swprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
+				wprintf( wszSelType[LINESELECTION], L"Width: %d", gusSelectionWidth );
 			DrawEditorInfoBox( wszSelType[gusSelectionType], FONT12POINT1, 440, 430, 60, 30 );
 			break;
 	}

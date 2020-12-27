@@ -791,14 +791,14 @@ void RenderItemDetails()
 					SetFontForeground( 77 );
 				switch( i )
 				{
-					case 0: swprintf( str, L"Panic1" );		break;
-					case 1:	swprintf( str, L"Panic2" );		break;
-					case 2:	swprintf( str, L"Panic3" );		break;
-					case 3:	swprintf( str, L"Norm1" );		break;
-					case 4:	swprintf( str, L"Norm2" );		break;
-					case 5:	swprintf( str, L"Norm3" );		break;
-					case 6:	swprintf( str, L"Norm4" );		break;
-					case 7:	swprintf( str, L"Pressure Actions" );		break;
+					case 0: wprintf( str, L"Panic1" );		break;
+					case 1:	wprintf( str, L"Panic2" );		break;
+					case 2:	wprintf( str, L"Panic3" );		break;
+					case 3:	wprintf( str, L"Norm1" );		break;
+					case 4:	wprintf( str, L"Norm2" );		break;
+					case 5:	wprintf( str, L"Norm3" );		break;
+					case 6:	wprintf( str, L"Norm4" );		break;
+					case 7:	wprintf( str, L"Pressure Actions" );		break;
 				}
 				if( i < 7 )
 				{
@@ -1047,8 +1047,8 @@ void RenderSummaryWindow()
 					x = gsSelSectorX - 1, y = gsSelSectorY - 1;
 				else
 					x = gsSectorX - 1, y = gsSectorY - 1;
-				swprintf( str, L"%c%d", y + 'A', x + 1 );
-				swprintf( gszFilename, str );
+				wprintf( str, L"%c%d", y + 'A', x + 1 );
+				wprintf( gszFilename, str );
 				giCurrLevel = giCurrentViewLevel;
 				switch( giCurrentViewLevel )
 				{
@@ -1176,7 +1176,7 @@ void RenderSummaryWindow()
 						case 6:	wcscat( gszFilename, L"_b2_a.dat" );	break;
 						case 7:	wcscat( gszFilename, L"_b3_a.dat" );	break;
 					}
-					swprintf( gszDisplayName, gszFilename );
+					wprintf( gszDisplayName, gszFilename );
 					EnableButton( iSummaryButton[ SUMMARY_LOAD ] );
 					if( gpCurrentSectorSummary )
 					{
@@ -1251,7 +1251,7 @@ void RenderSummaryWindow()
 						case ALTERNATE_B2_MASK:			wcscat( gszFilename, L"_b2_a.dat" );	break;
 						case ALTERNATE_B3_MASK:			wcscat( gszFilename, L"_b3_a.dat" );	break;
 					}
-					swprintf( gszDisplayName, gszFilename );
+					wprintf( gszDisplayName, gszFilename );
 					DisableButton( iSummaryButton[ SUMMARY_LOAD ] );
 				}
 				SPECIALCASE_LABEL:
@@ -1364,7 +1364,7 @@ void RenderSummaryWindow()
 		for( x = 1; x <= 16; x++ )
 		{
 			UINT16 str[3];
-			swprintf( str, L"%d", x );
+			wprintf( str, L"%d", x );
 			mprintf( MAP_LEFT+x*13-(13+StringPixLength( str, SMALLCOMPFONT ))/2, MAP_TOP-8, str );
 		}
 		if( gfRenderGrid )
@@ -1404,7 +1404,7 @@ void RenderSummaryWindow()
 							//is no ground level, then it'll be shadowed.
 							SetFont( SMALLCOMPFONT );
 							SetFontForeground( FONT_YELLOW );
-							swprintf( str, L"%d", ubNumUndergroundLevels );
+							wprintf( str, L"%d", ubNumUndergroundLevels );
 							mprintf( MAP_LEFT + x*13 + 4, ClipRect.iTop + 4, str );
 						}
 						if( gbSectorLevels[x][y] & GROUND_LEVEL_MASK )
@@ -1424,7 +1424,7 @@ void RenderSummaryWindow()
 							//is no ground level, then it'll be shadowed.
 							SetFont( SMALLCOMPFONT );
 							SetFontForeground( FONT_YELLOW );
-							swprintf( str, L"%d", ubNumUndergroundLevels );
+							wprintf( str, L"%d", ubNumUndergroundLevels );
 							mprintf( MAP_LEFT + x*13 + 4, ClipRect.iTop + 4, str );
 						}
 						if( gbSectorLevels[x][y] & ALTERNATE_GROUND_MASK )
@@ -1606,7 +1606,7 @@ void UpdateSectorSummary( UINT16 *gszFilename, BOOLEAN fUpdate )
 		SetFont( FONT10ARIAL );
 		SetFontForeground( FONT_LTKHAKI );
 		SetFontShadow( FONT_NEARBLACK );
-		swprintf( str, L"Analyzing map:  %s...", gszFilename );
+		wprintf( str, L"Analyzing map:  %s...", gszFilename );
 
 		if( gfSummaryWindowActive )
 		{
@@ -2075,14 +2075,14 @@ void SummaryLoadMapCallback( GUI_BUTTON *btn, INT32 reason )
 		SetFontForeground( FONT_LTKHAKI );
 		SetFontShadow( FONT_NEARBLACK );
 
-		//swprintf( str, L"Loading map:  %s...", gszDisplayName );
+		//wprintf( str, L"Loading map:  %s...", gszDisplayName );
 		//mprintf( MAP_LEFT, MAP_BOTTOM+100, str );
 		//InvalidateRegion( MAP_LEFT, MAP_BOTTOM+100, MAP_LEFT+150,	MAP_BOTTOM+110 );
 		
 		CreateProgressBar( 0, MAP_LEFT+5, MAP_BOTTOM+110, 573, MAP_BOTTOM+120 );
 
 		DefineProgressBarPanel( 0, 65, 79, 94, MAP_LEFT, 318, 578, 356 );
-		swprintf( str, L"Loading map:  %s", gszDisplayName );
+		wprintf( str, L"Loading map:  %s", gszDisplayName );
 		SetProgressBarTitle( 0, str, BLOCKFONT2, FONT_RED, FONT_NEARBLACK );
 		SetProgressBarMsgAttributes( 0, SMALLCOMPFONT, FONT_BLACK, FONT_BLACK );
 
@@ -2174,7 +2174,7 @@ void CalculateOverrideStatus()
 	}
 	else
 		sprintf( szFilename, "MAPS\\%S", gszFilename );
-	swprintf( gszDisplayName, L"%S", &(szFilename[5]) );
+	wprintf( gszDisplayName, L"%S", &(szFilename[5]) );
 	if( GetFileFirst( szFilename, &FileInfo) )
 	{
 		if( gfWorldLoaded )
@@ -2586,10 +2586,10 @@ void ReportError( UINT8 *pSector, UINT8 ubLevel )
 	UINT16 temp[10];
 
 	//Make sure the file exists... if not, then return false
-	swprintf( str, L"%S", pSector );
+	wprintf( str, L"%S", pSector );
 	if( ubLevel % 4  )
 	{
-		swprintf( temp, L"_b%d.dat", ubLevel % 4 );
+		wprintf( temp, L"_b%d.dat", ubLevel % 4 );
 		wcscat( str, temp );
 	}
 	mprintf( 10, yp, L"Skipping update for %s.  Probably due to tileset conflicts...", str );
@@ -2719,7 +2719,7 @@ void ExtractTempFilename()
 		gfOverrideDirty = TRUE;
 	}
 	if( !wcslen( str ) )
-		swprintf( gszDisplayName, L"test.dat" );
+		wprintf( gszDisplayName, L"test.dat" );
 }
 
 void ApologizeOverrideAndForceUpdateEverything()
@@ -2741,11 +2741,11 @@ void ApologizeOverrideAndForceUpdateEverything()
 	SetFont( HUGEFONT );
 	SetFontForeground( FONT_RED );
 	SetFontShadow( FONT_NEARBLACK );
-	swprintf( str, L"MAJOR VERSION UPDATE" );
+	wprintf( str, L"MAJOR VERSION UPDATE" );
 	mprintf( 320 - StringPixLength( str, HUGEFONT )/2, 105, str );
 	SetFont( FONT10ARIAL );
 	SetFontForeground( FONT_YELLOW );
-	swprintf( str, L"There are %d maps requiring a major version update.", gusNumberOfMapsToBeForceUpdated );
+	wprintf( str, L"There are %d maps requiring a major version update.", gusNumberOfMapsToBeForceUpdated );
 	mprintf( 320 - StringPixLength( str, FONT10ARIAL )/2, 130, str );
 
 	CreateProgressBar( 2, 120, 170, 520, 202 ); 

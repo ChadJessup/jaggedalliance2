@@ -1843,7 +1843,7 @@ void AddSoldierInitListBloodcats()
 		{
 			#ifdef JA2BETAVERSION
 				UINT16 str[200];
-				swprintf( str, L"Table specifies that there are %d bloodcat placements in sector %c%d, but the map actually has %d bloodcat placements. Map value takes precedence. KM,LC:1",
+				wprintf( str, L"Table specifies that there are %d bloodcat placements in sector %c%d, but the map actually has %d bloodcat placements. Map value takes precedence. KM,LC:1",
 									pSector->bBloodCatPlacements, gWorldSectorY + 'A' - 1, gWorldSectorX, bBloodCatPlacements );
 				DoScreenIndependantMessageBox( str, MSG_BOX_FLAG_OK, NULL );
 			#endif
@@ -2095,13 +2095,13 @@ BOOLEAN ValidateSoldierInitLinks( UINT8 ubCode )
 		switch( ubCode )
 		{
 			case 1: //loading save
-				swprintf( str, L"Error detected in save file WHILE LOADING.  Please send save and text files associated with save to Kris and Dave."
+				wprintf( str, L"Error detected in save file WHILE LOADING.  Please send save and text files associated with save to Kris and Dave."
 											 L"  After doing so, go back into the game and immediately resave the game which will fix the problem."
 											 L"  This is the bug responsible for mercs disappearing.  Be prepared to answer lots of questions..." );
 				DoSaveLoadMessageBox( MSG_BOX_BASIC_STYLE, str, SAVE_LOAD_SCREEN, MSG_BOX_FLAG_OK, ErrorDetectedInSaveCallback );
 				break;
 			case 2: //saving game
-				//swprintf( str, L"Error detected WHILE SAVING file.  Please send save and text files associated with save to Kris and Dave."
+				//wprintf( str, L"Error detected WHILE SAVING file.  Please send save and text files associated with save to Kris and Dave."
 				//							 L"  After doing so, go back into the game and try reloading the new save and saving it again which *could* fix the problem."
 				//							 L"  This is the bug responsible for mercs disappearing.  Be prepared to answer lots of questions..." );
 				//if( guiPreviousOptionScreen == MAP_SCREEN )
@@ -2114,7 +2114,7 @@ BOOLEAN ValidateSoldierInitLinks( UINT8 ubCode )
 				break;
 			case 4: //after fade in
 				gfDoDialogOnceGameScreenFadesIn = FALSE;
-				swprintf( str, L"Error detected while entering sector USING TEMP FILES.  Please send previous save and text files associated with save to Kris and Dave."
+				wprintf( str, L"Error detected while entering sector USING TEMP FILES.  Please send previous save and text files associated with save to Kris and Dave."
 											 L"  After doing so, go back into the game and saving the game, reloading it, and saving it again *could* fix it."
 											 L"  This is the bug responsible for mercs disappearing.  Be prepared to answer lots of questions..." );
 				DoMessageBox( MSG_BOX_BASIC_STYLE, str, GAME_SCREEN, MSG_BOX_FLAG_OK, NULL, NULL );

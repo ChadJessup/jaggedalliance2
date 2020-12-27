@@ -212,7 +212,7 @@ void PrintWinFont( UINT32 uiDestBuf, INT32 iFont, INT32 x, INT32 y, UINT16 *pFon
   }
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	len = vswprintf(string2, pFontString, argptr);	// process gprintf string (get output str)
+	len = vwprintf(string2, pFontString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 #ifdef TAIWANESE
@@ -303,7 +303,7 @@ UINT32	WinFont_mprintf( INT32 iFont, INT32 x, INT32 y, UINT16 *pFontString, ...)
   wchar_t	                string[512];
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vswprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
   PrintWinFont( FontDestBuffer, iFont, x,  y, string );

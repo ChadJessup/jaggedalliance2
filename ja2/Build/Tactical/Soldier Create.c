@@ -1065,26 +1065,26 @@ BOOLEAN TacticalCopySoldierFromCreateStruct( SOLDIERTYPE *pSoldier, SOLDIERCREAT
 	//Expanded the default names based on team.
 	switch( pCreateStruct->bTeam )
 	{
-		case ENEMY_TEAM:		swprintf( pSoldier->name, TacticalStr[ ENEMY_TEAM_MERC_NAME ] );		break;
-		case MILITIA_TEAM:	swprintf( pSoldier->name, TacticalStr[ MILITIA_TEAM_MERC_NAME ] );	break;
+		case ENEMY_TEAM:		wprintf( pSoldier->name, TacticalStr[ ENEMY_TEAM_MERC_NAME ] );		break;
+		case MILITIA_TEAM:	wprintf( pSoldier->name, TacticalStr[ MILITIA_TEAM_MERC_NAME ] );	break;
 		case CIV_TEAM:			
 			if( pSoldier->ubSoldierClass == SOLDIER_CLASS_MINER )
 			{
-				swprintf( pSoldier->name, TacticalStr[ CIV_TEAM_MINER_NAME ] );
+				wprintf( pSoldier->name, TacticalStr[ CIV_TEAM_MINER_NAME ] );
 			}
 			else
 			{
-				swprintf( pSoldier->name, TacticalStr[ CIV_TEAM_MERC_NAME ] );	
+				wprintf( pSoldier->name, TacticalStr[ CIV_TEAM_MERC_NAME ] );	
 			}
 			break;
 		case CREATURE_TEAM:	
 			if( pSoldier->ubBodyType == BLOODCAT )
 			{
-				swprintf( pSoldier->name, gzLateLocalizedString[ 36 ] );
+				wprintf( pSoldier->name, gzLateLocalizedString[ 36 ] );
 			}
 			else
 			{
-				swprintf( pSoldier->name, TacticalStr[ CREATURE_TEAM_MERC_NAME ] );	break;
+				wprintf( pSoldier->name, TacticalStr[ CREATURE_TEAM_MERC_NAME ] );	break;
 			}
 			break;
 	}

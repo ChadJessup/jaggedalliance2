@@ -11001,13 +11001,13 @@ void DebugValidateSoldierData( )
 				if ( pSoldier->ubGroupID == 0 && pSoldier->bAssignment != IN_TRANSIT && pSoldier->bAssignment != ASSIGNMENT_POW && !( pSoldier->uiStatusFlags & ( SOLDIER_DRIVER | SOLDIER_PASSENGER ) ) )
 				{
 					// This is bad!
-					swprintf( sString, L"Soldier Data Error: Soldier %d is alive but has a zero group ID.", cnt );
+					wprintf( sString, L"Soldier Data Error: Soldier %d is alive but has a zero group ID.", cnt );
 					fProblemDetected = TRUE;
 				}
 				else if ( ( pSoldier->ubGroupID != 0 ) && ( GetGroup( pSoldier->ubGroupID ) == NULL ) )
 				{
 					// This is bad!
-					swprintf( sString, L"Soldier Data Error: Soldier %d has an invalid group ID of %d.", cnt, pSoldier->ubGroupID );
+					wprintf( sString, L"Soldier Data Error: Soldier %d has an invalid group ID of %d.", cnt, pSoldier->ubGroupID );
 					fProblemDetected = TRUE;
 				}
 			}
@@ -11016,7 +11016,7 @@ void DebugValidateSoldierData( )
 				if ( pSoldier->ubGroupID != 0 && ( pSoldier->uiStatusFlags & SOLDIER_DEAD ) )
 				{
 					// Dead guys should have 0 group IDs
-					//swprintf( sString, L"GroupID Error: Soldier %d is dead but has a non-zero group ID.", cnt );
+					//wprintf( sString, L"GroupID Error: Soldier %d is dead but has a non-zero group ID.", cnt );
 					//fProblemDetected = TRUE;
 				}
 			}
@@ -11027,7 +11027,7 @@ void DebugValidateSoldierData( )
 						 ( pSoldier->sSectorY <= 0 ) || ( pSoldier->sSectorY >= 17 ) ||
 						 ( pSoldier->bSectorZ  < 0 ) || ( pSoldier->bSectorZ >   3 ) ) )
 			{
-				swprintf( sString, L"Soldier Data Error: Soldier %d is located at %d/%d/%d.", cnt, pSoldier->sSectorX, pSoldier->sSectorY, pSoldier->bSectorZ );
+				wprintf( sString, L"Soldier Data Error: Soldier %d is located at %d/%d/%d.", cnt, pSoldier->sSectorX, pSoldier->sSectorY, pSoldier->bSectorZ );
 				fProblemDetected = TRUE;
 			}
 		}

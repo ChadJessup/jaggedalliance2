@@ -851,7 +851,7 @@ void DisplayEditMercWindow( void )
 		ColorFillVideoSurfaceArea(FRAME_BUFFER, iXPos + 117, iYPos + 111 + (20 * x), iXPos + 116 + 30, iYPos + 111 + (20 * x) + 19, usFillColorLight );
 		ColorFillVideoSurfaceArea(FRAME_BUFFER, iXPos + 117, iYPos + 111 + (20 * x), iXPos + 116 + 29, iYPos + 111 + (20 * x) + 18, usFillColorTextBk );
 		
-		swprintf( TempString, L"%d", iEditStat[x] );
+		wprintf( TempString, L"%d", iEditStat[x] );
 		iXOff = (30 - StringPixLength( TempString, FONT12POINT1 )) / 2;
 		gprintf( iXPos + 118 + iXOff, iYPos + 114 + (20 * x), L"%s", TempString );
 	}
@@ -1774,9 +1774,9 @@ void CalcStringForValue( UINT16 *str, INT32 iValue, UINT32 uiMax )
 	if( iValue < 0 )			//a blank string is determined by a negative value.
 		str[0] = '\0';
 	else if( (UINT32)iValue > uiMax )	//higher than max attribute value, so convert it to the max.
-		swprintf( str, L"%d", uiMax );
+		wprintf( str, L"%d", uiMax );
 	else										//this is a valid static value, so convert it to a string.
-		swprintf( str, L"%d", iValue );
+		wprintf( str, L"%d", iValue );
 }
 
 void ExtractAndUpdateMercAttributes()
@@ -2387,34 +2387,34 @@ void DisplayBodyTypeInfo()
 	UINT16 str[20];
 	switch( gpSelected->pBasicPlacement->bBodyType )
 	{
-		case RANDOM:							swprintf( str, L"Random" );					break;
-		case REGMALE:							swprintf( str, L"Reg Male" );				break;
-		case BIGMALE:							swprintf( str, L"Big Male" );				break;
-		case STOCKYMALE:					swprintf( str, L"Stocky Male" );		break;
-		case REGFEMALE:						swprintf( str, L"Reg Female" );			break;
-		case TANK_NE:							swprintf( str, L"NE Tank" );				break;
-		case TANK_NW:							swprintf( str, L"NW Tank" );				break;
-		case FATCIV:							swprintf( str, L"Fat Civilian" );		break;
-		case MANCIV:							swprintf( str, L"M Civilian" );			break;
-		case MINICIV:							swprintf( str, L"Miniskirt" );			break;
-		case DRESSCIV:						swprintf( str, L"F Civilian" );			break;
-		case HATKIDCIV:						swprintf( str, L"Kid w/ Hat" );			break;
-		case HUMVEE:							swprintf( str, L"Humvee" );					break;
-		case ELDORADO:						swprintf( str, L"Eldorado" );				break;
-		case ICECREAMTRUCK:				swprintf( str, L"Icecream Truck" );	break;
-		case JEEP:								swprintf( str, L"Jeep" );						break;
-		case KIDCIV:							swprintf( str, L"Kid Civilian" );		break;
-		case COW:									swprintf( str, L"Domestic Cow" );		break;
-		case CRIPPLECIV:					swprintf( str, L"Cripple" );				break;
-		case ROBOTNOWEAPON:				swprintf( str, L"Unarmed Robot" );	break;
-		case LARVAE_MONSTER:			swprintf( str, L"Larvae" );					break;
-		case INFANT_MONSTER:			swprintf( str, L"Infant" );					break;
-		case YAF_MONSTER:					swprintf( str, L"Yng F Monster" );	break;
-		case YAM_MONSTER:					swprintf( str, L"Yng M Monster" );	break;
-		case ADULTFEMALEMONSTER:	swprintf( str, L"Adt F Monster" );	break;
-		case AM_MONSTER:					swprintf( str, L"Adt M Monster" );	break;
-		case QUEENMONSTER:				swprintf( str, L"Queen Monster" );	break;
-		case BLOODCAT:						swprintf( str, L"Bloodcat" );				break;
+		case RANDOM:							wprintf( str, L"Random" );					break;
+		case REGMALE:							wprintf( str, L"Reg Male" );				break;
+		case BIGMALE:							wprintf( str, L"Big Male" );				break;
+		case STOCKYMALE:					wprintf( str, L"Stocky Male" );		break;
+		case REGFEMALE:						wprintf( str, L"Reg Female" );			break;
+		case TANK_NE:							wprintf( str, L"NE Tank" );				break;
+		case TANK_NW:							wprintf( str, L"NW Tank" );				break;
+		case FATCIV:							wprintf( str, L"Fat Civilian" );		break;
+		case MANCIV:							wprintf( str, L"M Civilian" );			break;
+		case MINICIV:							wprintf( str, L"Miniskirt" );			break;
+		case DRESSCIV:						wprintf( str, L"F Civilian" );			break;
+		case HATKIDCIV:						wprintf( str, L"Kid w/ Hat" );			break;
+		case HUMVEE:							wprintf( str, L"Humvee" );					break;
+		case ELDORADO:						wprintf( str, L"Eldorado" );				break;
+		case ICECREAMTRUCK:				wprintf( str, L"Icecream Truck" );	break;
+		case JEEP:								wprintf( str, L"Jeep" );						break;
+		case KIDCIV:							wprintf( str, L"Kid Civilian" );		break;
+		case COW:									wprintf( str, L"Domestic Cow" );		break;
+		case CRIPPLECIV:					wprintf( str, L"Cripple" );				break;
+		case ROBOTNOWEAPON:				wprintf( str, L"Unarmed Robot" );	break;
+		case LARVAE_MONSTER:			wprintf( str, L"Larvae" );					break;
+		case INFANT_MONSTER:			wprintf( str, L"Infant" );					break;
+		case YAF_MONSTER:					wprintf( str, L"Yng F Monster" );	break;
+		case YAM_MONSTER:					wprintf( str, L"Yng M Monster" );	break;
+		case ADULTFEMALEMONSTER:	wprintf( str, L"Adt F Monster" );	break;
+		case AM_MONSTER:					wprintf( str, L"Adt M Monster" );	break;
+		case QUEENMONSTER:				wprintf( str, L"Queen Monster" );	break;
+		case BLOODCAT:						wprintf( str, L"Bloodcat" );				break;
 	}
 	DrawEditorInfoBox( str, FONT10ARIAL, 490, 364, 70, 20 );
 }
@@ -2531,7 +2531,7 @@ void UpdateMercsInfo()
 			SetFontShadow( FONT_NEARBLACK );
 			{ //scope trick
 				UINT16 tempStr[500];
-				swprintf( tempStr, L"%s%s%s%s%s%d.",
+				wprintf( tempStr, L"%s%s%s%s%s%d.",
 					L"By specifying a profile index, all of the information will be extracted from the profile ",
 					L"and override any values that you have edited.  It will also disable the editing features ", 
 					L"though, you will still be able to view stats, etc.  Pressing ENTER will automatically ",
@@ -2584,24 +2584,24 @@ void UpdateMercsInfo()
 				ColorFillVideoSurfaceArea( FRAME_BUFFER, 431, 388, 590, 450, Get16BPPColor( FROMRGB( 32, 45, 72 ) ) );
 				switch( gCurrSchedule.ubAction[ gubCurrentScheduleActionIndex ] )
 				{
-					case SCHEDULE_ACTION_LOCKDOOR:			swprintf( keyword, L"lock" );			break;
-					case SCHEDULE_ACTION_UNLOCKDOOR:		swprintf( keyword, L"unlock" );		break;
-					case SCHEDULE_ACTION_OPENDOOR:			swprintf( keyword, L"open" );			break;
-					case SCHEDULE_ACTION_CLOSEDOOR:			swprintf( keyword, L"close" );		break;
+					case SCHEDULE_ACTION_LOCKDOOR:			wprintf( keyword, L"lock" );			break;
+					case SCHEDULE_ACTION_UNLOCKDOOR:		wprintf( keyword, L"unlock" );		break;
+					case SCHEDULE_ACTION_OPENDOOR:			wprintf( keyword, L"open" );			break;
+					case SCHEDULE_ACTION_CLOSEDOOR:			wprintf( keyword, L"close" );		break;
 				}
 				switch( gubScheduleInstructions )
 				{
 					case SCHEDULE_INSTRUCTIONS_DOOR1:
-						swprintf( str, L"Click on the gridno adjacent to the door that you wish to %s.", keyword );
+						wprintf( str, L"Click on the gridno adjacent to the door that you wish to %s.", keyword );
 						break;
 					case SCHEDULE_INSTRUCTIONS_DOOR2:
-						swprintf( str, L"Click on the gridno where you wish to move after you %s the door.", keyword );
+						wprintf( str, L"Click on the gridno where you wish to move after you %s the door.", keyword );
 						break;
 					case SCHEDULE_INSTRUCTIONS_GRIDNO:
-						swprintf( str, L"Click on the gridno where you wish to move to." );
+						wprintf( str, L"Click on the gridno where you wish to move to." );
 						break;
 					case SCHEDULE_INSTRUCTIONS_SLEEP:
-						swprintf( str, L"Click on the gridno where you wish to sleep at.  Person will automatically return to original position after waking up." );
+						wprintf( str, L"Click on the gridno where you wish to sleep at.  Person will automatically return to original position after waking up." );
 					default:
 						return;
 				}
@@ -3145,7 +3145,7 @@ void RenderMercStrings()
 				sYPos += 10;
 
 				SetFontForeground( FONT_GRAY2 );
-				swprintf( str, L"Slot #%d", pSoldier->ubID );
+				wprintf( str, L"Slot #%d", pSoldier->ubID );
 				FindFontCenterCoordinates( sXPos, sYPos, 80, 1, str, TINYFONT1, &sX, &sY );
 				if( sY < 352 )
 				{
@@ -3171,7 +3171,7 @@ void RenderMercStrings()
 				sYPos += 10;
 
 				SetFontForeground( FONT_GRAY2 );
-				swprintf( str, L"Slot #%d", pSoldier->ubID );
+				wprintf( str, L"Slot #%d", pSoldier->ubID );
 				FindFontCenterCoordinates( sXPos, sYPos, 80, 1, str, TINYFONT1, &sX, &sY );
 				if( sY < 352 )
 				{
@@ -3188,7 +3188,7 @@ void RenderMercStrings()
 						SetFontForeground( FONT_DKRED );
 					else 
 						SetFontForeground( FONT_RED );
-					swprintf( str, L"Patrol orders with no waypoints" );
+					wprintf( str, L"Patrol orders with no waypoints" );
 					FindFontCenterCoordinates( sXPos, sYPos, 80, 1, str, TINYFONT1, &sX, &sY );
 					if( sY < 352 )
 					{
@@ -3204,7 +3204,7 @@ void RenderMercStrings()
 					SetFontForeground( FONT_DKRED );
 				else 
 					SetFontForeground( FONT_RED );
-				swprintf( str, L"Waypoints with no patrol orders" );
+				wprintf( str, L"Waypoints with no patrol orders" );
 				FindFontCenterCoordinates( sXPos, sYPos, 80, 1, str, TINYFONT1, &sX, &sY );
 				if( sY < 352 )
 				{
@@ -3303,7 +3303,7 @@ void RegisterCurrentScheduleAction( INT32 iMapIndex )
 {
 	UINT16 str[6];
 	MarkWorldDirty();
-	swprintf( str, L"%d", iMapIndex );
+	wprintf( str, L"%d", iMapIndex );
 	if( gfUseScheduleData2 )
 	{
 		if( gfSingleAction )
@@ -3526,7 +3526,7 @@ void RenderCurrentSchedule()
 			SetFont(TINYFONT1);
 			SetFontBackground( FONT_LTKHAKI );
 			SetFontForeground( FONT_WHITE );
-			swprintf( str, L"%d%c", i/2 + 1, 'A' + (i%2) );
+			wprintf( str, L"%d%c", i/2 + 1, 'A' + (i%2) );
 			VarFindFontCenterCoordinates( sScreenX, sScreenY, 1, 1, TINYFONT1, &sX, &sY, str );
 			mprintf( sX, sY, str );
 		}
@@ -3549,13 +3549,13 @@ void UpdateScheduleInfo()
 		{ //Update the text and buttons
 			MSYS_SetBtnUserData( iEditorButton[ MERCS_SCHEDULE_ACTION1 + i ], 0, pSchedule->ubAction[i] );
 			SpecifyButtonText( iEditorButton[ MERCS_SCHEDULE_ACTION1 + i ], gszScheduleActions[ pSchedule->ubAction[i] ] );
-			swprintf( str, L"" );
+			wprintf( str, L"" );
 			if( pSchedule->usData1[i] != 0xffff )
-				swprintf( str, L"%d", pSchedule->usData1[i] );
+				wprintf( str, L"%d", pSchedule->usData1[i] );
 			SpecifyButtonText( iEditorButton[ MERCS_SCHEDULE_DATA1A + i ], str );
-			swprintf( str, L"" );
+			wprintf( str, L"" );
 			if( pSchedule->usData2[i] != 0xffff )
-				swprintf( str, L"%d", pSchedule->usData2[i] );
+				wprintf( str, L"%d", pSchedule->usData2[i] );
 			SpecifyButtonText( iEditorButton[ MERCS_SCHEDULE_DATA1B + i ], str );
 			if( gubCurrMercMode == MERC_SCHEDULEMODE )
 			{ //Update the text input fields too!

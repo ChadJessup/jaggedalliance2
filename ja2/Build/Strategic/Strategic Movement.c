@@ -699,7 +699,7 @@ GROUP* CreateNewEnemyGroupDepartingFromSector( UINT32 uiSector, UINT8 ubNumAdmin
 		UINT16 str[ 512 ];
 		if( PlayerMercsInSector( pNew->ubSectorX, pNew->ubSectorY, 0 ) || CountAllMilitiaInSector( pNew->ubSectorX, pNew->ubSectorY ) )
 		{
-			swprintf( str, L"Attempting to send enemy troops from player occupied location.  "
+			wprintf( str, L"Attempting to send enemy troops from player occupied location.  "
 										 L"Please ALT+TAB out of the game before doing anything else and send 'Strategic Decisions.txt' "
 										 L"and this message.  You'll likely need to revert to a previous save.  If you can reproduce this "
 										 L"with a save close to this event, that would really help me! -- KM:0" );
@@ -707,7 +707,7 @@ GROUP* CreateNewEnemyGroupDepartingFromSector( UINT32 uiSector, UINT8 ubNumAdmin
 		}
 		else if( pNew->ubGroupSize > 25 )
 		{
-			swprintf( str, L"Strategic AI warning:  Creating an enemy group containing %d soldiers "
+			wprintf( str, L"Strategic AI warning:  Creating an enemy group containing %d soldiers "
 										 L"(%d admins, %d troops, %d elites) in sector %c%d.  This message is a temporary test message "
 										 L"to evaluate a potential problems with very large enemy groups.",
 										 pNew->ubGroupSize, ubNumAdmins, ubNumTroops, ubNumElites,
@@ -1151,7 +1151,7 @@ BOOLEAN CheckConditionsForBattle( GROUP *pGroup )
 				UINT16 str[ 256 ];
 				UINT16 pSectorStr[ 128 ];
 				GetSectorIDString( pGroup->ubSectorX, pGroup->ubSectorY, pGroup->ubSectorZ , pSectorStr, TRUE );
-				swprintf( str, gpStrategicString[ STR_DIALOG_ENEMIES_ATTACK_UNCONCIOUSMERCS ], pSectorStr );
+				wprintf( str, gpStrategicString[ STR_DIALOG_ENEMIES_ATTACK_UNCONCIOUSMERCS ], pSectorStr );
 				DoScreenIndependantMessageBox( str, MSG_BOX_FLAG_OK, TriggerPrebattleInterface );
 			}
 		}
@@ -2238,7 +2238,7 @@ BOOLEAN PossibleToCoordinateSimultaneousGroupArrivals( GROUP *pFirstGroup )
 		//header, sector, singular/plural str, confirmation string.
 		//Ex:  Enemies have been detected in sector J9 and another squad is 
 		//     about to arrive.  Do you wish to coordinate a simultaneous arrival?
-		swprintf( str, pStr, 
+		wprintf( str, pStr, 
 			pEnemyType, //Enemy type (Enemies or bloodcats)
 			'A' + gpPendingSimultaneousGroup->ubSectorY - 1, gpPendingSimultaneousGroup->ubSectorX ); //Sector location
 		wcscat( str, L"  " );
@@ -4473,7 +4473,7 @@ void AddFuelToVehicle( SOLDIERTYPE *pSoldier, SOLDIERTYPE *pVehicle )
 	{
 		#ifdef JA2BETAVERSION
 			UINT16 str[ 100 ];
-			swprintf( str, L"%s is supposed to have gas can in hand.  ATE:0", pSoldier->name );
+			wprintf( str, L"%s is supposed to have gas can in hand.  ATE:0", pSoldier->name );
 			DoScreenIndependantMessageBox( str, MSG_BOX_FLAG_OK, NULL );
 		#endif
 		return;
@@ -4505,7 +4505,7 @@ void ReportVehicleOutOfGas( INT32 iVehicleID, UINT8 ubSectorX, UINT8 ubSectorY )
 {
 	UINT16 str[255];
 	//Report that the vehicle that just arrived is out of gas.
-	swprintf( str, gzLateLocalizedString[ 5 ], 
+	wprintf( str, gzLateLocalizedString[ 5 ], 
 		pVehicleStrings[ pVehicleList[ iVehicleID ].ubVehicleType ],
 		ubSectorY + 'A' - 1, ubSectorX );
 	DoScreenIndependantMessageBox( str, MSG_BOX_FLAG_OK, NULL );
@@ -4736,7 +4736,7 @@ void NotifyPlayerOfBloodcatBattle( UINT8 ubSectorX, UINT8 ubSectorY )
 	if( gubEnemyEncounterCode == BLOODCAT_AMBUSH_CODE )
 	{
 		GetSectorIDString( ubSectorX, ubSectorY, 0, zTempString, TRUE );
-		swprintf( str, pMapErrorString[ 12 ], zTempString );
+		wprintf( str, pMapErrorString[ 12 ], zTempString );
 	}
 	else if( gubEnemyEncounterCode == ENTERING_BLOODCAT_LAIR_CODE )
 	{
@@ -4955,7 +4955,7 @@ BOOLEAN HandlePlayerGroupEnteringSectorToCheckForNPCsOfNote( GROUP *pGroup )
 
 	// build string for squad
 	GetSectorIDString( sSectorX, sSectorY, bSectorZ, wSectorName, FALSE );
-	swprintf( sString, pLandMarkInSectorString[ 0 ], pGroup->pPlayerList->pSoldier->bAssignment + 1, wSectorName );
+	wprintf( sString, pLandMarkInSectorString[ 0 ], pGroup->pPlayerList->pSoldier->bAssignment + 1, wSectorName );
 
 	if ( GroupAtFinalDestination( pGroup ) )
 	{
@@ -5136,14 +5136,14 @@ void ValidateGroups( GROUP *pGroup )
 		UINT16 str[ 512 ];
 		if( pGroup->ubSectorIDOfLastReassignment == 255 )
 		{
-			swprintf( str, L"Enemy group found with 0 troops in it.  This is illegal and group will be deleted."
+			wprintf( str, L"Enemy group found with 0 troops in it.  This is illegal and group will be deleted."
 										 L"  Group %d in sector %c%d originated from sector %c%d.",
 										 pGroup->ubGroupID, pGroup->ubSectorY + 'A' - 1, pGroup->ubSectorX,
 										 SECTORY( pGroup->ubCreatedSectorID ) + 'A' - 1, SECTORX( pGroup->ubCreatedSectorID ) );
 		}
 		else
 		{
-			swprintf( str, L"Enemy group found with 0 troops in it.  This is illegal and group will be deleted."
+			wprintf( str, L"Enemy group found with 0 troops in it.  This is illegal and group will be deleted."
 										 L"  Group %d in sector %c%d originated from sector %c%d and last reassignment location was %c%d.",
 										 pGroup->ubGroupID, pGroup->ubSectorY + 'A' - 1, pGroup->ubSectorX,
 										 SECTORY( pGroup->ubCreatedSectorID ) + 'A' - 1, SECTORX( pGroup->ubCreatedSectorID ),

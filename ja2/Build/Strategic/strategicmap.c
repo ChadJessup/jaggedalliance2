@@ -505,12 +505,12 @@ void EndLoadScreen( )
 	SetFontBackground( FONT_NEARBLACK );
 	if( !gbWorldSectorZ )
 	{
-		swprintf( str, L"%c%d ENTER SECTOR TIME:  %d.%02d seconds.", 
+		wprintf( str, L"%c%d ENTER SECTOR TIME:  %d.%02d seconds.", 
 							'A' + gWorldSectorY - 1, gWorldSectorX, uiSeconds, uiHundreths );
 	}
 	else
 	{
-		swprintf( str, L"%c%d_b%d ENTER SECTOR TIME:  %d.%02d seconds.", 
+		wprintf( str, L"%c%d_b%d ENTER SECTOR TIME:  %d.%02d seconds.", 
 							'A' + gWorldSectorY - 1, gWorldSectorX, gbWorldSectorZ, uiSeconds, uiHundreths );
 	}
 	ScreenMsg( FONT_YELLOW, MSG_TESTVERSION, str );
@@ -715,7 +715,7 @@ void InitializeSAMSites( void )
 void GetShortSectorString( INT16 sMapX,INT16 sMapY, STR16 sString )
 {
 	// OK, build string id like J11
-	swprintf( sString, L"%S%S",pVertStrings[ sMapY ], pHortStrings[ sMapX ] );
+	wprintf( sString, L"%S%S",pVertStrings[ sMapY ], pHortStrings[ sMapX ] );
 
 	return;
 }
@@ -1561,7 +1561,7 @@ BOOLEAN EnterSector( INT16 sSectorX, INT16 sSectorY , INT8 bSectorZ )
 	//#ifdef JA2TESTVERSION
 	//	//add more detailed progress bar
 	//	DefineProgressBarPanel( 0, 65, 79, 94, 130, 350, 510, 430 );
-	//	swprintf( str, L"Loading map:  %S", bFilename );
+	//	wprintf( str, L"Loading map:  %S", bFilename );
 	//	SetProgressBarTitle( 0, str, FONT12POINT1, FONT_BLACK, FONT_BLACK );
 	//#endif
 	if( !LoadWorld( bFilename ) )
@@ -1881,27 +1881,27 @@ void UpdateMercInSector( SOLDIERTYPE *pSoldier, INT16 sSectorX, INT16 sSectorY, 
 				GetLoadedSectorString( szSector );
 				if( gMapInformation.sNorthGridNo != -1 )
 				{
-					swprintf( szEntry, L"north" );
+					wprintf( szEntry, L"north" );
 					sGridNo = gMapInformation.sNorthGridNo;
 				}
 				else if( gMapInformation.sEastGridNo != -1 )
 				{
-					swprintf( szEntry, L"east" );
+					wprintf( szEntry, L"east" );
 					sGridNo = gMapInformation.sEastGridNo;
 				}
 				else if( gMapInformation.sSouthGridNo != -1 )
 				{
-					swprintf( szEntry, L"south" );
+					wprintf( szEntry, L"south" );
 					sGridNo = gMapInformation.sSouthGridNo;
 				}
 				else if( gMapInformation.sWestGridNo != -1 )
 				{
-					swprintf( szEntry, L"west" );
+					wprintf( szEntry, L"west" );
 					sGridNo = gMapInformation.sWestGridNo;
 				}
 				else if( gMapInformation.sCenterGridNo != -1 )
 				{
-					swprintf( szEntry, L"center" );
+					wprintf( szEntry, L"center" );
 					sGridNo = gMapInformation.sCenterGridNo;
 				}
 				else 
@@ -1970,7 +1970,7 @@ void GetSectorIDString( INT16 sSectorX, INT16 sSectorY, INT8 bSectorZ , CHAR16 *
 
 #ifdef JA2DEMO
 
-	swprintf( zString, L"Demoville" );
+	wprintf( zString, L"Demoville" );
 
 #else
 	SECTORINFO *pSector = NULL;
@@ -1982,7 +1982,7 @@ void GetSectorIDString( INT16 sSectorX, INT16 sSectorY, INT8 bSectorZ , CHAR16 *
 
 	if( sSectorX <= 0 || sSectorY <= 0 || bSectorZ < 0 )
 	{
-		//swprintf( zString, L"%s", pErrorStrings[0] );
+		//wprintf( zString, L"%s", pErrorStrings[0] );
 	}
 	else if( bSectorZ != 0 )
 	{
@@ -1992,27 +1992,27 @@ void GetSectorIDString( INT16 sSectorX, INT16 sSectorY, INT8 bSectorZ , CHAR16 *
 			bMineIndex = GetIdOfMineForSector( sSectorX, sSectorY, bSectorZ );
 			if( bMineIndex != -1 )
 			{
-				swprintf( zString, L"%c%d: %s %s", 'A' + sSectorY - 1, sSectorX, pTownNames[ GetTownAssociatedWithMine( bMineIndex ) ], pwMineStrings[ 0 ] );
+				wprintf( zString, L"%c%d: %s %s", 'A' + sSectorY - 1, sSectorX, pTownNames[ GetTownAssociatedWithMine( bMineIndex ) ], pwMineStrings[ 0 ] );
 			}
 			else switch( SECTOR( sSectorX, sSectorY ) )
 			{
 				case SEC_A10:
-					swprintf( zString, L"A10: %s", pLandTypeStrings[ REBEL_HIDEOUT ] );
+					wprintf( zString, L"A10: %s", pLandTypeStrings[ REBEL_HIDEOUT ] );
 					break;
 				case SEC_J9:
-					swprintf( zString, L"J9: %s", pLandTypeStrings[ TIXA_DUNGEON ] );
+					wprintf( zString, L"J9: %s", pLandTypeStrings[ TIXA_DUNGEON ] );
 					break;
 				case SEC_K4:
-					swprintf( zString, L"K4: %s", pLandTypeStrings[ ORTA_BASEMENT ] );
+					wprintf( zString, L"K4: %s", pLandTypeStrings[ ORTA_BASEMENT ] );
 					break;
 				case SEC_O3:
-					swprintf( zString, L"O3: %s", pLandTypeStrings[ TUNNEL ] );
+					wprintf( zString, L"O3: %s", pLandTypeStrings[ TUNNEL ] );
 					break;
 				case SEC_P3:
-					swprintf( zString, L"P3: %s", pLandTypeStrings[ SHELTER ] );
+					wprintf( zString, L"P3: %s", pLandTypeStrings[ SHELTER ] );
 					break;
 				default:
-					swprintf( zString, L"%c%d: %s", 'A' + sSectorY - 1, sSectorX, pLandTypeStrings[ CREATURE_LAIR ] );
+					wprintf( zString, L"%c%d: %s", 'A' + sSectorY - 1, sSectorX, pLandTypeStrings[ CREATURE_LAIR ] );
 					break;
 			}
 		}
@@ -2027,7 +2027,7 @@ void GetSectorIDString( INT16 sSectorX, INT16 sSectorY, INT8 bSectorZ , CHAR16 *
 		ubSectorID = (UINT8)SECTOR( sSectorX, sSectorY );
 		pSector = &SectorInfo[ ubSectorID ];
 		ubLandType = pSector->ubTraversability[ 4 ];
-		swprintf( zString, L"%c%d: ", 'A' + sSectorY - 1, sSectorX );
+		wprintf( zString, L"%c%d: ", 'A' + sSectorY - 1, sSectorX );
 
 		if ( bTownNameID == BLANK_SECTOR )
 		{
@@ -3611,7 +3611,7 @@ void UpdateAirspaceControl( void )
 		GetSectorIDString( gsMercArriveSectorX, gsMercArriveSectorY, 0, sMsgSubString2, FALSE );
 
 		// now build the string
-		swprintf( sMsgString, pBullseyeStrings[ 4 ], sMsgSubString1, sMsgSubString2 );
+		wprintf( sMsgString, pBullseyeStrings[ 4 ], sMsgSubString1, sMsgSubString2 );
 
 		// confirm the change with overlay message
 		DoScreenIndependantMessageBox( sMsgString, MSG_BOX_FLAG_OK, NULL );
@@ -4474,16 +4474,16 @@ void GetLoadedSectorString( UINT16 *pString )
 {
 	if( !gfWorldLoaded )
 	{
-		swprintf( pString, L"" );
+		wprintf( pString, L"" );
 		return;
 	}
 	if( gbWorldSectorZ )
 	{
-		swprintf( pString, L"%c%d_b%d", gWorldSectorY + 'A' - 1, gWorldSectorX, gbWorldSectorZ );
+		wprintf( pString, L"%c%d_b%d", gWorldSectorY + 'A' - 1, gWorldSectorX, gbWorldSectorZ );
 	}
 	else if( !gbWorldSectorZ )
 	{
-		swprintf( pString, L"%c%d", gWorldSectorY + 'A' - 1, gWorldSectorX );
+		wprintf( pString, L"%c%d", gWorldSectorY + 'A' - 1, gWorldSectorX );
 	}
 }
 
@@ -4897,7 +4897,7 @@ void CrippledVersionFailureToLoadMapCheck()
 {
 	CHAR16	zString[512];
 
-	swprintf( zString, L"Error! Sorry, you must stay between sectors A and E in this limited press version." );
+	wprintf( zString, L"Error! Sorry, you must stay between sectors A and E in this limited press version." );
 
 	DoScreenIndependantMessageBox( zString, MSG_BOX_FLAG_OK, CrippledVersionFailureToLoadMapCallBack );	
 }

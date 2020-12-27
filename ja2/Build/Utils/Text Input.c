@@ -272,12 +272,12 @@ void AddTextInputField( INT16 sLeft, INT16 sTop, INT16 sWidth, INT16 sHeight, IN
 	{
 		pNode->ubStrLen = (UINT8)wcslen( szInitText );		
 		Assert( pNode->ubStrLen <= ubMaxChars );
-		swprintf( pNode->szString, szInitText );
+		wprintf( pNode->szString, szInitText );
 	}
 	else
 	{
 		pNode->ubStrLen = 0;
-		swprintf( pNode->szString, L"" );
+		wprintf( pNode->szString, L"" );
 	}
 	pNode->ubMaxChars = ubMaxChars; //max string length
 
@@ -395,12 +395,12 @@ void SetInputFieldStringWith16BitString( UINT8 ubField, UINT16 *szNewText )
 			{
 				curr->ubStrLen = (UINT8)wcslen( szNewText );
 				Assert( curr->ubStrLen <= curr->ubMaxChars );
-				swprintf( curr->szString, szNewText );
+				wprintf( curr->szString, szNewText );
 			}
 			else if( !curr->fUserField )
 			{
 				curr->ubStrLen = 0;
-				swprintf( curr->szString, L"");
+				wprintf( curr->szString, L"");
 			}
 			else
 			{
@@ -424,12 +424,12 @@ void SetInputFieldStringWith8BitString( UINT8 ubField, UINT8 *szNewText )
 			{
 				curr->ubStrLen = (UINT8)strlen( szNewText );
 				Assert( curr->ubStrLen <= curr->ubMaxChars );
-				swprintf( curr->szString, L"%S", szNewText );
+				wprintf( curr->szString, L"%S", szNewText );
 			}
 			else if( !curr->fUserField )
 			{
 				curr->ubStrLen = 0;
-				swprintf( curr->szString, L"" );
+				wprintf( curr->szString, L"" );
 			}
 			else
 			{
@@ -466,7 +466,7 @@ void Get16BitStringFromField( UINT8 ubField, UINT16 *szString )
 	{
 		if( curr->ubID == ubField )
 		{
-			swprintf( szString, curr->szString );
+			wprintf( szString, curr->szString );
 			return;
 		}
 		curr = curr->next;
@@ -515,14 +515,14 @@ void SetInputFieldStringWithNumericStrictValue( UINT8 ubField, INT32 iNumber )
 			if( curr->fUserField )
 				AssertMsg( 0, String( "Attempting to illegally set text into user field %d", curr->ubID ) );
 			if( iNumber < 0 ) //negative number converts to blank string
-				swprintf( curr->szString, L"" );
+				wprintf( curr->szString, L"" );
 			else 
 			{
 				INT32 iMax = (INT32)pow( 10.0, curr->ubMaxChars );
 				if( iNumber > iMax ) //set string to max value based on number of chars.
-					swprintf( curr->szString, L"%d", iMax - 1 );
+					wprintf( curr->szString, L"%d", iMax - 1 );
 				else	//set string to the number given
-					swprintf( curr->szString, L"%d", iNumber );
+					wprintf( curr->szString, L"%d", iNumber );
 			}
 			curr->ubStrLen = (UINT8)wcslen( curr->szString );
 			return;

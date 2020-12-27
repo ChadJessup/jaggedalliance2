@@ -520,7 +520,7 @@ void HandleInterfaceMessageForCostOfTrainingMilitia( SOLDIERTYPE *pSoldier )
 
 	if( LaptopSaveInfo.iCurrentBalance < giTotalCostOfTraining )
 	{
-		swprintf( sString, pMilitiaConfirmStrings[ 8 ], giTotalCostOfTraining );
+		wprintf( sString, pMilitiaConfirmStrings[ 8 ], giTotalCostOfTraining );
 		DoScreenIndependantMessageBox( sString, MSG_BOX_FLAG_OK, CantTrainMilitiaOkBoxCallback );
 		return;
 	}
@@ -530,11 +530,11 @@ void HandleInterfaceMessageForCostOfTrainingMilitia( SOLDIERTYPE *pSoldier )
 
 	if( iNumberOfSectors > 1 )
 	{
-		swprintf( sString, pMilitiaConfirmStrings[ 7 ], iNumberOfSectors, giTotalCostOfTraining, pMilitiaConfirmStrings[ 1 ] );
+		wprintf( sString, pMilitiaConfirmStrings[ 7 ], iNumberOfSectors, giTotalCostOfTraining, pMilitiaConfirmStrings[ 1 ] );
 	}
 	else
 	{
-		swprintf( sString, L"%s%d. %s", pMilitiaConfirmStrings[ 0 ], giTotalCostOfTraining, pMilitiaConfirmStrings[ 1 ] );
+		wprintf( sString, L"%s%d. %s", pMilitiaConfirmStrings[ 0 ], giTotalCostOfTraining, pMilitiaConfirmStrings[ 1 ] );
 	}
 
 	// if we are in mapscreen, make a pop up
@@ -583,7 +583,7 @@ void HandleInterfaceMessageForContinuingTrainingMilitia( SOLDIERTYPE *pSoldier )
 	if( DoesSectorMercIsInHaveSufficientLoyaltyToTrainMilitia( pSoldier ) == FALSE )
 	{
 		// loyalty too low to continue training
-		swprintf( sString, pMilitiaConfirmStrings[ 9 ], pTownNames[ GetTownIdForSector( sSectorX, sSectorY )], MIN_RATING_TO_TRAIN_TOWN );
+		wprintf( sString, pMilitiaConfirmStrings[ 9 ], pTownNames[ GetTownIdForSector( sSectorX, sSectorY )], MIN_RATING_TO_TRAIN_TOWN );
 		DoContinueMilitiaTrainingMessageBox( sSectorX, sSectorY, sString, MSG_BOX_FLAG_OK, CantTrainMilitiaOkBoxCallback );
 		return;
 	}
@@ -596,12 +596,12 @@ void HandleInterfaceMessageForContinuingTrainingMilitia( SOLDIERTYPE *pSoldier )
 		{
 			// wilderness SAM site
 			GetSectorIDString( sSectorX, sSectorY, 0, sStringB, TRUE );
-			swprintf( sString, pMilitiaConfirmStrings[ 10 ], sStringB, GetSectorIDString, MIN_RATING_TO_TRAIN_TOWN );
+			wprintf( sString, pMilitiaConfirmStrings[ 10 ], sStringB, GetSectorIDString, MIN_RATING_TO_TRAIN_TOWN );
 		}
 		else
 		{
 			// town
-			swprintf( sString, pMilitiaConfirmStrings[ 10 ], pTownNames[ bTownId ], MIN_RATING_TO_TRAIN_TOWN );
+			wprintf( sString, pMilitiaConfirmStrings[ 10 ], pTownNames[ bTownId ], MIN_RATING_TO_TRAIN_TOWN );
 		}
 		DoContinueMilitiaTrainingMessageBox( sSectorX, sSectorY, sString, MSG_BOX_FLAG_OK, CantTrainMilitiaOkBoxCallback );
 		return;
@@ -614,7 +614,7 @@ void HandleInterfaceMessageForContinuingTrainingMilitia( SOLDIERTYPE *pSoldier )
 	if( LaptopSaveInfo.iCurrentBalance < giTotalCostOfTraining )
 	{
 		// can't afford to continue training
-		swprintf( sString, pMilitiaConfirmStrings[ 8 ], giTotalCostOfTraining );
+		wprintf( sString, pMilitiaConfirmStrings[ 8 ], giTotalCostOfTraining );
 		DoContinueMilitiaTrainingMessageBox( sSectorX, sSectorY, sString, MSG_BOX_FLAG_OK, CantTrainMilitiaOkBoxCallback );
 		return;
 	}
@@ -622,7 +622,7 @@ void HandleInterfaceMessageForContinuingTrainingMilitia( SOLDIERTYPE *pSoldier )
 	// ok to continue, ask player
 
 	GetSectorIDString( sSectorX, sSectorY, 0, sStringB, TRUE );
-	swprintf( sString, pMilitiaConfirmStrings[ 3 ], sStringB, pMilitiaConfirmStrings[ 4 ], giTotalCostOfTraining );
+	wprintf( sString, pMilitiaConfirmStrings[ 3 ], sStringB, pMilitiaConfirmStrings[ 4 ], giTotalCostOfTraining );
 
 	// ask player whether he'd like to continue training
 	//DoContinueMilitiaTrainingMessageBox( sSectorX, sSectorY, sString, MSG_BOX_FLAG_YESNO, PayMilitiaTrainingYesNoBoxCallback );
@@ -666,7 +666,7 @@ void PayMilitiaTrainingYesNoBoxCallback( UINT8 bExitValue )
 		{
 			StopTimeCompression();
 
-			swprintf( sString, L"%s", pMilitiaConfirmStrings[ 2 ] );
+			wprintf( sString, L"%s", pMilitiaConfirmStrings[ 2 ] );
 			DoMapMessageBox( MSG_BOX_BASIC_STYLE, sString, MAP_SCREEN, MSG_BOX_FLAG_OK, CantTrainMilitiaOkBoxCallback );
 		}
 	}
@@ -1202,7 +1202,7 @@ void BuildMilitiaPromotionsString( UINT16 *str )
 {
 	UINT16 pStr[256];
 	BOOLEAN fAddSpace = FALSE;
-	swprintf( str, L"" );
+	wprintf( str, L"" );
 
 	if( !gbMilitiaPromotions )
 	{
@@ -1210,7 +1210,7 @@ void BuildMilitiaPromotionsString( UINT16 *str )
 	}
 	if( gbGreenToElitePromotions > 1 )
 	{
-		swprintf( pStr, gzLateLocalizedString[22], gbGreenToElitePromotions );
+		wprintf( pStr, gzLateLocalizedString[22], gbGreenToElitePromotions );
 		wcscat( str, pStr );
 		fAddSpace = TRUE;
 	}
@@ -1226,7 +1226,7 @@ void BuildMilitiaPromotionsString( UINT16 *str )
 		{
 			wcscat( str, L" " );
 		}
-		swprintf( pStr, gzLateLocalizedString[23], gbGreenToRegPromotions );
+		wprintf( pStr, gzLateLocalizedString[23], gbGreenToRegPromotions );
 		wcscat( str, pStr );
 		fAddSpace = TRUE;
 	}
@@ -1246,7 +1246,7 @@ void BuildMilitiaPromotionsString( UINT16 *str )
 		{
 			wcscat( str, L" " );
 		}
-		swprintf( pStr, gzLateLocalizedString[24], gbRegToElitePromotions );
+		wprintf( pStr, gzLateLocalizedString[24], gbRegToElitePromotions );
 		wcscat( str, pStr );
 	}
 	else if( gbRegToElitePromotions == 1 )

@@ -1565,11 +1565,11 @@ void RenderAutoResolve()
 	switch( gubEnemyEncounterCode )
 	{
 		case ENEMY_ENCOUNTER_CODE:
-			swprintf( str, gpStrategicString[STR_AR_ENCOUNTER_HEADER] );
+			wprintf( str, gpStrategicString[STR_AR_ENCOUNTER_HEADER] );
 			break;
 		case ENEMY_INVASION_CODE:
 		case CREATURE_ATTACK_CODE:
-			swprintf( str, gpStrategicString[STR_AR_DEFEND_HEADER] );
+			wprintf( str, gpStrategicString[STR_AR_DEFEND_HEADER] );
 			break;
 	}
 
@@ -1589,7 +1589,7 @@ void RenderAutoResolve()
 	//Display the remaining forces
 	ubGood = (UINT8)(gpAR->ubAliveMercs + gpAR->ubAliveCivs);
 	ubBad = gpAR->ubAliveEnemies;
-	swprintf( str, gzLateLocalizedString[ 17 ], ubGood, ubBad );
+	wprintf( str, gzLateLocalizedString[ 17 ], ubGood, ubBad );
 
 	SetFont( FONT14ARIAL );
 	if( ubGood * 3 <= ubBad * 2 )
@@ -1712,29 +1712,29 @@ void RenderAutoResolve()
 			{
 				case BATTLE_VICTORY:
 					SetFontForeground( FONT_LTGREEN );
-					swprintf( str, gpStrategicString[ STR_AR_OVER_VICTORY ] );
+					wprintf( str, gpStrategicString[ STR_AR_OVER_VICTORY ] );
 					break;
 				case BATTLE_SURRENDERED:
 				case BATTLE_CAPTURED:
 					if( gpAR->ubBattleStatus == BATTLE_SURRENDERED )
 					{
-						swprintf( str, gpStrategicString[ STR_AR_OVER_SURRENDERED ] );
+						wprintf( str, 50, gpStrategicString[ STR_AR_OVER_SURRENDERED ] );
 					}
 					else
 					{
 						DisplayWrappedString( (UINT16)(gpAR->sCenterStartX+16), 310, 108, 2,
 							FONT10ARIAL, FONT_YELLOW, gpStrategicString[ STR_ENEMY_CAPTURED ], FONT_BLACK, FALSE, LEFT_JUSTIFIED );
-						swprintf( str, gpStrategicString[ STR_AR_OVER_CAPTURED ] );
+						wprintf( str, 50, gpStrategicString[ STR_AR_OVER_CAPTURED ] );
 					}
 					SetFontForeground( FONT_RED );
 					break;
 				case BATTLE_DEFEAT:
 					SetFontForeground( FONT_RED );
-					swprintf( str, gpStrategicString[ STR_AR_OVER_DEFEAT ] );
+					wprintf( str, 50, gpStrategicString[ STR_AR_OVER_DEFEAT ] );
 					break;
 				case BATTLE_RETREAT:
 					SetFontForeground( FONT_YELLOW );
-					swprintf( str, gpStrategicString[ STR_AR_OVER_RETREATED ] );
+					wprintf( str, 50, gpStrategicString[ STR_AR_OVER_RETREATED ] );
 					break;
 			}
 			//Render the results of the battle.
@@ -1748,7 +1748,7 @@ void RenderAutoResolve()
 
 			//Render the total battle time elapsed.
 			SetFont( FONT10ARIAL );
-			swprintf( str, L"%s:  %dm %02ds", 
+			wprintf( str, L"%s:  %dm %02ds", 
 				gpStrategicString[ STR_AR_TIME_ELAPSED ],
 				gpAR->uiTotalElapsedBattleTimeInMilliseconds/60000,
 				(gpAR->uiTotalElapsedBattleTimeInMilliseconds%60000)/1000 );
@@ -1921,7 +1921,7 @@ void CreateAutoResolveInterface()
 		gpCivs[i].uiVObjectID = gpAR->iFaces;
 		gpCivs[i].pSoldier->sSectorX = gpAR->ubSectorX;
 		gpCivs[i].pSoldier->sSectorY = gpAR->ubSectorY;
-		swprintf( gpCivs[i].pSoldier->name, gpStrategicString[ STR_AR_MILITIA_NAME ] );
+		wprintf( gpCivs[i].pSoldier->name, gpStrategicString[ STR_AR_MILITIA_NAME ] );
 	}
 	if( gubEnemyEncounterCode != CREATURE_ATTACK_CODE )
 	{
@@ -1939,7 +1939,7 @@ void CreateAutoResolveInterface()
 			}
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_ELITE_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_ELITE_NAME ] );
 		}
 		for( i = 0; i < gpAR->ubTroops; i++, index++ )
 		{
@@ -1948,7 +1948,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = TROOP_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_TROOP_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_TROOP_NAME ] );
 		}
 		for( i = 0; i < gpAR->ubAdmins; i++, index++ )
 		{
@@ -1957,7 +1957,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = ADMIN_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_ADMINISTRATOR_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_ADMINISTRATOR_NAME ] );
 		}
 		AssociateEnemiesWithStrategicGroups();
 	}
@@ -1970,7 +1970,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = AF_CREATURE_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
 		}
 		for( i = 0; i < gpAR->ubAMCreatures; i++, index++ )
 		{
@@ -1979,7 +1979,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = AM_CREATURE_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
 		}
 		for( i = 0; i < gpAR->ubYFCreatures; i++, index++ )
 		{
@@ -1988,7 +1988,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = YF_CREATURE_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
 		}
 		for( i = 0; i < gpAR->ubYMCreatures; i++, index++ )
 		{
@@ -1997,7 +1997,7 @@ void CreateAutoResolveInterface()
 			gpEnemies[index].usIndex = YM_CREATURE_FACE;
 			gpEnemies[index].pSoldier->sSectorX = gpAR->ubSectorX;
 			gpEnemies[index].pSoldier->sSectorY = gpAR->ubSectorY;
-			swprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
+			wprintf( gpEnemies[index].pSoldier->name, gpStrategicString[ STR_AR_CREATURE_NAME ] );
 		}
 	}
 
@@ -3166,7 +3166,7 @@ void RenderSoldierCellHealth( SOLDIERCELL *pCell )
 	if( pCell->uiFlags & CELL_RETREATED && gpAR->ubBattleStatus != BATTLE_VICTORY )
 	{
 		usColor = FONT_LTGREEN;
-		swprintf( str, gpStrategicString[ STR_AR_MERC_RETREATED ] );
+		wprintf( str, gpStrategicString[ STR_AR_MERC_RETREATED ] );
 		pStr = str;
 	}
 	else if( pCell->uiFlags & CELL_RETREATING && gpAR->ubBattleStatus == BATTLE_IN_PROGRESS )
@@ -3177,7 +3177,7 @@ void RenderSoldierCellHealth( SOLDIERCELL *pCell )
 			if( GetJA2Clock() % 900 < 450 )
 			{ //override the health string with the retreating string.
 				usColor = FONT_LTRED;
-				swprintf( str, gpStrategicString[ STR_AR_MERC_RETREATING ] );
+				wprintf( str, gpStrategicString[ STR_AR_MERC_RETREATING ] );
 				pStr = str;
 			}
 		}
@@ -3187,7 +3187,7 @@ void RenderSoldierCellHealth( SOLDIERCELL *pCell )
 		if( pCell->pSoldier->bLife >= OKLIFE )
 		{
 			SetFontForeground( FONT_YELLOW );
-			swprintf( str, gpStrategicString[ STR_AR_MERC_RETREAT ] );
+			wprintf( str, gpStrategicString[ STR_AR_MERC_RETREAT ] );
 			xp = pCell->xp + 25 - StringPixLength( pStr, SMALLCOMPFONT ) / 2;
 			yp = pCell->yp + 12;
 			mprintf( xp, yp, str );

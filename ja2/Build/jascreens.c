@@ -152,12 +152,12 @@ void DisplayFrameRate( )
 	{
 		// FRAME RATE
 		memset( &VideoOverlayDesc, 0, sizeof( VideoOverlayDesc ) );
-		swprintf( VideoOverlayDesc.pzText, L"%ld", __min( uiFPS, 1000 ) );
+		wprintf( VideoOverlayDesc.pzText, L"%ld", __min( uiFPS, 1000 ) );
 		VideoOverlayDesc.uiFlags    = VOVERLAY_DESC_TEXT;
 		UpdateVideoOverlay( &VideoOverlayDesc, giFPSOverlay, FALSE );
 
 		// TIMER COUNTER		
-		swprintf( VideoOverlayDesc.pzText, L"%ld", __min( giTimerDiag, 1000 ) );
+		wprintf( VideoOverlayDesc.pzText, L"%ld", __min( giTimerDiag, 1000 ) );
 		VideoOverlayDesc.uiFlags    = VOVERLAY_DESC_TEXT;
 		UpdateVideoOverlay( &VideoOverlayDesc, giCounterPeriodOverlay, FALSE );
 		
@@ -291,7 +291,7 @@ UINT32 ErrorScreenHandle(void)
   
 	  if( gubAssertString[0] )
 	  {
-		  swprintf( str, L"%S", gubAssertString );
+		  wprintf( str, L"%S", gubAssertString );
 		  DisplayWrappedString( 50, 270, 560, 2, FONT12ARIAL, FONT_RED, str, FONT_BLACK, TRUE, LEFT_JUSTIFIED );
 	  }
 #endif
@@ -1465,7 +1465,7 @@ UINT32 DemoExitScreenHandle(void)
 			{
 				case 38:
 					SetFontForeground( FONT_LTKHAKI );
-					swprintf( str, L"%s", gpDemoString[ i ] );
+					wprintf( str, L"%s", gpDemoString[ i ] );
 					break;
 				case 39:
 					SetFontForeground( FONT_LTKHAKI );

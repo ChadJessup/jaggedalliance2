@@ -761,7 +761,7 @@ void DrawRecordsText( void )
 	for(iCounter; iCounter <NUM_RECORDS_PER_PAGE; iCounter++)
 	{
 		// get and write the date
-		swprintf(sString, L"%d", pCurFinance->uiDate / ( 24*60 ) );
+		wprintf(sString, L"%d", pCurFinance->uiDate / ( 24*60 ) );
 		
 		
 
@@ -772,7 +772,7 @@ void DrawRecordsText( void )
 		if(pCurFinance->iAmount >=0)
 		{
 			// increase in asset - debit
-     swprintf(sString, L"%d", pCurFinance->iAmount);
+     wprintf(sString, L"%d", pCurFinance->iAmount);
 		 // insert commas
 		 InsertCommasForDollarFigure( sString );
 		 // insert dollar sight for first record in the list
@@ -788,7 +788,7 @@ void DrawRecordsText( void )
 		else
 		{
 			// decrease in asset - credit
-     swprintf(sString, L"%d", pCurFinance->iAmount * (-1));
+     wprintf(sString, L"%d", pCurFinance->iAmount * (-1));
 		 SetFontForeground(FONT_RED);
 		 InsertCommasForDollarFigure( sString );
 		 // insert dollar sight for first record in the list
@@ -824,7 +824,7 @@ void DrawRecordsText( void )
 
 
 		// print the balance string
-    swprintf(sString, L"%d", iBalance);
+    wprintf(sString, L"%d", iBalance);
 		InsertCommasForDollarFigure( sString );
 		// insert dollar sight for first record in the list
 //DEF: 3/19/99: removed cause we want to see the dollar sign on ALL entries
@@ -913,7 +913,7 @@ void DrawSummaryText( void )
 
 	// yesterdays income
 	iBalance =  GetPreviousDaysIncome( );
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 
@@ -928,7 +928,7 @@ void DrawSummaryText( void )
 
 	// yesterdays other
 	iBalance =  GetYesterdaysOtherDeposits( );
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -947,7 +947,7 @@ void DrawSummaryText( void )
 		iBalance *= -1;
 	}
 
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -967,7 +967,7 @@ void DrawSummaryText( void )
 		iBalance *= -1;
 	}
 
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
 		InsertDollarSignInToString( pString );
@@ -979,7 +979,7 @@ void DrawSummaryText( void )
 
 	// todays income
 	iBalance =  GetTodaysDaysIncome( );
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -992,7 +992,7 @@ void DrawSummaryText( void )
 
 	// todays other
 	iBalance =  GetTodaysOtherDeposits( );
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -1012,7 +1012,7 @@ void DrawSummaryText( void )
 		iBalance *= ( -1 );
 	}
 
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -1029,12 +1029,12 @@ void DrawSummaryText( void )
 	{
 		iBalance *= -1;
 		SetFontForeground( FONT_RED );
-		swprintf(pString, L"%d", iBalance );
+		wprintf(pString, L"%d", iBalance );
 		iBalance *= -1;
 	}
 	else
 	{
-		swprintf(pString, L"%d", iBalance );
+		wprintf(pString, L"%d", iBalance );
 	}
 
   InsertCommasForDollarFigure( pString );
@@ -1047,7 +1047,7 @@ void DrawSummaryText( void )
   
 	// todays forcast income
 	iBalance =  GetProjectedTotalDailyIncome( );
-	swprintf(pString, L"%d", iBalance );
+	wprintf(pString, L"%d", iBalance );
 	
 	InsertCommasForDollarFigure( pString );
 	if( iBalance != 0 )
@@ -1065,12 +1065,12 @@ void DrawSummaryText( void )
 	{
 		iBalance *= -1;
 		SetFontForeground( FONT_RED );
-		swprintf(pString, L"%d", iBalance );
+		wprintf(pString, L"%d", iBalance );
 		iBalance *= -1;
 	}
 	else
 	{
-		swprintf(pString, L"%d", iBalance );
+		wprintf(pString, L"%d", iBalance );
 	}
 
   InsertCommasForDollarFigure( pString );
@@ -1410,98 +1410,98 @@ void ProcessTransactionString(STR16 pString, FinanceUnitPtr pFinance)
 	switch( pFinance->ubCode)
 	{
 		case ACCRUED_INTEREST:
-			swprintf(pString, L"%s", pTransactionText[ACCRUED_INTEREST]);
+			wprintf(pString, L"%s", pTransactionText[ACCRUED_INTEREST]);
 			break;
 
 		case ANONYMOUS_DEPOSIT:
-			swprintf(pString, L"%s", pTransactionText[ANONYMOUS_DEPOSIT]);
+			wprintf(pString, L"%s", pTransactionText[ANONYMOUS_DEPOSIT]);
 			break;
 
 		case TRANSACTION_FEE:
-			swprintf(pString, L"%s", pTransactionText[TRANSACTION_FEE]);
+			wprintf(pString, L"%s", pTransactionText[TRANSACTION_FEE]);
 			break;
 
 		case HIRED_MERC:
-			swprintf(pString, pMessageStrings[ MSG_HIRED_MERC ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pMessageStrings[ MSG_HIRED_MERC ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case BOBBYR_PURCHASE:
-			swprintf(pString, L"%s", pTransactionText[ BOBBYR_PURCHASE ]);
+			wprintf(pString, L"%s", pTransactionText[ BOBBYR_PURCHASE ]);
 			break;
 
 		case PAY_SPECK_FOR_MERC:
-			swprintf(pString, L"%s", pTransactionText[ PAY_SPECK_FOR_MERC ], gMercProfiles[pFinance->ubSecondCode].zName);
+			wprintf(pString, L"%s", pTransactionText[ PAY_SPECK_FOR_MERC ], gMercProfiles[pFinance->ubSecondCode].zName);
 			break;
 	
 		case MEDICAL_DEPOSIT:
-			swprintf(pString, pTransactionText[ MEDICAL_DEPOSIT ] , gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ MEDICAL_DEPOSIT ] , gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 		
 		case IMP_PROFILE:
-			swprintf(pString, L"%s", pTransactionText[ IMP_PROFILE ] );
+			wprintf(pString, L"%s", pTransactionText[ IMP_PROFILE ] );
 			break;
 
 		case PURCHASED_INSURANCE:
-			swprintf(pString, pTransactionText[ PURCHASED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionText[ PURCHASED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case REDUCED_INSURANCE:
-			swprintf(pString,  pTransactionText[ REDUCED_INSURANCE ],  gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString,  pTransactionText[ REDUCED_INSURANCE ],  gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case EXTENDED_INSURANCE:
-			swprintf(pString, pTransactionText[ EXTENDED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionText[ EXTENDED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case CANCELLED_INSURANCE:
-			swprintf(pString, pTransactionText[ CANCELLED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionText[ CANCELLED_INSURANCE ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case INSURANCE_PAYOUT:
-			swprintf(pString, pTransactionText[ INSURANCE_PAYOUT ], gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ INSURANCE_PAYOUT ], gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 
 		case EXTENDED_CONTRACT_BY_1_DAY:
-			swprintf(pString, pTransactionAlternateText[ 1 ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionAlternateText[ 1 ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case EXTENDED_CONTRACT_BY_1_WEEK:
-			swprintf(pString, pTransactionAlternateText[ 2 ], gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionAlternateText[ 2 ], gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case EXTENDED_CONTRACT_BY_2_WEEKS:
-			swprintf(pString, pTransactionAlternateText[ 3 ],  gMercProfiles[pFinance->ubSecondCode].zNickname );
+			wprintf(pString, pTransactionAlternateText[ 3 ],  gMercProfiles[pFinance->ubSecondCode].zNickname );
 			break;
 
 		case DEPOSIT_FROM_GOLD_MINE:
 		case DEPOSIT_FROM_SILVER_MINE:
-			swprintf( pString, pTransactionText[ 16 ] );
+			wprintf( pString, pTransactionText[ 16 ] );
 			break;
 
 		case PURCHASED_FLOWERS:
-			swprintf(pString, L"%s", pTransactionText[ PURCHASED_FLOWERS ] );
+			wprintf(pString, L"%s", pTransactionText[ PURCHASED_FLOWERS ] );
 			break;
 
 		case FULL_MEDICAL_REFUND:
-			swprintf(pString, pTransactionText[ FULL_MEDICAL_REFUND ], gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ FULL_MEDICAL_REFUND ], gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 
 		case PARTIAL_MEDICAL_REFUND:
-			swprintf(pString, pTransactionText[ PARTIAL_MEDICAL_REFUND ],  gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ PARTIAL_MEDICAL_REFUND ],  gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 
 		case NO_MEDICAL_REFUND:
-			swprintf(pString, pTransactionText[ NO_MEDICAL_REFUND ], gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ NO_MEDICAL_REFUND ], gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 
 		case TRANSFER_FUNDS_TO_MERC:
-			swprintf(pString,pTransactionText[ TRANSFER_FUNDS_TO_MERC ],  gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString,pTransactionText[ TRANSFER_FUNDS_TO_MERC ],  gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 		case TRANSFER_FUNDS_FROM_MERC:
-			swprintf(pString, pTransactionText[ TRANSFER_FUNDS_FROM_MERC ], gMercProfiles[pFinance->ubSecondCode].zNickname);
+			wprintf(pString, pTransactionText[ TRANSFER_FUNDS_FROM_MERC ], gMercProfiles[pFinance->ubSecondCode].zNickname);
 			break;
 		case 	PAYMENT_TO_NPC:
-			swprintf(pString, pTransactionText[ PAYMENT_TO_NPC ], gMercProfiles[ pFinance->ubSecondCode ].zNickname );
+			wprintf(pString, pTransactionText[ PAYMENT_TO_NPC ], gMercProfiles[ pFinance->ubSecondCode ].zNickname );
 			break;
 		case( TRAIN_TOWN_MILITIA ):
 			{
@@ -1511,16 +1511,16 @@ void ProcessTransactionString(STR16 pString, FinanceUnitPtr pFinance)
 				ubSectorX = (UINT8)SECTORX( pFinance->ubSecondCode );
 				ubSectorY = (UINT8)SECTORY( pFinance->ubSecondCode );
 				GetSectorIDString( ubSectorX, ubSectorY, 0, str, TRUE );
-				swprintf(pString, pTransactionText[ TRAIN_TOWN_MILITIA ], str );
+				wprintf(pString, pTransactionText[ TRAIN_TOWN_MILITIA ], str );
 			}
 			break;
 
 		case( PURCHASED_ITEM_FROM_DEALER ):
-			swprintf(pString, pTransactionText[ PURCHASED_ITEM_FROM_DEALER ],  gMercProfiles[ pFinance->ubSecondCode ].zNickname );
+			wprintf(pString, pTransactionText[ PURCHASED_ITEM_FROM_DEALER ],  gMercProfiles[ pFinance->ubSecondCode ].zNickname );
 			break;
 
 		case( MERC_DEPOSITED_MONEY_TO_PLAYER_ACCOUNT ):
-			swprintf(pString, pTransactionText[ MERC_DEPOSITED_MONEY_TO_PLAYER_ACCOUNT ],  gMercProfiles[ pFinance->ubSecondCode ].zNickname );
+			wprintf(pString, pTransactionText[ MERC_DEPOSITED_MONEY_TO_PLAYER_ACCOUNT ],  gMercProfiles[ pFinance->ubSecondCode ].zNickname );
 			break;
 
 	}
@@ -1551,7 +1551,7 @@ void DisplayFinancePageNumberAndDateRange( void )
 		pCurrentFinance = pFinanceListHead;
     if( !pCurrentFinance )
 		{
-     swprintf( sString, L"%s %d / %d",pFinanceHeaders[5], iCurrentPage + 1 , guiLastPageInRecordsList + 2 );
+     wprintf( sString, L"%s %d / %d",pFinanceHeaders[5], iCurrentPage + 1 , guiLastPageInRecordsList + 2 );
 	   mprintf( PAGE_NUMBER_X, PAGE_NUMBER_Y, sString );
 		 return;
 		}
@@ -1567,7 +1567,7 @@ void DisplayFinancePageNumberAndDateRange( void )
   
 	// get the last page
    
-  swprintf( sString, L"%s %d / %d",pFinanceHeaders[5], iCurrentPage + 1 , guiLastPageInRecordsList + 2 );
+  wprintf( sString, L"%s %d / %d",pFinanceHeaders[5], iCurrentPage + 1 , guiLastPageInRecordsList + 2 );
 	mprintf( PAGE_NUMBER_X, PAGE_NUMBER_Y, sString );
 	
 	// reset shadow

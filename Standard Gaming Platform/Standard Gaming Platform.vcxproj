@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Bounds Checker|Win32">
+      <Configuration>Bounds Checker</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Demo|Win32">
+      <Configuration>Debug Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Demo Release with Debug Info|Win32">
+      <Configuration>Demo Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Demo|Win32">
+      <Configuration>Release Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release with Debug Info|Win32">
+      <Configuration>Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/Jagged Alliance 2/Development/Programming/Jagged Alliance 2/Build", AVAAAAAA</SccProjectName>
+    <SccLocalPath>..\ja2source\ja2\build</SccLocalPath>
+    <ProjectGuid>{14ADDB4B-A4AE-4842-9B6D-A8B906E98246}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <OutDir>.\Standard\</OutDir>
+    <IntDir>.\Standard\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <OutDir>.\Standar0\</OutDir>
+    <IntDir>.\Standar0\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <OutDir>.\Release with Debug Info\</OutDir>
+    <IntDir>.\Release with Debug Info\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <OutDir>.\Standar2\</OutDir>
+    <IntDir>.\Standar2\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <OutDir>.\Standar1\</OutDir>
+    <IntDir>.\Standar1\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;JA2DEMO;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Standard\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Standard\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Standard\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Standard\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standard\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standard\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BOUNDS_CHECKER;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Standar0\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Standar0\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Standar0\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Standar0\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar0\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar0\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;RELEASE_WITH_DEBUG_INFO;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release with Debug Info\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release with Debug Info\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release with Debug Info\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release with Debug Info\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug Info\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug Info\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Standar2\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Standar2\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Standar2\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Standar2\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar2\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar2\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.\;..\ja2\Build\;..\ja2\Build\TileEngine;..\ja2\Build\Utils;..\ja2\Build\TacticalAI;..\ja2\Build\Communications;..\ja2\Build\Tactical;..\ja2\Build\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;NO_ZLIB;WIN32;_WINDOWS;JA2;JA2_PRECOMPILED_HEADERS;NO_ZLIB_COMPRESSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Standar1\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Standar1\Standard Gaming Platform.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Standar1\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Standar1\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar1\Standard Gaming Platform.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Standar1\Standard Gaming Platform.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include=".\Button Sound Control.c" />
+    <ClCompile Include="Button System.c" />
+    <ClCompile Include=".\Container.c" />
+    <ClCompile Include=".\Cursor Control.c" />
+    <ClCompile Include=".\DbMan.c" />
+    <ClCompile Include=".\DEBUG.C">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include=".\DirectDraw Calls.c" />
+    <ClCompile Include=".\DirectX Common.c" />
+    <ClCompile Include=".\English.c" />
+    <ClCompile Include=".\FileMan.c" />
+    <ClCompile Include=".\Font.c" />
+    <ClCompile Include=".\himage.c" />
+    <ClCompile Include=".\impTGA.c" />
+    <ClCompile Include=".\input.c" />
+    <ClCompile Include=".\Install.c" />
+    <ClCompile Include=".\LibraryDataBase.c" />
+    <ClCompile Include=".\line.c" />
+    <ClCompile Include=".\MemMan.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">_MEMMAN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">_MEMMAN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_MEMMAN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include=".\mousesystem.c" />
+    <ClCompile Include=".\Mutex Manager.c" />
+    <ClCompile Include=".\PCX.C" />
+    <ClCompile Include=".\Random.c" />
+    <ClCompile Include=".\RegInst.c" />
+    <ClCompile Include=".\sgp.c" />
+    <ClCompile Include=".\shading.c" />
+    <ClCompile Include=".\soundman.c" />
+    <ClCompile Include=".\STCI.c" />
+    <ClCompile Include=".\timer.c" />
+    <ClCompile Include=".\video.c" />
+    <ClCompile Include=".\vobject.c" />
+    <ClCompile Include=".\vobject_blitters.c" />
+    <ClCompile Include=".\vsurface.c" />
+    <ClCompile Include="ExceptionHandling.cpp" />
+    <ClCompile Include="WinFont.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include=".\ddraw.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\Button System.h" />
+    <ClInclude Include=".\container.h" />
+    <ClInclude Include=".\Cursor Control.h" />
+    <ClInclude Include=".\DbMan.h" />
+    <ClInclude Include=".\Debug.h" />
+    <ClInclude Include=".\DirectDraw Calls.h" />
+    <ClInclude Include=".\DirectX Common.h" />
+    <ClInclude Include=".\english.h" />
+    <ClInclude Include=".\FileMan.h" />
+    <ClInclude Include=".\font.h" />
+    <ClInclude Include=".\gameloop.h" />
+    <ClInclude Include=".\himage.h" />
+    <ClInclude Include=".\imgfmt.h" />
+    <ClInclude Include=".\impTGA.h" />
+    <ClInclude Include=".\Input.h" />
+    <ClInclude Include=".\Install.h" />
+    <ClInclude Include=".\LibraryDataBase.h" />
+    <ClInclude Include=".\line.h" />
+    <ClInclude Include=".\MemMan.h" />
+    <ClInclude Include=".\mousesystem.h" />
+    <ClInclude Include=".\mousesystem_macros.h" />
+    <ClInclude Include=".\Mutex Manager.h" />
+    <ClInclude Include=".\pcx.h" />
+    <ClInclude Include=".\random.h" />
+    <ClInclude Include=".\RegInst.h" />
+    <ClInclude Include=".\sgp.h" />
+    <ClInclude Include=".\shading.h" />
+    <ClInclude Include=".\soundman.h" />
+    <ClInclude Include=".\STCI.h" />
+    <ClInclude Include=".\timer.h" />
+    <ClInclude Include=".\TopicIDs.h" />
+    <ClInclude Include=".\TopicOps.h" />
+    <ClInclude Include=".\trle.h" />
+    <ClInclude Include=".\Video.h" />
+    <ClInclude Include=".\video_private.h" />
+    <ClInclude Include=".\vobject.h" />
+    <ClInclude Include=".\vobject_blitters.h" />
+    <ClInclude Include=".\vobject_private.h" />
+    <ClInclude Include=".\vsurface.h" />
+    <ClInclude Include=".\vsurface_private.h" />
+    <ClInclude Include=".\WCheck.h" />
+    <ClInclude Include=".\Winbart97.h" />
+    <ClInclude Include=".\WizShare.h" />
+    <ClInclude Include=".\ZCONF.H" />
+    <ClInclude Include="..\jascreens.h" />
+    <ClInclude Include="..\local.h" />
+    <ClInclude Include="..\screenids.h" />
+    <ClInclude Include="..\SCREENS.H" />
+    <ClInclude Include="..\TileEngine\render dirty.h" />
+    <ClInclude Include="..\Utils\Font Control.h" />
+    <ClInclude Include="ExceptionHandling.h" />
+    <ClInclude Include="JA2 SGP ALL.H" />
+    <ClInclude Include="Types.h" />
+    <ClInclude Include="WinFont.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

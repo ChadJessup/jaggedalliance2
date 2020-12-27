@@ -1141,7 +1141,7 @@ void CreateMouseRegionsForLevelMarkers( void )
 
 		MSYS_SetRegionUserData(&LevelMouseRegions[sCounter],0,sCounter);
 
-		swprintf( sString, L"%s %d", zMarksMapScreenText[ 0 ], sCounter + 1 );
+		wprintf( sString, L"%s %d", zMarksMapScreenText[ 0 ], sCounter + 1 );
 		SetRegionFastHelpText( &LevelMouseRegions[ sCounter ], sString );
   }
 

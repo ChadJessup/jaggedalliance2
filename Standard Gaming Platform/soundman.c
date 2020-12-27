@@ -21,7 +21,7 @@
 #endif
 
 // Uncomment this to disable the startup of sound hardware
-//#define SOUND_DISABLE
+#define SOUND_DISABLE
 
 #pragma pack(push,1)
 

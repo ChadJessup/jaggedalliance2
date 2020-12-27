@@ -114,7 +114,7 @@ void DisplayCoverOfSelectedGridNo( )
 #ifdef JA2TESTVERSION
 				{
 					CHAR16	zString[512];
-					swprintf( zString, L"%s, (%d)", zNewTacticalMessages[ TCTL_MSG__DISPLAY_COVER ], gGameSettings.ubSizeOfDisplayCover );
+					wprintf( zString, L"%s, (%d)", zNewTacticalMessages[ TCTL_MSG__DISPLAY_COVER ], gGameSettings.ubSizeOfDisplayCover );
 					ScreenMsg( FONT_MCOLOR_LTYELLOW, MSG_INTERFACE, zString );
 				}
 #else
@@ -601,12 +601,12 @@ void DisplayRangeToTarget( SOLDIERTYPE *pSoldier, INT16 sTargetGridNo )
 	if( WeaponInHand( pSoldier ) )
 	{
 		//display a string with the weapons range, then range to target
-		swprintf( zOutputString, zNewTacticalMessages[ TCTL_MSG__RANGE_TO_TARGET_AND_GUN_RANGE ], Weapon[ pSoldier->inv[HANDPOS].usItem ].usRange / 10, usRange );
+		wprintf( zOutputString, zNewTacticalMessages[ TCTL_MSG__RANGE_TO_TARGET_AND_GUN_RANGE ], Weapon[ pSoldier->inv[HANDPOS].usItem ].usRange / 10, usRange );
 	}
 	else
 	{
 		//display a string with the range to target
-		swprintf( zOutputString, zNewTacticalMessages[ TCTL_MSG__RANGE_TO_TARGET ], usRange );
+		wprintf( zOutputString, zNewTacticalMessages[ TCTL_MSG__RANGE_TO_TARGET ], usRange );
 	}
 
 	//Display the msg
@@ -656,7 +656,7 @@ void DisplayGridNoVisibleToSoldierGrid( )
 #ifdef JA2TESTVERSION
 				{
 					CHAR16	zString[512];
-					swprintf( zString, L"%s, (%d)", zNewTacticalMessages[ TCTL_MSG__LOS ], gGameSettings.ubSizeOfLOS );
+					wprintf( zString, L"%s, (%d)", zNewTacticalMessages[ TCTL_MSG__LOS ], gGameSettings.ubSizeOfLOS );
 					ScreenMsg( FONT_MCOLOR_LTYELLOW, MSG_INTERFACE, zString );
 				}
 #else
@@ -986,13 +986,13 @@ void DisplayLosAndDisplayCoverUsageScreenMsg()
 {
 	CHAR16	zString[512];
 
-	swprintf( zString, L"Display Cover: %d", gJa25SaveStruct.uiDisplayCoverCounter );
+	wprintf( zString, L"Display Cover: %d", gJa25SaveStruct.uiDisplayCoverCounter );
 	ScreenMsg( FONT_MCOLOR_LTYELLOW, MSG_INTERFACE, zString );
 
-	swprintf( zString, L"LOS: %d", gJa25SaveStruct.uiDisplayLosCounter );
+	wprintf( zString, L"LOS: %d", gJa25SaveStruct.uiDisplayLosCounter );
 	ScreenMsg( FONT_MCOLOR_LTYELLOW, MSG_INTERFACE, zString );
 
-	swprintf( zString, L"Gun Range: %d", gJa25SaveStruct.uiDisplayGunRangeCounter );
+	wprintf( zString, L"Gun Range: %d", gJa25SaveStruct.uiDisplayGunRangeCounter );
 	ScreenMsg( FONT_MCOLOR_LTYELLOW, MSG_INTERFACE, zString );
 }
 */

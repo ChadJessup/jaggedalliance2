@@ -13,7 +13,7 @@
 #include "Button Sound Control.h"
 #include "Sound Control.h"
 #ifdef _JA2_RENDER_DIRTY
-	#include "\JA2\Build\utils\Font Control.h"
+	#include "..\JA2\Build\utils\Font Control.h"
 	#include "Render Dirty.h"
 	#include "utilities.h"
 #endif
@@ -36,7 +36,7 @@
 #include <malloc.h>
 #include <stdio.h>
 #include "Container.h"
-#include <iostream.h>
+//#include "iostream.h"
 #include "Cursor Control.h"
 #include "wcheck.h"
 #include "FileMan.h"

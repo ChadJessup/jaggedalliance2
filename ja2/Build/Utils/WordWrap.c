@@ -50,7 +50,7 @@ WRAPPED_STRING *LineWrapForSingleCharWords(UINT32 ulFont, UINT16 usLineWidthPixe
 		return(FALSE);
 
 	va_start(argptr, pString);       	// Set up variable argument pointer
-	vswprintf(TempString, pString, argptr);	// process string (get output str)
+	vwprintf(TempString, pString, argptr);	// process string (get output str)
 	va_end(argptr);
 
 	usCurIndex = usEndIndex = usDestIndex = 0;
@@ -168,7 +168,7 @@ WRAPPED_STRING *LineWrap(UINT32 ulFont, UINT16 usLineWidthPixels, UINT16 *pusLin
 		return(FALSE);
 
 	va_start(argptr, pString);       	// Set up variable argument pointer
-	vswprintf(TempString, pString, argptr);	// process string (get output str)
+	vwprintf(TempString, pString, argptr);	// process string (get output str)
 	va_end(argptr);
 
 	usCurIndex = usEndIndex = usDestIndex = 0;
@@ -2017,7 +2017,7 @@ BOOLEAN ReduceStringLength( STR16 pString, UINT32 uiWidthToFitIn, UINT32 uiFont 
 
 
 	//combine the temp string and the '...' to form the finished string
-	swprintf( pString, L"%s%s", zTemp, zStrDots );
+	wprintf( pString, L"%s%s", zTemp, zStrDots );
 
 	return( TRUE );
 }

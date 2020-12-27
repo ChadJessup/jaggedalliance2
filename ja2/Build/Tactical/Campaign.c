@@ -1515,7 +1515,7 @@ void BuildStatChangeString( STR16 wString, STR16 wName, BOOLEAN fIncrease, INT16
 		ubStringIndex += 2;
 	}
 
-	swprintf( wString, L"%s %s %d %s %s", wName, sPreStatBuildString[ fIncrease ? 1 : 0 ], abs( sPtsChanged ), 
+	wprintf( wString, L"%s %s %d %s %s", wName, sPreStatBuildString[ fIncrease ? 1 : 0 ], abs( sPtsChanged ), 
 					sPreStatBuildString[ ubStringIndex ], sStatGainStrings[ ubStat - FIRST_CHANGEABLE_STAT ] );
 }
 

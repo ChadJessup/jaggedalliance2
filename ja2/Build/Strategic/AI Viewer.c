@@ -223,9 +223,9 @@ void StringFromValue( UINT16 *str, INT32 iValue, UINT32 uiMax )
 	if( iValue < 0 )			//a blank string is determined by a negative value.
 		str[0] = '\0';
 	else if( (UINT32)iValue > uiMax )	//higher than max attribute value, so convert it to the max.
-		swprintf( str, L"%d", uiMax );
+		wprintf( str, L"%d", uiMax );
 	else										//this is a valid static value, so convert it to a string.
-		swprintf( str, L"%d", iValue );
+		wprintf( str, L"%d", iValue );
 }
 
 BOOLEAN CreateAIViewer()
@@ -505,7 +505,7 @@ void RenderStationaryGroups()
 				BlitGroupIcon( ICON_TYPE_STOPPED, ubIconColor, xp, yp, hVObject );
 
 				//Print the group size
-				swprintf( str, L"%d", ubGroupSize );
+				wprintf( str, L"%d", ubGroupSize );
 				mprintf( xp + 2, yp + 2, str );
 			}
 
@@ -846,7 +846,7 @@ void RenderViewer()
 				SetFontForeground( FONT_YELLOW );
 			else
 				SetFontForeground( FONT_GRAY1 );
-			swprintf( str, L"%d", x );
+			wprintf( str, L"%d", x );
 			mprintf( VIEWER_LEFT+x*26-(26+StringPixLength( str, FONT12POINT1 ))/2, VIEWER_TOP-12, str );
 		}
 		if( gbViewLevel )
@@ -1645,7 +1645,7 @@ void PrintEnemyPopTable()
 				wcscpy( wPrintSpec, L"%4d" );
 			}
 
-			swprintf( wTempString, wPrintSpec, usEnemyPopTable[ ubEnemyRank ][ ubEnemyType ] );
+			wprintf( wTempString, wPrintSpec, usEnemyPopTable[ ubEnemyRank ][ ubEnemyType ] );
 			DrawTextToScreen( wTempString, ( UINT16 ) ( usX + ( POP_TABLE_X_GAP * ubEnemyRank ) ), ( UINT16 ) ( usY + ( POP_TABLE_Y_GAP * ubEnemyType ) ), POP_TABLE_X_GAP, FONT10ARIAL, FONT_YELLOW, 0, FALSE, RIGHT_JUSTIFIED );
 		}
 	}
@@ -1784,7 +1784,7 @@ void PrintEnemiesKilledTable()
 				wcscpy( wPrintSpec, L"%4d" );
 			}
 
-			swprintf( wTempString, wPrintSpec, usEnemiesKilledTable[ ubEnemyRank ][ ubKillType ] );
+			wprintf( wTempString, wPrintSpec, usEnemiesKilledTable[ ubEnemyRank ][ ubKillType ] );
 			DrawTextToScreen( wTempString, ( UINT16 ) ( usX + ( KILLED_TABLE_X_GAP * ubEnemyRank ) ), ( UINT16 ) ( usY + ( KILLED_TABLE_Y_GAP * ubKillType ) ), KILLED_TABLE_X_GAP, FONT10ARIAL, FONT_YELLOW, 0, FALSE, RIGHT_JUSTIFIED );
 		}
 	}
@@ -1867,16 +1867,16 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 		iSurplus = pSector->ubNumTroops + pSector->ubNumAdmins + pSector->ubNumElites - iDesired;
 		SetFontForeground( FONT_WHITE );
 
-		swprintf( wString, L"Garrison #%d: %d desired, ", pSector->ubGarrisonID, iDesired );
+		wprintf( wString, L"Garrison #%d: %d desired, ", pSector->ubGarrisonID, iDesired );
 
 		if( iSurplus >= 0 )
 		{
-			swprintf( wSubString, L"%d surplus troops", iSurplus );
+			wprintf( wSubString, L"%d surplus troops", iSurplus );
 			wcscat( wString, wSubString );
 		}
 		else
 		{
-			swprintf( wSubString, L"%d reinforcements requested", -iSurplus  );
+			wprintf( wSubString, L"%d reinforcements requested", -iSurplus  );
 			wcscat( wString, wSubString );
 		}
 		mprintf( iScreenX, iScreenY, wString );
@@ -1918,7 +1918,7 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 			{
 				Assert( pGroup->pEnemyGroup->ubIntention < NUM_ENEMY_INTENTIONS );
 
-				swprintf( wString, L"Group %c: %s", 'A' + ubGroupCnt, gwGroupTypeString[ pGroup->pEnemyGroup->ubIntention ] );
+				wprintf( wString, L"Group %c: %s", 'A' + ubGroupCnt, gwGroupTypeString[ pGroup->pEnemyGroup->ubIntention ] );
 
 				switch ( pGroup->pEnemyGroup->ubIntention )
 				{
@@ -1928,7 +1928,7 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 						if ( iGarrisonIndex != -1 )
 						{
 							ubSectorID = gGarrisonGroup[ iGarrisonIndex ].ubSectorID;
-							swprintf( wSubString, L", target sector %c%d", SECTORY( ubSectorID ) + 'A' - 1, SECTORX( ubSectorID ) );
+							wprintf( wSubString, L", target sector %c%d", SECTORY( ubSectorID ) + 'A' - 1, SECTORX( ubSectorID ) );
 						}
 						else
 						{
@@ -1937,16 +1937,16 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 							{
 								if( pFinalWaypoint->x == 3 && pFinalWaypoint->y == 16 )
 								{
-									swprintf( wSubString, L" - group returning to pool.");
+									wprintf( wSubString, L" - group returning to pool.");
 								}
 								else
 								{
-									swprintf( wSubString, L" - moving to %c%d", pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
+									wprintf( wSubString, L" - moving to %c%d", pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
 								}
 							}
 							else
 							{
-								swprintf( wSubString, L" - can't determine target sector" );
+								wprintf( wSubString, L" - can't determine target sector" );
 							}
 						}
 						wcscat( wString, wSubString );
@@ -1958,7 +1958,7 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 						if ( iGarrisonIndex != -1 )
 						{
 							ubSectorID = gGarrisonGroup[ iGarrisonIndex ].ubSectorID;
-							swprintf( wSubString, L", dest sector %c%d", SECTORY( ubSectorID ) + 'A' - 1, SECTORX( ubSectorID ) );
+							wprintf( wSubString, L", dest sector %c%d", SECTORY( ubSectorID ) + 'A' - 1, SECTORX( ubSectorID ) );
 							wcscat( wString, wSubString );
 						}
 						else	// must be reinforcing a patrol
@@ -1969,7 +1969,7 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 								pFinalWaypoint = GetFinalWaypoint( pGroup );
 								Assert( pFinalWaypoint );
 
-								swprintf( wSubString, L", Patrol #%d, dest sector %c%d", iPatrolIndex, pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
+								wprintf( wSubString, L", Patrol #%d, dest sector %c%d", iPatrolIndex, pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
 								wcscat( wString, wSubString );
 							}
 							else
@@ -1979,16 +1979,16 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 								{
 									if( pFinalWaypoint->x == 3 && pFinalWaypoint->y == 16 )
 									{
-										swprintf( wSubString, L" - group returning to pool.");
+										wprintf( wSubString, L" - group returning to pool.");
 									}
 									else
 									{
-										swprintf( wSubString, L" - lost group moving to %c%d", pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
+										wprintf( wSubString, L" - lost group moving to %c%d", pFinalWaypoint->y + 'A' - 1, pFinalWaypoint->x );
 									}
 								}
 								else
 								{
-									swprintf( wSubString, L" (LOST GROUP!)" );
+									wprintf( wSubString, L" (LOST GROUP!)" );
 								}
 								wcscat( wString, wSubString );
 							}
@@ -1998,11 +1998,11 @@ void PrintDetailedEnemiesInSectorInfo( INT32 iScreenX, INT32 iScreenY, UINT8 ubS
 						iPatrolIndex = FindPatrolGroupIndexForGroupID( pGroup->ubGroupID );
 						if( iPatrolIndex != -1 )
 						{
-							swprintf( wSubString, L"#%d, next sector %c%d", iPatrolIndex, pGroup->ubNextY + 'A' - 1, pGroup->ubNextX );
+							wprintf( wSubString, L"#%d, next sector %c%d", iPatrolIndex, pGroup->ubNextY + 'A' - 1, pGroup->ubNextX );
 						}
 						else
 						{
-							swprintf( wSubString, L"#err, FLOATING GROUP!" );
+							wprintf( wSubString, L"#err, FLOATING GROUP!" );
 						}
 						wcscat( wString, wSubString );
 						break;

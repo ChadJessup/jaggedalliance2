@@ -96,32 +96,32 @@ DDSURFACEDESC SurfaceDescription;
 			fFlicStatus=TRUE;			
 			if(!fSuspendFlics)
 			{
-				if(!SmackWait(SmkList[uiCount].SmackHandle))
-				{
-					DDLockSurface(SmkList[uiCount].lpDDS, NULL, &SurfaceDescription, 0, NULL);
-			    SmackToBuffer(SmkList[uiCount].SmackHandle,SmkList[uiCount].uiLeft,
-																					SmkList[uiCount].uiTop,
-																					SurfaceDescription.lPitch,
-																					SmkList[uiCount].SmackHandle->Height,
-																					SurfaceDescription.lpSurface,
-																					guiSmackPixelFormat);
-					SmackDoFrame(SmkList[uiCount].SmackHandle);
-					DDUnlockSurface(SmkList[uiCount].lpDDS, SurfaceDescription.lpSurface);
-					// temp til I figure out what to do with it
-					//InvalidateRegion(0,0, 640, 480, FALSE);
-
-					// Check to see if the flic is done the last frame
-					if(SmkList[uiCount].SmackHandle->FrameNum==(SmkList[uiCount].SmackHandle->Frames-1))
-					{
-						// If flic is looping, reset frame to 0
-						if(SmkList[uiCount].uiFlags & SMK_FLIC_LOOP)
-							SmackGoto(SmkList[uiCount].SmackHandle, 0);
-						else if(SmkList[uiCount].uiFlags & SMK_FLIC_AUTOCLOSE)
-							SmkCloseFlic(&SmkList[uiCount]);
-					}
-					else
-						SmackNextFrame(SmkList[uiCount].SmackHandle);
-				}
+				//if(!SmackWait(SmkList[uiCount].SmackHandle))
+				//{
+				//	DDLockSurface(SmkList[uiCount].lpDDS, NULL, &SurfaceDescription, 0, NULL);
+			    //SmackToBuffer(SmkList[uiCount].SmackHandle,SmkList[uiCount].uiLeft,
+				//																	SmkList[uiCount].uiTop,
+				//																	SurfaceDescription.lPitch,
+				//																	SmkList[uiCount].SmackHandle->Height,
+				//																	SurfaceDescription.lpSurface,
+				//																	guiSmackPixelFormat);
+				//	SmackDoFrame(SmkList[uiCount].SmackHandle);
+				//	DDUnlockSurface(SmkList[uiCount].lpDDS, SurfaceDescription.lpSurface);
+				//	// temp til I figure out what to do with it
+				//	//InvalidateRegion(0,0, 640, 480, FALSE);
+				//
+				//	// Check to see if the flic is done the last frame
+				//	if(SmkList[uiCount].SmackHandle->FrameNum==(SmkList[uiCount].SmackHandle->Frames-1))
+				//	{
+				//		// If flic is looping, reset frame to 0
+				//		if(SmkList[uiCount].uiFlags & SMK_FLIC_LOOP)
+				//			SmackGoto(SmkList[uiCount].SmackHandle, 0);
+				//		else if(SmkList[uiCount].uiFlags & SMK_FLIC_AUTOCLOSE)
+				//			SmkCloseFlic(&SmkList[uiCount]);
+				//	}
+				//	else
+				//		SmackNextFrame(SmkList[uiCount].SmackHandle);
+				//}
 			}
 		}
 	}
@@ -144,14 +144,16 @@ void SmkInitialize(HWND hWindow, UINT32 uiWidth, UINT32 uiHeight)
 	uiDisplayHeight=uiHeight;
 
 	// Use MMX acceleration, if available
-	SmackUseMMX(1);
+	//SmackUseMMX(1);
 
 	//Get the sound Driver handle
 	pSoundDriver = SoundGetDriverHandle();
 
 	//if we got the sound handle, use sound during the intro
-	if( pSoundDriver )
-		SmackSoundUseMSS( pSoundDriver );
+	if (pSoundDriver)
+	{
+		//SmackSoundUseMSS( pSoundDriver );
+	}
 }
 
 void SmkShutdown(void)
@@ -208,16 +210,16 @@ SMKFLIC *SmkOpenFlic(CHAR8 *cFilename)
 	hFile = GetRealFileHandleFromFileManFileHandle( pSmack->hFileHandle );
 
 	// Allocate a Smacker buffer for video decompression
-	if(!(pSmack->SmackBuffer=SmackBufferOpen(hDisplayWindow,SMACKAUTOBLIT,640,480,0,0)))
+	//if(!(pSmack->SmackBuffer=SmackBufferOpen(hDisplayWindow,SMACKAUTOBLIT,640,480,0,0)))
 	{
-		ErrorMsg("SMK ERROR: Can't allocate a Smacker decompression buffer");
+//		ErrorMsg("SMK ERROR: Can't allocate a Smacker decompression buffer");
 		return(NULL);
 	}
 
-	if(!(pSmack->SmackHandle=SmackOpen((CHAR8 *)hFile, SMACKFILEHANDLE | SMACKTRACKS, SMACKAUTOEXTRA)))
+	//if(!(pSmack->SmackHandle=SmackOpen((CHAR8 *)hFile, SMACKFILEHANDLE | SMACKTRACKS, SMACKAUTOEXTRA)))
 //	if(!(pSmack->SmackHandle=SmackOpen(cFilename, SMACKTRACKS, SMACKAUTOEXTRA)))
 	{
-		ErrorMsg("SMK ERROR: Smacker won't open the SMK file");
+		//ErrorMsg("SMK ERROR: Smacker won't open the SMK file");
 		return(NULL);
 	}
 
@@ -246,10 +248,10 @@ void SmkCloseFlic(SMKFLIC *pSmack)
 	FileClose(pSmack->hFileHandle);
 
 	// Deallocate the smack buffers
-	SmackBufferClose(pSmack->SmackBuffer);
+	//SmackBufferClose(pSmack->SmackBuffer);
 
 	// Close the smack flic
-	SmackClose(pSmack->SmackHandle);
+	//SmackClose(pSmack->SmackHandle);
 
 	// Zero the memory, flags, etc.
 	memset(pSmack, 0, sizeof(SMKFLIC));

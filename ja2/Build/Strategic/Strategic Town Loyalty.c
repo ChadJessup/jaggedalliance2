@@ -1567,7 +1567,7 @@ void AdjustLoyaltyForCivsEatenByMonsters( INT16 sSectorX, INT16 sSectorY, UINT8 
 
 	//Report this to player
 	GetSectorIDString( sSectorX, sSectorY, 0, pSectorString, TRUE );
-	swprintf( str, gpStrategicString[ STR_DIALOG_CREATURES_KILL_CIVILIANS ], ubHowMany, pSectorString );
+	wprintf( str, gpStrategicString[ STR_DIALOG_CREATURES_KILL_CIVILIANS ], ubHowMany, pSectorString );
 	DoScreenIndependantMessageBox( str, MSG_BOX_FLAG_OK, MapScreenDefaultOkBoxCallback );
 
 	// use same formula as if it were a civilian "murder" in tactical!!!

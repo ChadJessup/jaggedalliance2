@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Bounds Checker|Win32">
+      <Configuration>Bounds Checker</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Demo|Win32">
+      <Configuration>Debug Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Demo Bounds Checker|Win32">
+      <Configuration>Demo Bounds Checker</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Demo Release with Debug Info|Win32">
+      <Configuration>Demo Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Demo|Win32">
+      <Configuration>Release Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release with Debug Info|Win32">
+      <Configuration>Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/Jagged Alliance 2/Development/Programming/Jagged Alliance 2/Build", AVAAAAAA</SccProjectName>
+    <SccLocalPath>..\..\..\ja2source\ja2\build</SccLocalPath>
+    <ProjectGuid>{9EE0F3EC-6202-428F-A2DA-E214145C50D8}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <OutDir>.\Bounds Checker\</OutDir>
+    <IntDir>.\Bounds Checker\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'">
+    <OutDir>.\Demo Bounds Checker\</OutDir>
+    <IntDir>.\Demo Bounds Checker\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <OutDir>.\Debug Demo\</OutDir>
+    <IntDir>.\Debug Demo\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <OutDir>.\Demo Release with Debug\</OutDir>
+    <IntDir>.\Demo Release with Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <OutDir>.\Release Demo\</OutDir>
+    <IntDir>.\Release Demo\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <OutDir>.\Release with Debug\</OutDir>
+    <IntDir>.\Release with Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BOUNDS_CHECKER;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Bounds Checker\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Bounds Checker\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Bounds Checker\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Bounds Checker\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Bounds Checker\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Bounds Checker\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BOUNDS_CHECKER;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Demo Bounds Checker\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Demo Bounds Checker\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Demo Bounds Checker\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Demo Bounds Checker\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Bounds Checker\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Bounds Checker\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug Demo\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug Demo\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug Demo\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug Demo\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug Demo\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug Demo\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Demo Release with Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Demo Release with Debug\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Demo Release with Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Demo Release with Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Release with Debug\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Release with Debug\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release Demo\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release Demo\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release Demo\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release Demo\</ProgramDataBaseFileName>
+      <AdditionalOptions> /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release Demo\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release Demo\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;RELEASE_WITH_DEBUG_INFO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release with Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release with Debug\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release with Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release with Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;..\Editor;..\Laptop;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\TileEngine.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\TileEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\TileEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Ambient Control.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Buildings.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="environment.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Exit Grids.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Explosion Control.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Fog Of War.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Interactive Tiles.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Isometric Utils.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="LightEffects.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="lighting.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Map Edgepoints.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="overhead map.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="phys math.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="physics.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="pits.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Radar Screen.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Render Dirty.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Render Fun.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="renderworld.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SaveLoadMap.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Shade Table Util.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Simple Render Utils.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Smell.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SmokeEffects.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="structure.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="sysutil.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Tactical Placement GUI.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Tile Animation.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Tile Cache.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Tile Surface.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="TileDat.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="tiledef.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="WorldDat.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="worlddef.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="worldman.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /O2b2   /O2b2 </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ambient Control.h" />
+    <ClInclude Include="Ambient Types.h" />
+    <ClInclude Include="Buildings.h" />
+    <ClInclude Include="edit_sys.h" />
+    <ClInclude Include="environment.h" />
+    <ClInclude Include="Exit Grids.h" />
+    <ClInclude Include="Fog Of War.h" />
+    <ClInclude Include="Interactive Tiles.h" />
+    <ClInclude Include="Isometric Utils.h" />
+    <ClInclude Include="lighting.h" />
+    <ClInclude Include="Map Edgepoints.h" />
+    <ClInclude Include="pits.h" />
+    <ClInclude Include="Radar Screen.h" />
+    <ClInclude Include="render dirty.h" />
+    <ClInclude Include="Render Fun.h" />
+    <ClInclude Include="renderworld.h" />
+    <ClInclude Include="SaveLoadMap.h" />
+    <ClInclude Include="Shade Table Util.h" />
+    <ClInclude Include="Simple Render Utils.h" />
+    <ClInclude Include="Smell.h" />
+    <ClInclude Include="Structure Internals.h" />
+    <ClInclude Include="structure.h" />
+    <ClInclude Include="sysutil.h" />
+    <ClInclude Include="Tile Animation.h" />
+    <ClInclude Include="TileDat.h" />
+    <ClInclude Include="tiledef.h" />
+    <ClInclude Include="TileEngine All.h" />
+    <ClInclude Include="WorldDat.h" />
+    <ClInclude Include="worlddef.h" />
+    <ClInclude Include="worldman.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

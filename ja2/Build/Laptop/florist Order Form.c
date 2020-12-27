@@ -894,7 +894,7 @@ void DisplayFlowerDynamicItems()
 */
 	//order number
 	usPosX = StringPixLength( sOrderFormText[FLORIST_ORDER_ORDER_NUMBER], FLOWER_ORDEER_SMALL_FONT) + 5 + FLOWER_ORDER_ORDER_NUM_NAME_X;
-	swprintf(sTemp, L"%d", LaptopSaveInfo.uiFlowerOrderNumber );
+	wprintf(sTemp, L"%d", LaptopSaveInfo.uiFlowerOrderNumber );
 	DrawTextToScreen( sTemp, usPosX, FLOWER_ORDER_ORDER_NUM_NAME_Y, 0, FLOWER_ORDEER_SMALL_FONT, FLOWER_ORDEER_SMALL_COLOR, FONT_MCOLOR_BLACK, FALSE, LEFT_JUSTIFIED );
 
 	guiFlowerPrice = 0;
@@ -927,7 +927,7 @@ void DisplayFlowerDynamicItems()
 	else
 		guiFlowerPrice += usPrice + FlowerOrderLocations[ gubCurrentlySelectedFlowerLocation ].ubWhenItGetsThereCost;
 
-	swprintf( sTemp, L"$%d.00 %s", guiFlowerPrice, pMessageStrings[ MSG_USDOLLAR_ABBREVIATION ] );
+	wprintf( sTemp, L"$%d.00 %s", guiFlowerPrice, pMessageStrings[ MSG_USDOLLAR_ABBREVIATION ] );
 	DrawTextToScreen( sTemp, usPosX, FLOWER_ORDER_BOUQUET_NAME_Y, 0, FLOWER_ORDEER_SMALL_FONT, FLOWER_ORDEER_SMALL_COLOR, FONT_MCOLOR_BLACK, FALSE, LEFT_JUSTIFIED );
 }
 

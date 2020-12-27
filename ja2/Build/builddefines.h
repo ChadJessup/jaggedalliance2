@@ -3,6 +3,8 @@
 
 #include "Language Defines.h"
 
+#define WINDOWS_IGNORE_PACKING_MISMATCH
+
 // Beta version
 // #define	JA2BETAVERSION
 

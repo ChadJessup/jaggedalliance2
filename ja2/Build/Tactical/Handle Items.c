@@ -3174,11 +3174,11 @@ BOOLEAN DrawItemPoolList( ITEM_POOL *pItemPool, INT16 sGridNo, UINT8 bCommand, I
 			// Set string
 			if ( gWorldItems[ pTempItemPool->iItemIndex ].o.ubNumberOfObjects > 1 )
 			{
-				swprintf( pStr, L"%s (%d)", ShortItemNames[ gWorldItems[ pTempItemPool->iItemIndex ].o.usItem ], gWorldItems[ pTempItemPool->iItemIndex ].o.ubNumberOfObjects );
+				wprintf( pStr, L"%s (%d)", ShortItemNames[ gWorldItems[ pTempItemPool->iItemIndex ].o.usItem ], gWorldItems[ pTempItemPool->iItemIndex ].o.ubNumberOfObjects );
 			}
 			else
 			{
-				swprintf( pStr, L"%s", ShortItemNames[ gWorldItems[ pTempItemPool->iItemIndex ].o.usItem ] );
+				wprintf( pStr, L"%s", ShortItemNames[ gWorldItems[ pTempItemPool->iItemIndex ].o.usItem ] );
 			}
 
 			// Get Width
@@ -3251,7 +3251,7 @@ BOOLEAN DrawItemPoolList( ITEM_POOL *pItemPool, INT16 sGridNo, UINT8 bCommand, I
 		{
 			SetFontForeground( FONT_MCOLOR_DKGRAY );
 		}
-		swprintf( pStr, TacticalStr[ ITEMPOOL_POPUP_PREV_STR ] );
+		wprintf( pStr, TacticalStr[ ITEMPOOL_POPUP_PREV_STR ] );
 		gprintfdirty( sFontX, sY, pStr );
 		mprintf( sFontX, sY, pStr );
 		sY += GetFontHeight( SMALLFONT1 ) - 2;
@@ -3281,11 +3281,11 @@ BOOLEAN DrawItemPoolList( ITEM_POOL *pItemPool, INT16 sGridNo, UINT8 bCommand, I
 
 			if ( gWorldItems[ pItemPool->iItemIndex ].o.ubNumberOfObjects > 1 )
 			{
-				swprintf( pStr, L"%s (%d)", ShortItemNames[ gWorldItems[ pItemPool->iItemIndex ].o.usItem ], gWorldItems[ pItemPool->iItemIndex ].o.ubNumberOfObjects );
+				wprintf( pStr, L"%s (%d)", ShortItemNames[ gWorldItems[ pItemPool->iItemIndex ].o.usItem ], gWorldItems[ pItemPool->iItemIndex ].o.ubNumberOfObjects );
 			}
 			else
 			{
-				swprintf( pStr, L"%s", ShortItemNames[ gWorldItems[ pItemPool->iItemIndex ].o.usItem ] );
+				wprintf( pStr, L"%s", ShortItemNames[ gWorldItems[ pItemPool->iItemIndex ].o.usItem ] );
 			}
 
 			gprintfdirty( sFontX, sY, pStr );
@@ -3319,7 +3319,7 @@ BOOLEAN DrawItemPoolList( ITEM_POOL *pItemPool, INT16 sGridNo, UINT8 bCommand, I
 				{
 					SetFontForeground( FONT_MCOLOR_DKGRAY );
 				}
-				swprintf( pStr, TacticalStr[ ITEMPOOL_POPUP_MORE_STR ] );
+				wprintf( pStr, TacticalStr[ ITEMPOOL_POPUP_MORE_STR ] );
 				gprintfdirty( sFontX, sY, pStr );
 				mprintf( sFontX, sY, pStr );
 			}

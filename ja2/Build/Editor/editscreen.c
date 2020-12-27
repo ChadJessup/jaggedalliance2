@@ -3532,7 +3532,7 @@ void ProcessAreaSelection( BOOLEAN fWithLeftButton )
 				if( iCurrentTaskbar == TASK_BUILDINGS && TextInputMode() )
 				{
 					UINT16 str[4];
-					swprintf( str, L"%d", gubCurrRoomNumber );
+					wprintf( str, L"%d", gubCurrRoomNumber );
 					SetInputFieldStringWith16BitString( 1, str );
 					SetActiveField( 0 );
 				}
@@ -3807,7 +3807,7 @@ void UpdateLastActionBeforeLeaving()
 void ReloadMap()
 {
 	UINT16 szFilename[30];
-	swprintf( szFilename, L"%S", gubFilename );
+	wprintf( szFilename, L"%S", gubFilename );
 	ExternalLoadMap( szFilename );
 }
 

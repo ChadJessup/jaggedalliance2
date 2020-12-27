@@ -1436,7 +1436,7 @@ void DrawDate(INT32 iCounter, INT32 iDate, BOOLEAN fRead)
 		SetFont( FONT10ARIALBOLD );
 	}
 	// draw date of message being displayed in mail viewer
-  swprintf(sString, L"%s %d", pDayStrings[ 0 ], iDate/ ( 24 * 60 ) ); 
+  wprintf(sString, L"%s %d", pDayStrings[ 0 ], iDate/ ( 24 * 60 ) ); 
   mprintf(DATE_X,(( UINT16 )( 4 + MIDDLE_Y + iCounter * MIDDLE_WIDTH ) ),sString);
 
 	SetFont( MESSAGE_FONT );
@@ -1740,7 +1740,7 @@ INT32 DisplayEmailMessage(EmailPtr pMail)
 	pMail->fRead=TRUE;
 	
 	// draw text for title bar
-  //swprintf(pString, L"%s / %s", pSenderNameList[pMail->ubSender],pMail->pSubject);
+  //wprintf(pString, L"%s / %s", pSenderNameList[pMail->ubSender],pMail->pSubject);
 	//DisplayWrappedString(VIEWER_X+VIEWER_HEAD_X+4, VIEWER_Y+VIEWER_HEAD_Y+4, VIEWER_HEAD_WIDTH, MESSAGE_GAP, MESSAGE_FONT, MESSAGE_COLOR, pString, 0,FALSE,0);
 	 
 	// increment height for size of one line
@@ -2963,7 +2963,7 @@ void DisplayEmailMessageSubjectDateFromLines( EmailPtr pMail , INT32 iViewerY)
 	mprintf( usX, MESSAGE_DATE_Y+ (UINT16)iViewerY , pEmailHeaders[2]);
 	
 	// the actual date info
-	swprintf(sString, L"%d", ( ( pMail->iDate ) / ( 24 * 60) ) );
+	wprintf(sString, L"%d", ( ( pMail->iDate ) / ( 24 * 60) ) );
 	mprintf( MESSAGE_HEADER_X+235, MESSAGE_DATE_Y + (UINT16)iViewerY, sString);
   
 	
@@ -3368,7 +3368,7 @@ void HandleIMPCharProfileResultsMessage( void)
 			{
 				wchar_t	zTemp[512];
 
-				swprintf( zTemp, L" %s", gMercProfiles[ PLAYER_GENERATED_CHARACTER_ID + LaptopSaveInfo.iVoiceId ].zName );
+				wprintf( zTemp, L" %s", gMercProfiles[ PLAYER_GENERATED_CHARACTER_ID + LaptopSaveInfo.iVoiceId ].zName );
 				wcscat( pString, zTemp );
 			}
 			
@@ -4586,9 +4586,9 @@ void DisplayWhichPageOfEmailProgramIsDisplayed( void )
   
 	// page number
 	if( iLastPage < 0 )
-		swprintf( sString, L"%d / %d", 1, 1);
+		wprintf( sString, L"%d / %d", 1, 1);
 	else
-		swprintf( sString, L"%d / %d", iCurrentPage + 1, iLastPage + 1);
+		wprintf( sString, L"%d / %d", iCurrentPage + 1, iLastPage + 1);
 
 	// print it
 	mprintf( PAGE_NUMBER_X ,PAGE_NUMBER_Y, sString );
@@ -4654,7 +4654,7 @@ BOOLEAN DisplayNumberOfPagesToThisEmail( INT32 iViewerY )
 	giNumberOfPagesToCurrentEmail = ( giNumberOfPagesToCurrentEmail );
 
 	// parse current page and max number of pages to email
-	swprintf( sString,L"%d / %d", ( giMessagePage + 1 ), ( giNumberOfPagesToCurrentEmail - 1 ) );
+	wprintf( sString,L"%d / %d", ( giMessagePage + 1 ), ( giNumberOfPagesToCurrentEmail - 1 ) );
 
 	SetFont( FONT12ARIAL );
 	SetFontForeground( FONT_BLACK );
@@ -4963,7 +4963,7 @@ void ModifyInsuranceEmails( UINT16 usMessageId, INT32 *iResults, EmailPtr pMail,
 
 
 	// Replace the name in the subject line
-//	swprintf( pMail->pSubject, gMercProfiles[ pMail->ubFirstData ].zNickname );
+//	wprintf( pMail->pSubject, gMercProfiles[ pMail->ubFirstData ].zNickname );
 
 	// set record ptr to head of list
 	pTempRecord=pMessageRecordList;
@@ -5077,7 +5077,7 @@ BOOLEAN ReplaceMercNameAndAmountWithProperData( CHAR16 *pFinishedString, EmailPt
 			{
 				CHAR16	sDollarAmount[64];
 
-				swprintf( sDollarAmount, L"%d", pMail->iFirstData );
+				wprintf( sDollarAmount, L"%d", pMail->iFirstData );
 
 				InsertCommasForDollarFigure( sDollarAmount );
 				InsertDollarSignInToString( sDollarAmount );

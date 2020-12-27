@@ -1290,11 +1290,11 @@ INT16 GetNumberOfLinesInHeight( STR16 pStringA )
 	wcscpy( pString, pStringA );
 
 	// tokenize
-	pToken = wcstok( pString, L"\n" );
+	pToken = wcstok( pString, L"\n", NULL);
 
 	while( pToken != NULL )
   {
-		 pToken = wcstok( NULL, L"\n" );
+		 pToken = wcstok( NULL, L"\n", NULL);
 		 sCounter++;
 	}
 
@@ -1372,7 +1372,7 @@ INT16 GetWidthOfString( STR16 pStringA )
 	wcscpy( pString, pStringA );
 
 	// tokenize
-	pToken = wcstok( pString, L"\n" );
+	pToken = wcstok( pString, L"\n", NULL );
 
 	while( pToken != NULL )
   {
@@ -1381,7 +1381,7 @@ INT16 GetWidthOfString( STR16 pStringA )
 			sWidth = StringPixLength( pToken, FONT10ARIAL );
 		}
 
-		pToken = wcstok( NULL, L"\n" );
+		pToken = wcstok( NULL, L"\n", NULL);
 	}
 
 	return( sWidth );
@@ -1399,7 +1399,7 @@ void DisplayHelpTokenizedString( STR16 pStringA, INT16 sX, INT16 sY )
 	wcscpy( pString, pStringA );
 
 	// tokenize
-	pToken = wcstok( pString, L"\n" );
+	pToken = wcstok( pString, L"\n", NULL );
 
 	while( pToken != NULL )
   {
@@ -1420,7 +1420,7 @@ void DisplayHelpTokenizedString( STR16 pStringA, INT16 sX, INT16 sY )
 			}
 			mprintf( sX + uiCursorXPos, sY + iCounter * (GetFontHeight(FONT10ARIAL)+1), L"%c", pToken[ i ] );
 		}
-		pToken = wcstok( NULL, L"\n" );
+		pToken = wcstok( NULL, L"\n", NULL);
 		iCounter++;
 	}
 }

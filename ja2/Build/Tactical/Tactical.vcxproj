@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Bounds Checker|Win32">
+      <Configuration>Bounds Checker</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Demo|Win32">
+      <Configuration>Debug Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Demo Bounds Checker|Win32">
+      <Configuration>Demo Bounds Checker</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Demo Release with Debug Info|Win32">
+      <Configuration>Demo Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Demo|Win32">
+      <Configuration>Release Demo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release with Debug Info|Win32">
+      <Configuration>Release with Debug Info</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/Jagged Alliance 2/Development/Programming/Jagged Alliance 2/Build", AVAAAAAA</SccProjectName>
+    <SccLocalPath>..\..\..\ja2source\ja2\build</SccLocalPath>
+    <ProjectGuid>{0480873A-A3BB-4E60-A80E-9D29B4473C87}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <OutDir>.\Demo Release with Debug\</OutDir>
+    <IntDir>.\Demo Release with Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <OutDir>.\Bounds Checker\</OutDir>
+    <IntDir>.\Bounds Checker\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <OutDir>.\Release Demo\</OutDir>
+    <IntDir>.\Release Demo\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'">
+    <OutDir>.\Demo Bounds Checker\</OutDir>
+    <IntDir>.\Demo Bounds Checker\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <OutDir>.\Debug Demo\</OutDir>
+    <IntDir>.\Debug Demo\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <OutDir>.\Release with Debug\</OutDir>
+    <IntDir>.\Release with Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Demo Release with Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Demo Release with Debug\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Demo Release with Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Demo Release with Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Release with Debug\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Release with Debug\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Bounds Checker|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BOUNDS_CHECKER;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Bounds Checker\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Bounds Checker\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Bounds Checker\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Bounds Checker\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Bounds Checker\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Bounds Checker\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RELEASE_WITH_DEBUG_INFO;NDEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release Demo\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release Demo\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release Demo\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release Demo\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release Demo\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release Demo\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Demo Bounds Checker|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BOUNDS_CHECKER;JA2DEMO;PRECOMPILEDHEADERS;CALLBACKTIMER;WIN32;_WINDOWS;JA2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Demo Bounds Checker\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Demo Bounds Checker\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Demo Bounds Checker\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Demo Bounds Checker\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Bounds Checker\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Demo Bounds Checker\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;..\Laptop;..\Editor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Demo|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;JA2DEMO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug Demo\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug Demo\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug Demo\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug Demo\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug Demo\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug Demo\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Standard Gaming Platform;..\;..\TileEngine;..\Utils;..\TacticalAI;..\Communications;..\Tactical;..\strategic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;RELEASE_WITH_DEBUG_INFO;CALLBACKTIMER;WIN32;_WINDOWS;JA2;PRECOMPILEDHEADERS;_VTUNE_PROFILING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release with Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release with Debug\Tactical.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release with Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release with Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug\Tactical.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release with Debug\Tactical.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Air Raid.c" />
+    <ClCompile Include="Animation Cache.c" />
+    <ClCompile Include="Animation Control.c" />
+    <ClCompile Include="Animation Data.c" />
+    <ClCompile Include="Arms Dealer Init.c" />
+    <ClCompile Include="ArmsDealerInvInit.c" />
+    <ClCompile Include="Auto Bandage.c" />
+    <ClCompile Include="Boxing.c" />
+    <ClCompile Include="bullets.c" />
+    <ClCompile Include="Campaign.c" />
+    <ClCompile Include="Civ Quotes.c" />
+    <ClCompile Include="Dialogue Control.c" />
+    <ClCompile Include="DisplayCover.c" />
+    <ClCompile Include="Drugs And Alcohol.c" />
+    <ClCompile Include="End Game.c" />
+    <ClCompile Include="Enemy Soldier Save.c" />
+    <ClCompile Include="Faces.c" />
+    <ClCompile Include="fov.c" />
+    <ClCompile Include="GAP.C" />
+    <ClCompile Include="Handle Doors.c">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">OldStyle</DebugInformationFormat>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="Handle Items.c" />
+    <ClCompile Include="Handle UI Plan.c" />
+    <ClCompile Include="Handle UI.c" />
+    <ClCompile Include="Interface Control.c" />
+    <ClCompile Include="Interface Cursors.c" />
+    <ClCompile Include="Interface Dialogue.c" />
+    <ClCompile Include="Interface Items.c" />
+    <ClCompile Include="Interface Panels.c" />
+    <ClCompile Include="Interface Utils.c" />
+    <ClCompile Include="Interface.c" />
+    <ClCompile Include="Inventory Choosing.c" />
+    <ClCompile Include="Items.c" />
+    <ClCompile Include="Keys.c" />
+    <ClCompile Include="LOS.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release Demo|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release with Debug Info|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="Map Information.c" />
+    <ClCompile Include="Merc Entering.c" />
+    <ClCompile Include="Merc Hiring.c" />
+    <ClCompile Include="Militia Control.c" />
+    <ClCompile Include="Morale.c" />
+    <ClCompile Include="opplist.c" />
+    <ClCompile Include="Overhead.c">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="PATHAI.C">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">OldStyle</DebugInformationFormat>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="Points.c" />
+    <ClCompile Include="QARRAY.C" />
+    <ClCompile Include="Real Time Input.c" />
+    <ClCompile Include="Rotting Corpses.c" />
+    <ClCompile Include="ShopKeeper Interface.c" />
+    <ClCompile Include="SkillCheck.c" />
+    <ClCompile Include="Soldier Add.c" />
+    <ClCompile Include="Soldier Ani.c" />
+    <ClCompile Include="Soldier Control.c" />
+    <ClCompile Include="Soldier Create.c" />
+    <ClCompile Include="Soldier Find.c" />
+    <ClCompile Include="Soldier Init List.c">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="Soldier Profile.c" />
+    <ClCompile Include="Soldier Tile.c">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">OldStyle</DebugInformationFormat>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Demo Release with Debug Info|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="Spread Burst.c" />
+    <ClCompile Include="Squads.c" />
+    <ClCompile Include="Strategic Exit GUI.c" />
+    <ClCompile Include="Structure Wrap.c" />
+    <ClCompile Include="Tactical Save.c" />
+    <ClCompile Include="Tactical Turns.c" />
+    <ClCompile Include="TeamTurns.c" />
+    <ClCompile Include="Turn Based Input.c" />
+    <ClCompile Include="UI Cursors.c" />
+    <ClCompile Include="Vehicles.c" />
+    <ClCompile Include="Weapons.c" />
+    <ClCompile Include="World Items.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aim.h" />
+    <ClInclude Include="animation cache.h" />
+    <ClInclude Include="Animation Control.h" />
+    <ClInclude Include="Animation Data.h" />
+    <ClInclude Include="Arms Dealer Init.h" />
+    <ClInclude Include="Boxing.h" />
+    <ClInclude Include="Campaign.h" />
+    <ClInclude Include="Enemy Soldier Save.h" />
+    <ClInclude Include="Handle Items.h" />
+    <ClInclude Include="Handle UI.h" />
+    <ClInclude Include="Interface Cursors.h" />
+    <ClInclude Include="Interface Items.h" />
+    <ClInclude Include="interface panels.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="Inventory Choosing.h" />
+    <ClInclude Include="Item Types.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Keys.h" />
+    <ClInclude Include="los.h" />
+    <ClInclude Include="Map Information.h" />
+    <ClInclude Include="Merc Hiring.h" />
+    <ClInclude Include="Militia Control.h" />
+    <ClInclude Include="Morale.h" />
+    <ClInclude Include="opplist.h" />
+    <ClInclude Include="overhead types.h" />
+    <ClInclude Include="Overhead.h" />
+    <ClInclude Include="PATHAI.H" />
+    <ClInclude Include="points.h" />
+    <ClInclude Include="ShopKeeper Interface.h" />
+    <ClInclude Include="ShopKeeper Quotes.h" />
+    <ClInclude Include="SkillCheck.h" />
+    <ClInclude Include="Soldier Add.h" />
+    <ClInclude Include="soldier ani.h" />
+    <ClInclude Include="Soldier Control.h" />
+    <ClInclude Include="Soldier Create.h" />
+    <ClInclude Include="Soldier Init List.h" />
+    <ClInclude Include="Soldier macros.h" />
+    <ClInclude Include="soldier profile type.h" />
+    <ClInclude Include="Soldier Profile.h" />
+    <ClInclude Include="Squads.h" />
+    <ClInclude Include="Strategic Exit GUI.h" />
+    <ClInclude Include="Tactical All.h" />
+    <ClInclude Include="Tactical Save.h" />
+    <ClInclude Include="TeamTurns.h" />
+    <ClInclude Include="Vehicles.h" />
+    <ClInclude Include="weapons.h" />
+    <ClInclude Include="World Items.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

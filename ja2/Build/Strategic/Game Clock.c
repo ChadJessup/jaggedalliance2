@@ -111,7 +111,7 @@ void InitNewGameClock( )
 	guiDay = ( guiGameClock / NUM_SEC_IN_DAY );
 	guiHour = ( guiGameClock - ( guiDay * NUM_SEC_IN_DAY ) ) / NUM_SEC_IN_HOUR;
 	guiMin	= ( guiGameClock - ( ( guiDay * NUM_SEC_IN_DAY ) + ( guiHour * NUM_SEC_IN_HOUR ) ) ) / NUM_SEC_IN_MIN;
-	swprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", pDayStrings[ 0 ], guiDay, guiHour, guiMin );
+	wprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", pDayStrings[ 0 ], guiDay, guiHour, guiMin );
 	guiTimeCurrentSectorWasLastLoaded = 0;
 	guiGameSecondsPerRealSecond = 0;
 	gubClockResolution = 1;
@@ -237,7 +237,7 @@ void AdvanceClock( UINT8 ubWarpCode )
 	guiHour = ( guiGameClock - ( guiDay * NUM_SEC_IN_DAY ) ) / NUM_SEC_IN_HOUR;
 	guiMin	= ( guiGameClock - ( ( guiDay * NUM_SEC_IN_DAY ) + ( guiHour * NUM_SEC_IN_HOUR ) ) ) / NUM_SEC_IN_MIN;
 
-	swprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", gpGameClockString[ STR_GAMECLOCK_DAY_NAME ], guiDay, guiHour, guiMin );
+	wprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", gpGameClockString[ STR_GAMECLOCK_DAY_NAME ], guiDay, guiHour, guiMin );
 
 	if( gfResetAllPlayerKnowsEnemiesFlags && !gTacticalStatus.fEnemyInSector )
 	{
@@ -297,7 +297,7 @@ void RenderClock( INT16 sX, INT16 sY )
 		SetFontForeground( FONT_FCOLOR_NICERED );
 		// Erase first!
 		RestoreExternBackgroundRect(sX, sY, CLOCK_STRING_WIDTH, CLOCK_STRING_HEIGHT );
-		swprintf( gswzWorldTimeStr, L"GAME OVER" );
+		wprintf( gswzWorldTimeStr, L"GAME OVER" );
 		mprintf( sX + (CLOCK_STRING_WIDTH - StringPixLength( WORLDTIMESTR, CLOCK_FONT ))/2, sY, WORLDTIMESTR );
 		return;
 	}
@@ -1005,7 +1005,7 @@ BOOLEAN LoadGameClock( HWFILE hFile )
 	guiHour = ( guiGameClock - ( guiDay * NUM_SEC_IN_DAY ) ) / NUM_SEC_IN_HOUR;
 	guiMin	= ( guiGameClock - ( ( guiDay * NUM_SEC_IN_DAY ) + ( guiHour * NUM_SEC_IN_HOUR ) ) ) / NUM_SEC_IN_MIN;
 
-	swprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", pDayStrings[ 0 ], guiDay, guiHour, guiMin );
+	wprintf( WORLDTIMESTR, L"%s %d, %02d:%02d", pDayStrings[ 0 ], guiDay, guiHour, guiMin );
 
 	if( !gfBasement && !gfCaves )
 		gfDoLighting		 = TRUE;

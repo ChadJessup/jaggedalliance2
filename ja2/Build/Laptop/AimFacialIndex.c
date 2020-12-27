@@ -160,9 +160,9 @@ BOOLEAN RenderAimFacialIndex()
 
 	//Display the 'A.I.M. Members Sorted Ascending By Price' type string
 	if( gubCurrentListMode == AIM_ASCEND )
-		swprintf(sString, AimFiText[ AIM_FI_AIM_MEMBERS_SORTED_ASCENDING ], AimFiText[gubCurrentSortMode] );
+		wprintf(sString, AimFiText[ AIM_FI_AIM_MEMBERS_SORTED_ASCENDING ], AimFiText[gubCurrentSortMode] );
 	else
-		swprintf(sString, AimFiText[ AIM_FI_AIM_MEMBERS_SORTED_DESCENDING ], AimFiText[gubCurrentSortMode] );
+		wprintf(sString, AimFiText[ AIM_FI_AIM_MEMBERS_SORTED_DESCENDING ], AimFiText[gubCurrentSortMode] );
 
 	DrawTextToScreen(sString, AIM_FI_MEMBER_TEXT_X, AIM_FI_MEMBER_TEXT_Y, AIM_FI_MEMBER_TEXT_WIDTH, AIM_MAINTITLE_FONT, AIM_MAINTITLE_COLOR, FONT_MCOLOR_BLACK, FALSE, CENTER_JUSTIFIED	);			
 

@@ -413,11 +413,11 @@ void CrippledVersionEndGameCheck()
 
 	if( guiDay >= 8 )
 	{
-		swprintf( zString, L"Game Over.  We hope you have enjoyed playing the limited version of Jagged Alliance 2." );
+		wprintf( zString, L"Game Over.  We hope you have enjoyed playing the limited version of Jagged Alliance 2." );
 	}
 	else
 	{
-		swprintf( zString, L"You have %d game days left in this limited version of Jagged Alliance 2.",  ( 8 - guiDay ) );
+		wprintf( zString, L"You have %d game days left in this limited version of Jagged Alliance 2.",  ( 8 - guiDay ) );
 	}
 
 	DoScreenIndependantMessageBox( zString, MSG_BOX_FLAG_OK, CrippledVersionEndGameCheckCallBack );	

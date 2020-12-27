@@ -4190,7 +4190,7 @@ void DisplayPlayersBalanceToDate( void )
   SetFontShadow(NO_SHADOW);
 
 	// parse straigth number
-	swprintf( sString, L"%d", LaptopSaveInfo.iCurrentBalance );
+	wprintf( sString, L"%d", LaptopSaveInfo.iCurrentBalance );
 
 	// put in commas, then dollar sign
 	InsertCommasForDollarFigure( sString );
@@ -5275,7 +5275,7 @@ void PrintBalance( void )
 	SetFontBackground( FONT_BLACK );
 	SetFontShadow( NO_SHADOW );
 
-	swprintf(pString, L"%d", LaptopSaveInfo.iCurrentBalance);
+	wprintf(pString, L"%d", LaptopSaveInfo.iCurrentBalance);
 	InsertCommasForDollarFigure( pString );
 	InsertDollarSignInToString( pString );
 	
@@ -5323,7 +5323,7 @@ void PrintNumberOnTeam( void )
 	}
 
 
-	swprintf( pString, L"%s %d",pPersonnelString[ 0 ], iCounter );
+	wprintf( pString, L"%s %d",pPersonnelString[ 0 ], iCounter );
 
 	usFontHeight = GetFontHeight( FONT10ARIAL );
 	usStrLength = StringPixLength( pString, FONT10ARIAL );
@@ -5378,7 +5378,7 @@ void PrintDate( void )
 
 	SetFontShadow( NO_SHADOW );
 
-	swprintf(pString, L"%s %d", pMessageStrings[ MSG_DAY ], GetWorldDay( ) ); 
+	wprintf(pString, L"%s %d", pMessageStrings[ MSG_DAY ], GetWorldDay( ) ); 
 
 //	gprintfdirty(35, 413 + 19,pString);
 	mprintf(35, 413 + 19,pString);
@@ -5704,7 +5704,7 @@ BOOLEAN RenderWWWProgramTitleBar( void )
 	{
 		iIndex = guiCurrentLaptopMode - LAPTOP_MODE_WWW-1;
 
-		swprintf( sString, L"%s  -  %s", pWebTitle[0], pWebPagesTitles[ iIndex ] );
+		wprintf( sString, L"%s  -  %s", pWebTitle[0], pWebPagesTitles[ iIndex ] );
 		mprintf(140 ,33 ,sString);
 	}
 	

@@ -5,7 +5,6 @@
 #include "types.h"
 #include <windows.h>
 #include "Quantize.h"
-#include "types.h"
 #include "himage.h"
 
 CQuantizer::CQuantizer (UINT nMaxColors, UINT nColorBits)
@@ -129,7 +128,8 @@ void CQuantizer::ReduceTree (UINT nColorBits, UINT* pLeafCount,
     //
     // Find the deepest level containing at least one reducible node.
     //
-    for (int i=nColorBits - 1; (i>0) && (pReducibleNodes[i] == NULL); i--);
+    int i;
+    for (i=nColorBits - 1; (i>0) && (pReducibleNodes[i] == NULL); i--);
 
     //
     // Reduce the node most recently added to the list at level i.

@@ -940,7 +940,7 @@ void HandleDialogue( )
 			if( QItem->uiSpecialEventData < 3 )
 			{
 				// post a notice if the player wants to withdraw money from thier account to cover the difference?
-				swprintf( zMoney, L"%d", QItem->uiSpecialEventData2 );
+				wprintf( zMoney, L"%d", QItem->uiSpecialEventData2 );
 				InsertCommasForDollarFigure( zMoney );
 				InsertDollarSignInToString( zMoney );
 			}
@@ -948,21 +948,21 @@ void HandleDialogue( )
 			switch( QItem->uiSpecialEventData  )
 			{
 				case( 0 ):
-						swprintf( zText, SkiMessageBoxText[ SKI_SHORT_FUNDS_TEXT ], zMoney );
+						wprintf( zText, SkiMessageBoxText[ SKI_SHORT_FUNDS_TEXT ], zMoney );
 
 						//popup a message stating the player doesnt have enough money
 						DoSkiMessageBox( MSG_BOX_BASIC_STYLE, zText, SHOPKEEPER_SCREEN, MSG_BOX_FLAG_OK, ConfirmDontHaveEnoughForTheDealerMessageBoxCallBack );
 				break;
 				case( 1 ):
 						//if the player is trading items
-						swprintf( zText, SkiMessageBoxText[ SKI_QUESTION_TO_DEDUCT_MONEY_FROM_PLAYERS_ACCOUNT_TO_COVER_DIFFERENCE ], zMoney );
+						wprintf( zText, SkiMessageBoxText[ SKI_QUESTION_TO_DEDUCT_MONEY_FROM_PLAYERS_ACCOUNT_TO_COVER_DIFFERENCE ], zMoney );
 					
 						//ask them if we should deduct money out the players account to cover the difference
 						DoSkiMessageBox( MSG_BOX_BASIC_STYLE, zText, SHOPKEEPER_SCREEN, MSG_BOX_FLAG_YESNO, ConfirmToDeductMoneyFromPlayersAccountMessageBoxCallBack );
 
 				break;
 				case( 2 ):
-						swprintf( zText, SkiMessageBoxText[ SKI_QUESTION_TO_DEDUCT_MONEY_FROM_PLAYERS_ACCOUNT_TO_COVER_COST ], zMoney );
+						wprintf( zText, SkiMessageBoxText[ SKI_QUESTION_TO_DEDUCT_MONEY_FROM_PLAYERS_ACCOUNT_TO_COVER_COST ], zMoney );
 			
 						//ask them if we should deduct money out the players account to cover the difference
 						DoSkiMessageBox( MSG_BOX_BASIC_STYLE, zText, SHOPKEEPER_SCREEN, MSG_BOX_FLAG_YESNO, ConfirmToDeductMoneyFromPlayersAccountMessageBoxCallBack );
@@ -1815,7 +1815,7 @@ BOOLEAN GetDialogue( UINT8 ubCharacterNum, UINT16 usQuoteNum, UINT32 iDataSize, 
 				LoadEncryptedDataFromFile( pFilename, zDialogueText, usQuoteNum * iDataSize, iDataSize );
 				if(zDialogueText[0] == 0) 
         {
-					swprintf( zDialogueText, L"I have no text in the EDT file ( %d ) %S", usQuoteNum, pFilename );
+					wprintf( zDialogueText, L"I have no text in the EDT file ( %d ) %S", usQuoteNum, pFilename );
 
 #ifndef JA2BETAVERSION
           return( FALSE );
@@ -1824,7 +1824,7 @@ BOOLEAN GetDialogue( UINT8 ubCharacterNum, UINT16 usQuoteNum, UINT32 iDataSize, 
 			} 
 			else
 			{
-				swprintf( zDialogueText, L"I have no text in the file ( %d ) %S", usQuoteNum , pFilename );
+				wprintf( zDialogueText, L"I have no text in the file ( %d ) %S", usQuoteNum , pFilename );
 
 #ifndef JA2BETAVERSION
           return( FALSE );
@@ -1883,10 +1883,10 @@ void HandleTacticalNPCTextUI( UINT8 ubCharacterNum, INT16 *zQuoteStr )
 
 	// post message to mapscreen message system
 #ifdef TAIWANESE
-	swprintf( gTalkPanel.zQuoteStr, L"%s", zQuoteStr );
+	wprintf( gTalkPanel.zQuoteStr, L"%s", zQuoteStr );
 #else
-	swprintf( gTalkPanel.zQuoteStr, L"\"%s\"", zQuoteStr );
-	swprintf( zText, L"%s: \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
+	wprintf( gTalkPanel.zQuoteStr, L"\"%s\"", zQuoteStr );
+	wprintf( zText, L"%s: \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
 	MapScreenMessage( FONT_MCOLOR_WHITE, MSG_DIALOG, L"%s",  zText );
 #endif
 }
@@ -1908,10 +1908,10 @@ void DisplayTextForExternalNPC( UINT8 ubCharacterNum, STR16 zQuoteStr )
 
 	// post message to mapscreen message system
 #ifdef TAIWANESE
-	swprintf( gTalkPanel.zQuoteStr, L"%s", zQuoteStr );
+	wprintf( gTalkPanel.zQuoteStr, L"%s", zQuoteStr );
 #else
-	swprintf( gTalkPanel.zQuoteStr, L"\"%s\"", zQuoteStr );
-	swprintf( zText, L"%s: \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
+	wprintf( gTalkPanel.zQuoteStr, L"\"%s\"", zQuoteStr );
+	wprintf( zText, L"%s: \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
 	MapScreenMessage( FONT_MCOLOR_WHITE, MSG_DIALOG, L"%s",  zText );
 #endif
 
@@ -1939,11 +1939,11 @@ void HandleTacticalTextUI( INT32 iFaceIndex, SOLDIERTYPE *pSoldier, INT16 *zQuot
 
 	//BUild text
 	// How do we do this with defines?
-	//swprintf( zText, L"\xb4\xa2 %s: \xb5 \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
+	//wprintf( zText, L"\xb4\xa2 %s: \xb5 \"%s\"", gMercProfiles[ ubCharacterNum ].zNickname, zQuoteStr );
 #ifdef TAIWANESE
-	swprintf( zText, L"%s", zQuoteStr );
+	wprintf( zText, L"%s", zQuoteStr );
 #else
-	swprintf( zText, L"\"%s\"", zQuoteStr );
+	wprintf( zText, L"\"%s\"", zQuoteStr );
 #endif
 	sLeft	= 110;
 
@@ -1954,7 +1954,7 @@ void HandleTacticalTextUI( INT32 iFaceIndex, SOLDIERTYPE *pSoldier, INT16 *zQuot
 	ExecuteTacticalTextBox( sLeft, zText );
 
 #ifndef TAIWANESE
-	swprintf( zText, L"%s: \"%s\"", gMercProfiles[ pSoldier->ubProfile ].zNickname, zQuoteStr );
+	wprintf( zText, L"%s: \"%s\"", gMercProfiles[ pSoldier->ubProfile ].zNickname, zQuoteStr );
 	MapScreenMessage( FONT_MCOLOR_WHITE, MSG_DIALOG, L"%s",  zText );
 #endif
 	

@@ -182,7 +182,7 @@ void RenderMercsAccount()
 	BltVideoObject(FRAME_BUFFER, hPixHandle, 0,MERC_AC_ACCOUNT_NUMBER_X, MERC_AC_ACCOUNT_NUMBER_Y, VO_BLT_SRCTRANSPARENCY,NULL);
 
 	//Display Players account number
-	swprintf(sText, L"%s %05d", MercAccountText[MERC_ACCOUNT_ACCOUNT], LaptopSaveInfo.guiPlayersMercAccountNumber);
+	wprintf(sText, L"%s %05d", MercAccountText[MERC_ACCOUNT_ACCOUNT], LaptopSaveInfo.guiPlayersMercAccountNumber);
 	DrawTextToScreen( sText, MERC_AC_ACCOUNT_NUMBER_TEXT_X, MERC_AC_ACCOUNT_NUMBER_TEXT_Y, 0, MERC_ACCOUNT_TEXT_FONT, MERC_ACCOUNT_TEXT_COLOR, FONT_MCOLOR_BLACK, FALSE, LEFT_JUSTIFIED);
 
 	//Display the order grid titles
@@ -224,13 +224,13 @@ void BtnMercAuthorizeButtonCallback(GUI_BUTTON *btn,INT32 reason)
 
 			btn->uiFlags &= (~BUTTON_CLICKED_ON );
 
-			swprintf( wzDollarAmount, L"%d", giMercTotalContractCharge );
+			wprintf( wzDollarAmount, L"%d", giMercTotalContractCharge );
 
 			InsertCommasForDollarFigure( wzDollarAmount );
 			InsertDollarSignInToString( wzDollarAmount );
 
 			//create the string to show to the user
-			swprintf( wzAuthorizeString, MercAccountText[MERC_ACCOUNT_AUTHORIZE_CONFIRMATION], wzDollarAmount );
+			wprintf( wzAuthorizeString, MercAccountText[MERC_ACCOUNT_AUTHORIZE_CONFIRMATION], wzDollarAmount );
 
 			DoLapTopMessageBox( MSG_BOX_BLUE_ON_GREY, wzAuthorizeString, LAPTOP_SCREEN, MSG_BOX_FLAG_YESNO, MercAuthorizePaymentMessageBoxCallBack );
 
@@ -306,16 +306,16 @@ void DisplayHiredMercs()
 
 			//Display The # of days the merc has worked since last paid
 
-			swprintf(sTemp, L"%d", gMercProfiles[ usMercID ].iMercMercContractLength );
+			wprintf(sTemp, L"%d", gMercProfiles[ usMercID ].iMercMercContractLength );
 			DrawTextToScreen(sTemp, MERC_AC_SECOND_COLUMN_X, usPosY, MERC_AC_SECOND_COLUMN_WIDTH, MERC_ACCOUNT_DYNAMIC_TEXT_FONT, ubFontColor, FONT_MCOLOR_BLACK, FALSE, CENTER_JUSTIFIED);
 
 			//Display the mercs rate
-			swprintf(sTemp, L"$%6d",gMercProfiles[ usMercID ].sSalary );
+			wprintf(sTemp, L"$%6d",gMercProfiles[ usMercID ].sSalary );
 			DrawTextToScreen(sTemp, MERC_AC_THIRD_COLUMN_X, usPosY, MERC_AC_THIRD_COLUMN_WIDTH, MERC_ACCOUNT_DYNAMIC_TEXT_FONT, ubFontColor, FONT_MCOLOR_BLACK, FALSE, CENTER_JUSTIFIED);
 
 			//Display the total charge
 			uiContractCharge = gMercProfiles[ usMercID ].sSalary * gMercProfiles[ usMercID ].iMercMercContractLength;
-			swprintf(sTemp, L"$%6d", uiContractCharge );
+			wprintf(sTemp, L"$%6d", uiContractCharge );
 			DrawTextToScreen(sTemp, MERC_AC_FOURTH_COLUMN_X, usPosY, MERC_AC_FOURTH_COLUMN_WIDTH, MERC_ACCOUNT_DYNAMIC_TEXT_FONT, ubFontColor, FONT_MCOLOR_BLACK, FALSE, CENTER_JUSTIFIED);
 
 			giMercTotalContractCharge += uiContractCharge;
@@ -323,7 +323,7 @@ void DisplayHiredMercs()
 		}
 	}
 
-	swprintf(sTemp, L"$%6d", giMercTotalContractCharge );
+	wprintf(sTemp, L"$%6d", giMercTotalContractCharge );
 	DrawTextToScreen(sTemp, MERC_AC_FOURTH_COLUMN_X, MERC_AC_TOTAL_COST_Y, MERC_AC_FOURTH_COLUMN_WIDTH, MERC_ACCOUNT_DYNAMIC_TEXT_FONT, MERC_ACCOUNT_DYNAMIC_TEXT_COLOR, FONT_MCOLOR_BLACK, FALSE, CENTER_JUSTIFIED);
 }
 
