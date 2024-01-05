@@ -80,9 +80,13 @@ extern	HINSTANCE					ghInstance;
 UINT32 InitializeJA2(void)
 { 
 
+	long mps = sizeof(MERCPROFILESTRUCT);
+
 #ifdef LASERLOCK_ENABLED
 	HandleLaserLockResult( PrepareLaserLockSystem() );
 #endif
+
+//	int face = InitFace(0, 0, 0);
 
   HandleJA2CDCheck( );
 

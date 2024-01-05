@@ -925,7 +925,7 @@ void KeyChange(UINT32 usParam, UINT32 uiParam, UINT8 ufKeyState)
         // There is no string input going on right now, so we queue up the event
         gfKeyState[ubKey] = TRUE;
         QueueEvent(KEY_DOWN, ubChar, uiTmpLParam);
-			}
+      }
       else
       { // There is a current input string which will capture this event
         RedirectToString(ubChar);

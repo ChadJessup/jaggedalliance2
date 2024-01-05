@@ -378,7 +378,7 @@ UINT32 InitScreenHandle(void)
 		if( !hVSurface )
 			AssertMsg( 0, "Failed to load ja2_logo.sti!" );
 
-		//BltVideoSurfaceToVideoSurface( ghFrameBuffer, hVSurface, 0, 0, 0, VS_BLT_FAST, NULL );
+		BltVideoSurfaceToVideoSurface( ghFrameBuffer, hVSurface, 0, 0, 0, VS_BLT_FAST, NULL );
 		ubCurrentScreen = 1;
 
 		// Init screen

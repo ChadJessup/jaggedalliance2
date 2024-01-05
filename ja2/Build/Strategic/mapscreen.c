@@ -2972,6 +2972,7 @@ UINT32 MapScreenInit(void)
 	FilenameForBPP("INTERFACE\\group_confirm_tactical.sti", VObjectDesc.ImageFile);
 	CHECKF( AddVideoObject( &VObjectDesc, &guiUpdatePanelTactical ) );
 
+	RefreshScreen(NULL);
 	return TRUE;
 }
 

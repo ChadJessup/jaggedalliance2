@@ -471,10 +471,10 @@ BOOLEAN SetCurrentCursorFromDatabase( UINT32 uiCursorIndex  )
 							}
 						}
 					}
+
 					// Check if we are a sub cursor!
 					// IN this case, do all frames but
 					// skip the 1st or second!
-
 					if ( pCurData->bFlags & CURSOR_TO_SUB_CONDITIONALLY )
 					{
 						if ( pCurData->bFlags & CURSOR_TO_FLASH )

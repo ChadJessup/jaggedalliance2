@@ -705,7 +705,6 @@ UINT32 count;
 // High level blit function encapsolates ALL effects and BPP
 BOOLEAN BltVideoObjectToBuffer( UINT16 *pBuffer, UINT32 uiDestPitchBYTES, HVOBJECT hSrcVObject, UINT16 usIndex, INT32 iDestX, INT32 iDestY, INT32 fBltFlags, blt_fx *pBltFx )
 {
-
 	// Assertions
 	Assert( pBuffer != NULL );
 

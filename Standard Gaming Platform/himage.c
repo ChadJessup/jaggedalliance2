@@ -1008,6 +1008,7 @@ void ConvertRGBDistribution565ToAny( UINT16 * p16BPPData, UINT32 uiNumberOfPixel
 		uiGreen = (*pPixel & 0x07E0) >> 5;
 		uiBlue = (*pPixel & 0x001F);
 		uiTemp = FROMRGB(uiRed,uiGreen,uiBlue);
+
 		// then convert the 32-bit RGB value to whatever 16 bit format is used
 		*pPixel = Get16BPPColor( uiTemp );
 		pPixel++;

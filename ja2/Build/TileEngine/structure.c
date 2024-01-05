@@ -353,6 +353,8 @@ BOOLEAN LoadStructureData( STR szFileName, STRUCTURE_FILE_REF *	pFileRef, UINT32
 	return( TRUE );
 }
 
+static int idxCount = 0;
+
 BOOLEAN CreateFileStructureArrays( STRUCTURE_FILE_REF * pFileRef, UINT32 uiDataSize )
 { // Based on a file chunk, creates all the dynamic arrays for the 
   // structure definitions contained within
@@ -380,6 +382,8 @@ BOOLEAN CreateFileStructureArrays( STRUCTURE_FILE_REF * pFileRef, UINT32 uiDataS
 			// freeing of memory will occur outside of the function
 			return( FALSE );
 		}
+
+		idxCount++;
 		usIndex = ((DB_STRUCTURE *) pCurrent)->usStructureNumber;
 		pDBStructureRef[usIndex].pDBStructure = (DB_STRUCTURE *) pCurrent;
 		ppTileArray = MemAlloc( pDBStructureRef[usIndex].pDBStructure->ubNumberOfTiles * sizeof( DB_STRUCTURE_TILE *));

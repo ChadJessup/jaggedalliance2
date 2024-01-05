@@ -2836,7 +2836,7 @@ BOOLEAN JA2EncryptedFileRead( HWFILE hFile, PTR pDest, UINT32 uiBytesToRead, UIN
 	UINT8		ubLastByte = 0;
 	UINT8		ubLastByteForNextLoop;
 	BOOLEAN	fRet;
-	UINT8 *	pMemBlock;
+	UINT8 *pMemBlock;
 
 	fRet = FileRead( hFile, pDest, uiBytesToRead, puiBytesRead );
 	if ( fRet )

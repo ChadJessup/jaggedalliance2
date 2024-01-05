@@ -35,7 +35,9 @@ BOOLEAN LoadSTCIFileToImage( HIMAGE hImage, UINT16 fContents )
 	hFile = FileOpen( TempImage.ImageFile, FILE_ACCESS_READ, FALSE );
 	CHECKF( hFile );
 
-	if (!FileRead( hFile, &Header, STCI_HEADER_SIZE, &uiBytesRead ) || uiBytesRead != STCI_HEADER_SIZE || memcmp( Header.cID, STCI_ID_STRING, STCI_ID_LEN ) != 0 )
+	if (!FileRead( hFile, &Header, STCI_HEADER_SIZE, &uiBytesRead )
+		|| uiBytesRead != STCI_HEADER_SIZE
+		|| memcmp( Header.cID, STCI_ID_STRING, STCI_ID_LEN ) != 0 )
 	{
 		DbgMessage( TOPIC_HIMAGE, DBG_LEVEL_3, "Problem reading STCI header." );
 		FileClose( hFile );
