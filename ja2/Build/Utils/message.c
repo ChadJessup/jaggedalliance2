@@ -624,7 +624,7 @@ void ScreenMsg( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 	}
 
 	va_start(argptr, pStringA);       	
-	vwprintf(DestString, pStringA, argptr);
+	vwprintf(DestString, argptr);
 	va_end(argptr);
 
 	// pass onto tactical message and mapscreen message
@@ -764,7 +764,7 @@ void TacticalScreenMsg( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 		    pStringSt=GetNextString(pStringSt);
 
 	va_start(argptr, pStringA);       	// Set up variable argument pointer
-	vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+	vwprintf(DestString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	if ( ubPriority == MSG_DEBUG )
@@ -907,7 +907,7 @@ void MapScreenMessage( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 	if ( ubPriority == MSG_UI_FEEDBACK )
 	{
 		va_start(argptr, pStringA);       	// Set up variable argument pointer
-		vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+		vwprintf(DestString, argptr);	// process gprintf string (get output str)
 		va_end(argptr);
 
 		BeginUIMessage( DestString );
@@ -917,7 +917,7 @@ void MapScreenMessage( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 	if ( ubPriority == MSG_SKULL_UI_FEEDBACK )
 	{
 		va_start(argptr, pStringA);       	// Set up variable argument pointer
-		vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+		vwprintf(DestString, argptr);	// process gprintf string (get output str)
 		va_end(argptr);
 
 		InternalBeginUIMessage( TRUE, DestString );
@@ -928,7 +928,7 @@ void MapScreenMessage( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 	if ( ubPriority == MSG_ERROR )
 	{
 		va_start(argptr, pStringA);       	// Set up variable argument pointer
-		vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+		vwprintf(DestString, argptr);	// process gprintf string (get output str)
 		va_end(argptr);
 
 		wprintf( DestStringA, L"DEBUG: %s", DestString );
@@ -946,7 +946,7 @@ void MapScreenMessage( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 			 ( ubPriority == MSG_MAP_UI_POSITION_LOWER  ) )
 	{
 		va_start(argptr, pStringA);       	// Set up variable argument pointer
-		vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+		vwprintf(DestString, argptr);	// process gprintf string (get output str)
 		va_end(argptr);
 
 		BeginMapUIMessage( ubPriority, DestString );
@@ -969,7 +969,7 @@ void MapScreenMessage( UINT16 usColor, UINT8 ubPriority, STR16 pStringA, ... )
 		    pStringSt=GetNextString(pStringSt);
 
 	va_start(argptr, pStringA);       	// Set up variable argument pointer
-	vwprintf(DestString, pStringA, argptr);	// process gprintf string (get output str)
+	vwprintf(DestString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	if ( ubPriority == MSG_DEBUG )

@@ -436,7 +436,7 @@ void mprintfEditor(INT16 x, INT16 y, UINT16 *pFontString, ...)
 	Assert( pFontString != NULL );
 
 	va_start( argptr, pFontString );       	// Set up variable argument pointer
-	vwprintf( string, 256, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf( string, argptr);	// process gprintf string (get output str)
 	va_end( argptr );
 
 	uiStringLength = StringPixLength( string, FontDefault );

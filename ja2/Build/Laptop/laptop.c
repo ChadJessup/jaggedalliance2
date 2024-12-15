@@ -1904,7 +1904,7 @@ UINT32 LaptopScreenHandle()
 	RestoreBackgroundRects();
 
 	// lock cursor to screen
-	RestrictMouseCursor( &LaptopScreenRect );
+//	RestrictMouseCursor( &LaptopScreenRect );
 	
 	
 

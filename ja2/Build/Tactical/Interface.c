@@ -1798,7 +1798,7 @@ void BeginOverlayMessage( UINT32 uiFont, UINT16 *pFontString, ... )
 
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(SlideString, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(SlideString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	// Override it!
@@ -2709,7 +2709,7 @@ void InternalBeginUIMessage( BOOLEAN fUseSkullIcon, UINT16 *pFontString, ... )
 
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(MsgString, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(MsgString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	guiUIMessageTime = GetJA2Clock( );
@@ -2767,7 +2767,7 @@ void BeginUIMessage( UINT16 *pFontString, ... )
 	wchar_t	MsgString[512];
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(MsgString, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(MsgString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	InternalBeginUIMessage( FALSE, MsgString );
@@ -2783,7 +2783,7 @@ void BeginMapUIMessage( UINT8 ubPosition, UINT16 *pFontString, ... )
 	memset( &VideoOverlayDesc, 0, sizeof( VideoOverlayDesc ) );
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(MsgString, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(MsgString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	guiUIMessageTime = GetJA2Clock( );

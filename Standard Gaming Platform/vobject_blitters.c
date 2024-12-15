@@ -11879,16 +11879,16 @@ BlitLoop:
 		mov		ax, [edx+eax]				// get 16-bit version of 8-bit pixel
 		mov		[edi], ax						// store it in destination buffer
 
-		inc		edi
-		inc		esi
-		inc		edi
-		dec		ecx
+		inc		edi							// DestPtr
+		inc		esi							// SrcPtr
+		inc		edi							// DestPtr
+		dec		ecx							// BlitLength
 		jnz		BlitLoop
 
-		add		esi, SrcSkip				// move line pointers down one line
-		add		edi, LineSkip
+		add		esi, SrcSkip				// SrcPtr + SrcSkip
+		add		edi, LineSkip				// DestPtr + LineSkip
 
-		dec		ebx									// check line counter
+		dec		ebx									// BlitHeight - check line counter
 		jnz		NewRow							// done blitting, exit
 
 //DoneBlit:											// finished blit

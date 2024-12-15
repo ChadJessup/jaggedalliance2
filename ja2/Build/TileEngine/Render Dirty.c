@@ -756,7 +756,7 @@ INT32 iBack;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
   if ( USE_WINFONTS( ) )
@@ -793,7 +793,7 @@ UINT16 uiStringLength, uiStringHeight;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	uiStringLength=StringPixLength(string, FontDefault);
@@ -816,7 +816,7 @@ UINT16 uiStringLength, uiStringHeight;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	uiStringLength=StringPixLength(string, FontDefault);

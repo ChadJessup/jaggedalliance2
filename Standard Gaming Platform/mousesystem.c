@@ -871,7 +871,7 @@ void MSYS_UpdateMouseRegion(void)
 //
 void MSYS_DefineRegion(MOUSE_REGION *region,UINT16 tlx,UINT16 tly,UINT16 brx,UINT16 bry,INT8 priority,
 					   UINT16 crsr,MOUSE_CALLBACK movecallback,MOUSE_CALLBACK buttoncallback)
-{
+ {
 	#ifdef MOUSESYSTEM_DEBUGGING
 		if( region->uiFlags & MSYS_REGION_EXISTS )
 			AssertMsg( 0, "Attempting to define a region that already exists." );

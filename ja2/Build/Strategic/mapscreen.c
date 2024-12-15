@@ -4087,7 +4087,7 @@ void SetDayAlternate(STR16 pStringA, ...)
  va_list argptr;
 
 	va_start(argptr, pStringA);						// Set up variable argument pointer
-	vwprintf(String, pStringA, argptr);	// process gprintf string (get output str)
+	vwprintf(String, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	if (String[1]==0)
@@ -4121,7 +4121,7 @@ void SetHourAlternate(STR16 pStringA, ...)
  va_list argptr;
 
 	va_start(argptr, pStringA);						// Set up variable argument pointer
-	vwprintf(String, pStringA, argptr);	// process gprintf string (get output str)
+	vwprintf(String, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	if (String[1]==0)
@@ -4157,7 +4157,7 @@ void SetClockHour(STR16 pStringA, ...)
  va_list argptr;
 
 	va_start(argptr, pStringA);						// Set up variable argument pointer
-	vwprintf(String, pStringA, argptr);	// process gprintf string (get output str)
+	vwprintf(String, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 	if (String[1]==0)
 	{
@@ -4186,7 +4186,7 @@ void SetClockMin(STR16 pStringA, ...)
  va_list argptr;
 
  va_start(argptr, pStringA);					// Set up variable argument pointer
- vwprintf(String, pStringA, argptr);	// process gprintf string (get output str)
+ vwprintf(String, argptr);	// process gprintf string (get output str)
  va_end(argptr);
  
 	if (String[1]==0)
@@ -6545,7 +6545,7 @@ void PopupText( UINT16 *pFontString, ...  )
 	wchar_t	PopupString[512];
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(PopupString, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(PopupString, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 

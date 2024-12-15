@@ -2052,7 +2052,7 @@ void AddDeleteRegionsToMessageRegion(INT32 iViewerY)
 
 void CreateDestroyNewMailButton()
 {
- static BOOLEAN fOldNewMailFlag=FALSE; 
+ static BOOLEAN CreateDestroyNewMailButtonfOldNewMailFlag=FALSE; 
 
  // check if we are video conferencing, if so, do nothing
  if( gubVideoConferencingMode != 0 )
@@ -2061,12 +2061,12 @@ void CreateDestroyNewMailButton()
  }
 
 
- if((fNewMailFlag)&&(!fOldNewMailFlag))
+ if((fNewMailFlag)&&(!CreateDestroyNewMailButtonfOldNewMailFlag))
  {
 	 // create new mail dialog box button 
 
 	 // set old flag (stating button has been created)
-  fOldNewMailFlag=TRUE;
+  CreateDestroyNewMailButtonfOldNewMailFlag=TRUE;
 	
 	// load image and setup button
 	giNewMailButtonImage[0]=LoadButtonImage( "LAPTOP\\YesNoButtons.sti" ,-1,0,-1,1,-1 );
@@ -2084,12 +2084,12 @@ void CreateDestroyNewMailButton()
 	MarkAButtonDirty(  giNewMailButton[0] );	
 	fReDrawScreenFlag = TRUE;
  }
- else if((!fNewMailFlag)&&(fOldNewMailFlag))
+ else if((!fNewMailFlag)&&(CreateDestroyNewMailButtonfOldNewMailFlag))
  {
 
 
 	 // reset old flag
-   fOldNewMailFlag=FALSE;
+   CreateDestroyNewMailButtonfOldNewMailFlag=FALSE;
 
 	 // remove the button
    RemoveButton( giNewMailButton[0] );
@@ -2114,7 +2114,7 @@ BOOLEAN DisplayNewMailBox( void )
 	
 	
 	HVOBJECT hHandle;
-	static BOOLEAN fOldNewMailFlag=FALSE;
+	static BOOLEAN DisplayNewMailBoxfOldNewMailFlag=FALSE;
 	// will display a new mail box whenever new mail has arrived
 	
 	// check if we are video conferencing, if so, do nothing
@@ -2124,9 +2124,9 @@ BOOLEAN DisplayNewMailBox( void )
   }
 
 	// just stopped displaying box, reset old flag
-	if( ( !fNewMailFlag ) && ( fOldNewMailFlag ) )
+	if( ( !fNewMailFlag ) && ( DisplayNewMailBoxfOldNewMailFlag ) )
 	{
-		fOldNewMailFlag=FALSE;
+		DisplayNewMailBoxfOldNewMailFlag=FALSE;
 		return ( FALSE );
 	}
 	
@@ -2180,7 +2180,7 @@ BOOLEAN DisplayNewMailBox( void )
 	// redraw icons
   
 	// set box as displayed
-	fOldNewMailFlag=TRUE;
+	DisplayNewMailBoxfOldNewMailFlag=TRUE;
 
 
 	

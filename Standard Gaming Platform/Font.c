@@ -417,7 +417,7 @@ wchar_t	string[512];
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
   // make sure the character count is legal
@@ -728,7 +728,7 @@ UINT8				*pDestBuf;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -774,7 +774,7 @@ void VarFindFontRightCoordinates( INT16 sLeft, INT16 sTop, INT16 sWidth, INT16 s
 	va_list argptr;
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	FindFontRightCoordinates( sLeft, sTop, sWidth, sHeight, string, iFontIndex, psNewX, psNewY );
@@ -786,7 +786,7 @@ void VarFindFontCenterCoordinates( INT16 sLeft, INT16 sTop, INT16 sWidth, INT16 
 	va_list argptr;
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	FindFontCenterCoordinates( sLeft, sTop, sWidth, sHeight, string, iFontIndex, psNewX, psNewY );
@@ -837,7 +837,7 @@ UINT8				*pDestBuf;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -888,7 +888,7 @@ UINT8				*pDestBuf;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -955,7 +955,7 @@ wchar_t	string[512];
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -1000,7 +1000,7 @@ wchar_t	string[512];
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -1045,7 +1045,7 @@ UINT16	usOldForeColor;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;
@@ -1107,7 +1107,7 @@ UINT8				*pDestBuf;
 	Assert(pFontString!=NULL);
 
 	va_start(argptr, pFontString);       	// Set up variable argument pointer
-	vwprintf(string, pFontString, argptr);	// process gprintf string (get output str)
+	vwprintf(string, argptr);	// process gprintf string (get output str)
 	va_end(argptr);
 
 	curletter=string;

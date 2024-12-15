@@ -3463,6 +3463,7 @@ void DrawTextOnButton(GUI_BUTTON *b)
 		SetFontBackground( FONT_MCOLOR_BLACK );
 		SetFontForeground( (UINT8)b->sForeColor );
 		sForeColor = b->sForeColor;
+
 		if( b->sShadowColor != -1 )
 			SetFontShadow( (UINT8)b->sShadowColor );
 		//Override the colors if necessary.

@@ -50,7 +50,7 @@ WRAPPED_STRING *LineWrapForSingleCharWords(UINT32 ulFont, UINT16 usLineWidthPixe
 		return(FALSE);
 
 	va_start(argptr, pString);       	// Set up variable argument pointer
-	vwprintf(TempString, pString, argptr);	// process string (get output str)
+	vwprintf(TempString, argptr);	// process string (get output str)
 	va_end(argptr);
 
 	usCurIndex = usEndIndex = usDestIndex = 0;
@@ -168,7 +168,7 @@ WRAPPED_STRING *LineWrap(UINT32 ulFont, UINT16 usLineWidthPixels, UINT16 *pusLin
 		return(FALSE);
 
 	va_start(argptr, pString);       	// Set up variable argument pointer
-	vwprintf(TempString, pString, argptr);	// process string (get output str)
+	vwprintf(TempString, argptr);	// process string (get output str)
 	va_end(argptr);
 
 	usCurIndex = usEndIndex = usDestIndex = 0;
